@@ -136,8 +136,8 @@
                         <div class="row h-100 align-items-center">
                             <div class="col-12">
                                 <!-- Welcome Text -->
-                                <div class="welcome-text">
-                                    <h2 data-animation="fadeInUp" data-delay="100ms" style="font-family: Verdana, Geneva, Tahoma, sans-serif">Testimony Joe</h2>
+                                <div class="welcome-text" style="margin-top: -250px;">
+                                    <h2 data-animation="fadeInUp" data-delay="100ms" style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-style: italic;">Testimony Joe</h2>
                                     <h5 data-animation="fadeInUp" data-delay="300ms" style="font-style: italic;">...reaching God through songs.</h5>
                                     {{-- <div class="welcome-btn-group">
                                         <a href="#" class="btn poca-btn m-2 ml-0 active" data-animation="fadeInUp"
@@ -149,10 +149,10 @@
                                 <!-- Welcome Music Area -->
                                 <div class="poca-music-area mt-100 d-flex align-items-center flex-wrap"
                                     data-animation="fadeInUp" data-delay="900ms">
-                                    <div class="poca-music-thumbnail">
+                                    {{-- <div class="poca-music-thumbnail">
                                         <img src="{{asset('bootstrap_assets/./img/bg-img/4.jpg')}}" alt="">
-                                    </div>
-                                    <div class="poca-music-content">
+                                    </div> --}}
+                                    {{-- <div class="poca-music-content">
                                         <span class="music-published-date">December 9, 2018</span>
                                         <h2>Episode 203 - The Last Blockbuster</h2>
                                         <div class="music-meta-data">
@@ -177,7 +177,7 @@
                                                     (12)</a>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
