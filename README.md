@@ -1,2 +1,2 @@
 # testimonyjoe
-A renowned Gospel Artist personal website
+A renowned London-based Gospel Artist personal website
