@@ -137,7 +137,7 @@
                             <div class="col-12">
                                 <!-- Welcome Text -->
                                 <div class="welcome-text" style="margin-top: -250px;">
-                                    <h2 data-animation="fadeInUp" data-delay="100ms" style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-style: italic;">Testimony Joe</h2>
+                                    <h2 data-animation="fadeInUp" data-delay="100ms" style="font-family: Verdana, Geneva, Tahoma, sans-serif, Georgia; font-style: italic;">Testimony Joe</h2>
                                     <h5 data-animation="fadeInUp" data-delay="300ms" style="font-style: italic;">...reaching God through songs.</h5>
                                     {{-- <div class="welcome-btn-group">
                                         <a href="#" class="btn poca-btn m-2 ml-0 active" data-animation="fadeInUp"
