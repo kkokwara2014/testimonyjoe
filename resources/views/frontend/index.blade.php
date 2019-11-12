@@ -4,12 +4,12 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Poca - Podcast &amp; Audio Template">
+  <meta name="description" content="testimonyjoe">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Title -->
-  <title>Poca - Podcast &amp; Audio Template</title>
+  <title>testimonyjoe</title>
 
   <!-- Favicon -->
   <link rel="icon" href="{{asset('bootstrap_assets/img/core-img/favicon.ico')}}">
@@ -36,7 +36,8 @@
         <nav class="classy-navbar justify-content-between" id="pocaNav">
 
           <!-- Logo -->
-          <a class="nav-brand" href="index.html"><img src="{{asset('bootstrap_assets/./img/core-img/logo.png')}}" alt=""></a>
+          {{-- <a class="nav-brand" href="index.html"><img src="{{asset('bootstrap_assets/img/core-img/logo.png')}}" alt=""></a> --}}
+          <a class="nav-brand" href="index.html">Testimonyjoe</a>
 
           <!-- Navbar Toggler -->
           <div class="classy-navbar-toggler">
@@ -58,8 +59,8 @@
                 <li><a href="#">Pages</a>
                   <ul class="dropdown">
                     <li><a href="./index.html">- Home</a></li>
-                    <li><a href="./podcast.html">- Podcast</a></li>
-                    <li><a href="./single-podcast.html">- Single Podcast</a></li>
+                    
+                    
                     <li><a href="./about.html">- About Us</a></li>
                     <li><a href="./blog.html">- Blog</a></li>
                     <li><a href="./single-blog.html">- Blog Details</a></li>
@@ -81,7 +82,7 @@
                     </li>
                   </ul>
                 </li>
-                <li><a href="./podcast.html">Podcasts</a></li>
+               
                 <li><a href="./about.html">About</a></li>
                 <li><a href="#">Blog</a>
                   <ul class="dropdown">
@@ -124,7 +125,7 @@
     <div class="welcome-slides owl-carousel">
 
       <!-- Single Welcome Slide -->
-      <div class="welcome-welcome-slide bg-img bg-overlay" style="background-image: url(img/bg-img/1.jpg);">
+      <div class="welcome-welcome-slide bg-img bg-overlay" style="background-image: url({{asset('bootstrap_assets/img/bg-img/1.jpg')}});">
         <div class="container h-100">
           <div class="row h-100 align-items-center">
             <div class="col-12">
@@ -170,7 +171,7 @@
       </div>
 
       <!-- Single Welcome Slide -->
-      <div class="welcome-welcome-slide bg-img bg-overlay" style="background-image: url(img/bg-img/2.jpg);">
+      <div class="welcome-welcome-slide bg-img bg-overlay" style="background-image: url({{asset('bootstrap_assets/img/bg-img/2.jpg')}});">
         <div class="container h-100">
           <div class="row h-100 align-items-center">
             <div class="col-12">
@@ -186,7 +187,7 @@
               <!-- Welcome Music Area -->
               <div class="poca-music-area mt-100 d-flex align-items-center flex-wrap" data-animation="fadeInUp" data-delay="900ms">
                 <div class="poca-music-thumbnail">
-                  <img src="{{asset('bootstrap_assets/./img/bg-img/4.jpg" alt="">
+                  <img src="{{asset('bootstrap_assets/./img/bg-img/4.jpg')}}" alt="">
                 </div>
                 <div class="poca-music-content">
                   <span class="music-published-date">December 8, 2018</span>
@@ -197,7 +198,7 @@
                   <!-- Music Player -->
                   <div class="poca-music-player">
                     <audio preload="auto" controls>
-                      <source src="{{asset('bootstrap_assets/audio/dummy-audio.mp3">
+                      <source src="{{asset('bootstrap_assets/audio/dummy-audio.mp3')}}">
                     </audio>
                   </div>
                   <!-- Likes, Share & Download -->
@@ -216,7 +217,7 @@
       </div>
 
       <!-- Single Welcome Slide -->
-      <div class="welcome-welcome-slide bg-img bg-overlay" style="background-image: url(img/bg-img/3.jpg);">
+      <div class="welcome-welcome-slide bg-img bg-overlay" style="background-image: url({{asset('bootstrap_assets/img/bg-img/3.jpg')}});">
         <div class="container h-100">
           <div class="row h-100 align-items-center">
             <div class="col-12">
@@ -232,7 +233,7 @@
               <!-- Welcome Music Area -->
               <div class="poca-music-area mt-100 d-flex align-items-center flex-wrap" data-animation="fadeInUp" data-delay="900ms">
                 <div class="poca-music-thumbnail">
-                  <img src="{{asset('bootstrap_assets/./img/bg-img/4.jpg" alt="">
+                  <img src="{{asset('bootstrap_assets/./img/bg-img/4.jpg')}}" alt="">
                 </div>
                 <div class="poca-music-content">
                   <span class="music-published-date">December 7, 2018</span>
@@ -243,7 +244,7 @@
                   <!-- Music Player -->
                   <div class="poca-music-player">
                     <audio preload="auto" controls>
-                      <source src="{{asset('bootstrap_assets/audio/dummy-audio.mp3">
+                      <source src="{{asset('bootstrap_assets/audio/dummy-audio.mp3')}}">
                     </audio>
                   </div>
                   <!-- Likes, Share & Download -->
@@ -300,7 +301,7 @@
           <!-- Welcome Music Area -->
           <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
             <div class="poca-music-thumbnail">
-              <img src="{{asset('bootstrap_assets/./img/bg-img/5.jpg" alt="">
+              <img src="{{asset('bootstrap_assets/./img/bg-img/5.jpg')}}" alt="">
             </div>
             <div class="poca-music-content text-center">
               <span class="music-published-date mb-2">December 9, 2018</span>
@@ -311,7 +312,7 @@
               <!-- Music Player -->
               <div class="poca-music-player">
                 <audio preload="auto" controls>
-                  <source src="{{asset('bootstrap_assets/audio/dummy-audio.mp3">
+                  <source src="{{asset('bootstrap_assets/audio/dummy-audio.mp3')}}">
                 </audio>
               </div>
               <!-- Likes, Share & Download -->
@@ -331,7 +332,7 @@
           <!-- Welcome Music Area -->
           <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
             <div class="poca-music-thumbnail">
-              <img src="{{asset('bootstrap_assets/./img/bg-img/6.jpg" alt="">
+              <img src="{{asset('bootstrap_assets/./img/bg-img/6.jpg')}}" alt="">
             </div>
             <div class="poca-music-content text-center">
               <span class="music-published-date mb-2">December 9, 2018</span>
@@ -342,7 +343,7 @@
               <!-- Music Player -->
               <div class="poca-music-player">
                 <audio preload="auto" controls>
-                  <source src="{{asset('bootstrap_assets/audio/dummy-audio.mp3">
+                  <source src="{{asset('bootstrap_assets/audio/dummy-audio.mp3')}}">
                 </audio>
               </div>
               <!-- Likes, Share & Download -->
@@ -362,7 +363,7 @@
           <!-- Welcome Music Area -->
           <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
             <div class="poca-music-thumbnail">
-              <img src="{{asset('bootstrap_assets/./img/bg-img/7.jpg" alt="">
+              <img src="{{asset('bootstrap_assets/./img/bg-img/7.jpg')}}" alt="">
             </div>
             <div class="poca-music-content text-center">
               <span class="music-published-date mb-2">December 9, 2018</span>
@@ -373,7 +374,7 @@
               <!-- Music Player -->
               <div class="poca-music-player">
                 <audio preload="auto" controls>
-                  <source src="{{asset('bootstrap_assets/audio/dummy-audio.mp3">
+                  <source src="{{asset('bootstrap_assets/audio/dummy-audio.mp3')}}">
                 </audio>
               </div>
               <!-- Likes, Share & Download -->
@@ -393,7 +394,7 @@
           <!-- Welcome Music Area -->
           <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
             <div class="poca-music-thumbnail">
-              <img src="{{asset('bootstrap_assets/./img/bg-img/8.jpg" alt="">
+              <img src="{{asset('bootstrap_assets/./img/bg-img/8.jpg')}}" alt="">
             </div>
             <div class="poca-music-content text-center">
               <span class="music-published-date mb-2">December 9, 2018</span>
@@ -404,7 +405,7 @@
               <!-- Music Player -->
               <div class="poca-music-player">
                 <audio preload="auto" controls>
-                  <source src="{{asset('bootstrap_assets/audio/dummy-audio.mp3">
+                  <source src="{{asset('bootstrap_assets/audio/dummy-audio.mp3')}}">
                 </audio>
               </div>
               <!-- Likes, Share & Download -->
@@ -424,7 +425,7 @@
           <!-- Welcome Music Area -->
           <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
             <div class="poca-music-thumbnail">
-              <img src="{{asset('bootstrap_assets/./img/bg-img/9.jpg" alt="">
+              <img src="{{asset('bootstrap_assets/./img/bg-img/9.jpg')}}" alt="">
             </div>
             <div class="poca-music-content text-center">
               <span class="music-published-date mb-2">December 9, 2018</span>
@@ -435,7 +436,7 @@
               <!-- Music Player -->
               <div class="poca-music-player">
                 <audio preload="auto" controls>
-                  <source src="{{asset('bootstrap_assets/audio/dummy-audio.mp3">
+                  <source src="{{asset('bootstrap_assets/audio/dummy-audio.mp3')}}">
                 </audio>
               </div>
               <!-- Likes, Share & Download -->
@@ -455,7 +456,7 @@
           <!-- Welcome Music Area -->
           <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
             <div class="poca-music-thumbnail">
-              <img src="{{asset('bootstrap_assets/./img/bg-img/10.jpg" alt="">
+              <img src="{{asset('bootstrap_assets/./img/bg-img/10.jpg')}}" alt="">
             </div>
             <div class="poca-music-content text-center">
               <span class="music-published-date mb-2">December 9, 2018</span>
@@ -466,7 +467,7 @@
               <!-- Music Player -->
               <div class="poca-music-player">
                 <audio preload="auto" controls>
-                  <source src="{{asset('bootstrap_assets/audio/dummy-audio.mp3">
+                  <source src="{{asset('bootstrap_assets/audio/dummy-audio.mp3')}}">
                 </audio>
               </div>
               <!-- Likes, Share & Download -->
@@ -511,7 +512,7 @@
         <!-- Single Featured Guest -->
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <div class="single-featured-guest mb-80">
-            <img src="{{asset('bootstrap_assets/img/bg-img/25.jpg" alt="">
+            <img src="{{asset('bootstrap_assets/img/bg-img/25.jpg')}}" alt="">
             <div class="guest-info">
               <h5>Alfred Day</h5>
               <span>PRODUCER</span>
@@ -522,7 +523,7 @@
         <!-- Single Featured Guest -->
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <div class="single-featured-guest mb-80">
-            <img src="{{asset('bootstrap_assets/img/bg-img/26.jpg" alt="">
+            <img src="{{asset('bootstrap_assets/img/bg-img/26.jpg')}}" alt="">
             <div class="guest-info">
               <h5>Jayden White</h5>
               <span>DRUMMER</span>
@@ -533,7 +534,7 @@
         <!-- Single Featured Guest -->
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <div class="single-featured-guest mb-80">
-            <img src="{{asset('bootstrap_assets/img/bg-img/27.jpg" alt="">
+            <img src="{{asset('bootstrap_assets/img/bg-img/27.jpg')}}" alt="">
             <div class="guest-info">
               <h5>Vincent Reid</h5>
               <span>ENTREPRENEUR</span>
@@ -546,7 +547,7 @@
   <!-- ***** Featured Guests Area End ***** -->
 
   <!-- ***** Newsletter Area Start ***** -->
-  <section class="poca-newsletter-area bg-img bg-overlay pt-50 jarallax" style="background-image: url(img/bg-img/15.jpg);">
+  <section class="poca-newsletter-area bg-img bg-overlay pt-50 jarallax" style="background-image: url({{asset('bootstrap_assets/img/bg-img/15.jpg')}});">
     <div class="container">
       <div class="row align-items-center">
         <!-- Newsletter Content -->
@@ -586,7 +587,7 @@
               <p>&copy; 
 
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | testimonyjoe.com
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
             </div>
           </div>
@@ -657,15 +658,15 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
   <!-- ******* All JS ******* -->
   <!-- jQuery js -->
-  <script src="{{asset('bootstrap_assets/js/jquery.min.js"></script>
+  <script src="{{asset('bootstrap_assets/js/jquery.min.js')}}"></script>
   <!-- Popper js -->
-  <script src="{{asset('bootstrap_assets/js/popper.min.js"></script>
+  <script src="{{asset('bootstrap_assets/js/popper.min.js')}}"></script>
   <!-- Bootstrap js -->
-  <script src="{{asset('bootstrap_assets/js/bootstrap.min.js"></script>
+  <script src="{{asset('bootstrap_assets/js/bootstrap.min.js')}}"></script>
   <!-- All js -->
-  <script src="{{asset('bootstrap_assets/js/poca.bundle.js"></script>
+  <script src="{{asset('bootstrap_assets/js/poca.bundle.js')}}"></script>
   <!-- Active js -->
-  <script src="{{asset('bootstrap_assets/js/default-assets/active.js"></script>
+  <script src="{{asset('bootstrap_assets/js/default-assets/active.js')}}"></script>
 
 </body>
 
