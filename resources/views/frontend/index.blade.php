@@ -29,6 +29,7 @@
         <!-- ***** Header Area Start ***** -->
         <header class="header-area">
             <!-- Main Header Start -->
+            <div class="container">
             <div class="main-header-area">
                 <div class="classy-nav-container breakpoint-off">
                     <!-- Classy Menu -->
@@ -121,172 +122,120 @@
                     </nav>
                 </div>
             </div>
+            
+            </div>
         </header>
         <!-- ***** Header Area End ***** -->
 
         <!-- ***** Welcome Area Start ***** -->
         <section class="welcome-area">
             <!-- Welcome Slides -->
-            <div class="welcome-slides owl-carousel">
-
-                <!-- Single Welcome Slide -->
-                <div class="welcome-welcome-slide bg-img bg-overlay"
-                    style="background-image: url({{asset('bootstrap_assets/img/bg-img/1.jpg')}});">
-                    <div class="container h-100">
-                        <div class="row h-100 align-items-center">
-                            <div class="col-12">
-                                <!-- Welcome Text -->
-                                <div class="welcome-text" style="margin-top: -250px;">
-                                    <h2 data-animation="fadeInUp" data-delay="100ms" style="font-family: Verdana, Geneva, Tahoma, sans-serif, Georgia; font-style: italic;">Testimony Joe</h2>
-                                    <h5 data-animation="fadeInUp" data-delay="300ms" style="font-style: italic;">...reaching God through songs.</h5>
-                                    {{-- <div class="welcome-btn-group">
-                                        <a href="#" class="btn poca-btn m-2 ml-0 active" data-animation="fadeInUp"
-                                            data-delay="500ms">Subscribe with iTunes</a>
-                                        <a href="#" class="btn poca-btn btn-2 m-2" data-animation="fadeInUp"
-                                            data-delay="700ms">Subscribe with RSS</a>
-                                    </div> --}}
-                                </div>
-                                <!-- Welcome Music Area -->
-                                <div class="poca-music-area mt-100 d-flex align-items-center flex-wrap"
-                                    data-animation="fadeInUp" data-delay="900ms">
-                                    {{-- <div class="poca-music-thumbnail">
-                                        <img src="{{asset('bootstrap_assets/./img/bg-img/4.jpg')}}" alt="">
-                                    </div> --}}
-                                    {{-- <div class="poca-music-content">
-                                        <span class="music-published-date">December 9, 2018</span>
-                                        <h2>Episode 203 - The Last Blockbuster</h2>
-                                        <div class="music-meta-data">
-                                            <p>By <a href="#" class="music-author">Admin</a> | <a href="#"
-                                                    class="music-catagory">Tutorials</a> | <a href="#"
-                                                    class="music-duration">00:02:56</a></p>
-                                        </div>
-                                        <!-- Music Player -->
-                                        <div class="poca-music-player">
-                                            <audio preload="auto" controls>
-                                                <source src="{{asset('bootstrap_assets/audio/dummy-audio.mp3')}}">
-                                            </audio>
-                                        </div>
-                                        <!-- Likes, Share & Download -->
-                                        <div
-                                            class="likes-share-download d-flex align-items-center justify-content-between">
-                                            <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>
-                                            <div>
-                                                <a href="#" class="mr-4"><i class="fa fa-share-alt"
-                                                        aria-hidden="true"></i> Share(04)</a>
-                                                <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download
-                                                    (12)</a>
-                                            </div>
-                                        </div>
-                                    </div> --}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Welcome Slide -->
-                <div class="welcome-welcome-slide bg-img bg-overlay"
-                    style="background-image: url({{asset('bootstrap_assets/img/bg-img/2.jpg')}});">
-                    <div class="container h-100">
-                        <div class="row h-100 align-items-center">
-                            <div class="col-12">
-                                <!-- Welcome Text -->
-                                <div class="welcome-text">
-                                    <h2 data-animation="fadeInUp" data-delay="100ms">Listen Now</h2>
-                                    <h5 data-animation="fadeInUp" data-delay="300ms">Please schedule a podcast post, to
-                                        make it visible here.</h5>
-                                    <div class="welcome-btn-group">
-                                        <a href="#" class="btn poca-btn m-2 ml-0 active" data-animation="fadeInUp"
-                                            data-delay="500ms">Subscribe with iTunes</a>
-                                        <a href="#" class="btn poca-btn btn-2 m-2" data-animation="fadeInUp"
-                                            data-delay="700ms">Subscribe with RSS</a>
+           
+                <div class="welcome-slides owl-carousel">
+    
+                    <!-- Single Welcome Slide -->
+                    <div class="welcome-welcome-slide bg-img bg-overlay"
+                        style="background-image: url({{asset('bootstrap_assets/img/bg-img/1.jpg')}});">
+                        <div class="container h-100">
+                            <div class="row h-100 align-items-center">
+                                <div class="col-12">
+                                    <!-- Welcome Text -->
+                                    <div class="welcome-text" style="margin-top: -250px;">
+                                        <h2 data-animation="fadeInUp" data-delay="100ms" style="font-family: Verdana, Geneva, Tahoma, sans-serif, Georgia; font-style: italic;">Testimony Joe</h2>
+                                        <h5 data-animation="fadeInUp" data-delay="300ms" style="font-style: italic;">...reaching God through songs.</h5>
+                                        {{-- <div class="welcome-btn-group">
+                                            <a href="#" class="btn poca-btn m-2 ml-0 active" data-animation="fadeInUp"
+                                                data-delay="500ms">Subscribe with iTunes</a>
+                                            <a href="#" class="btn poca-btn btn-2 m-2" data-animation="fadeInUp"
+                                                data-delay="700ms">Subscribe with RSS</a>
+                                        </div> --}}
                                     </div>
-                                </div>
-                                <!-- Welcome Music Area -->
-                                <div class="poca-music-area mt-100 d-flex align-items-center flex-wrap"
-                                    data-animation="fadeInUp" data-delay="900ms">
-                                    <div class="poca-music-thumbnail">
-                                        <img src="{{asset('bootstrap_assets/./img/bg-img/4.jpg')}}" alt="">
-                                    </div>
-                                    <div class="poca-music-content">
-                                        <span class="music-published-date">December 8, 2018</span>
-                                        <h2>Episode 202 - The Last Blockbuster</h2>
-                                        <div class="music-meta-data">
-                                            <p>By <a href="#" class="music-author">Admin</a> | <a href="#"
-                                                    class="music-catagory">Tutorials</a> | <a href="#"
-                                                    class="music-duration">00:02:56</a></p>
-                                        </div>
-                                        <!-- Music Player -->
-                                        <div class="poca-music-player">
-                                            <audio preload="auto" controls>
-                                                <source src="{{asset('bootstrap_assets/audio/dummy-audio.mp3')}}">
-                                            </audio>
-                                        </div>
-                                        <!-- Likes, Share & Download -->
-                                        <div
-                                            class="likes-share-download d-flex align-items-center justify-content-between">
-                                            <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>
-                                            <div>
-                                                <a href="#" class="mr-4"><i class="fa fa-share-alt"
-                                                        aria-hidden="true"></i> Share(04)</a>
-                                                <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download
-                                                    (12)</a>
+                                    <!-- Welcome Music Area -->
+                                    <div class="poca-music-area mt-100 d-flex align-items-center flex-wrap"
+                                        data-animation="fadeInUp" data-delay="900ms">
+                                        {{-- <div class="poca-music-thumbnail">
+                                            <img src="{{asset('bootstrap_assets/./img/bg-img/4.jpg')}}" alt="">
+                                        </div> --}}
+                                        {{-- <div class="poca-music-content">
+                                            <span class="music-published-date">December 9, 2018</span>
+                                            <h2>Episode 203 - The Last Blockbuster</h2>
+                                            <div class="music-meta-data">
+                                                <p>By <a href="#" class="music-author">Admin</a> | <a href="#"
+                                                        class="music-catagory">Tutorials</a> | <a href="#"
+                                                        class="music-duration">00:02:56</a></p>
                                             </div>
-                                        </div>
+                                            <!-- Music Player -->
+                                            <div class="poca-music-player">
+                                                <audio preload="auto" controls>
+                                                    <source src="{{asset('bootstrap_assets/audio/dummy-audio.mp3')}}">
+                                                </audio>
+                                            </div>
+                                            <!-- Likes, Share & Download -->
+                                            <div
+                                                class="likes-share-download d-flex align-items-center justify-content-between">
+                                                <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>
+                                                <div>
+                                                    <a href="#" class="mr-4"><i class="fa fa-share-alt"
+                                                            aria-hidden="true"></i> Share(04)</a>
+                                                    <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download
+                                                        (12)</a>
+                                                </div>
+                                            </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Single Welcome Slide -->
-                <div class="welcome-welcome-slide bg-img bg-overlay"
-                    style="background-image: url({{asset('bootstrap_assets/img/bg-img/3.jpg')}});">
-                    <div class="container h-100">
-                        <div class="row h-100 align-items-center">
-                            <div class="col-12">
-                                <!-- Welcome Text -->
-                                <div class="welcome-text">
-                                    <h2 data-animation="fadeInUp" data-delay="100ms">Discover Today</h2>
-                                    <h5 data-animation="fadeInUp" data-delay="300ms">Please schedule a podcast post, to
-                                        make it visible here.</h5>
-                                    <div class="welcome-btn-group">
-                                        <a href="#" class="btn poca-btn m-2 ml-0 active" data-animation="fadeInUp"
-                                            data-delay="500ms">Subscribe with iTunes</a>
-                                        <a href="#" class="btn poca-btn btn-2 m-2" data-animation="fadeInUp"
-                                            data-delay="700ms">Subscribe with RSS</a>
-                                    </div>
-                                </div>
-                                <!-- Welcome Music Area -->
-                                <div class="poca-music-area mt-100 d-flex align-items-center flex-wrap"
-                                    data-animation="fadeInUp" data-delay="900ms">
-                                    <div class="poca-music-thumbnail">
-                                        <img src="{{asset('bootstrap_assets/./img/bg-img/4.jpg')}}" alt="">
-                                    </div>
-                                    <div class="poca-music-content">
-                                        <span class="music-published-date">December 7, 2018</span>
-                                        <h2>Episode 201 - The Last Blockbuster</h2>
-                                        <div class="music-meta-data">
-                                            <p>By <a href="#" class="music-author">Admin</a> | <a href="#"
-                                                    class="music-catagory">Tutorials</a> | <a href="#"
-                                                    class="music-duration">00:02:56</a></p>
+    
+                    <!-- Single Welcome Slide -->
+                    <div class="welcome-welcome-slide bg-img bg-overlay"
+                        style="background-image: url({{asset('bootstrap_assets/img/bg-img/2.jpg')}});">
+                        <div class="container h-100">
+                            <div class="row h-100 align-items-center">
+                                <div class="col-12">
+                                    <!-- Welcome Text -->
+                                    <div class="welcome-text">
+                                        <h2 data-animation="fadeInUp" data-delay="100ms">Listen Now</h2>
+                                        <h5 data-animation="fadeInUp" data-delay="300ms">Please schedule a podcast post, to
+                                            make it visible here.</h5>
+                                        <div class="welcome-btn-group">
+                                            <a href="#" class="btn poca-btn m-2 ml-0 active" data-animation="fadeInUp"
+                                                data-delay="500ms">Subscribe with iTunes</a>
+                                            <a href="#" class="btn poca-btn btn-2 m-2" data-animation="fadeInUp"
+                                                data-delay="700ms">Subscribe with RSS</a>
                                         </div>
-                                        <!-- Music Player -->
-                                        <div class="poca-music-player">
-                                            <audio preload="auto" controls>
-                                                <source src="{{asset('bootstrap_assets/audio/dummy-audio.mp3')}}">
-                                            </audio>
+                                    </div>
+                                    <!-- Welcome Music Area -->
+                                    <div class="poca-music-area mt-100 d-flex align-items-center flex-wrap"
+                                        data-animation="fadeInUp" data-delay="900ms">
+                                        <div class="poca-music-thumbnail">
+                                            <img src="{{asset('bootstrap_assets/./img/bg-img/4.jpg')}}" alt="">
                                         </div>
-                                        <!-- Likes, Share & Download -->
-                                        <div
-                                            class="likes-share-download d-flex align-items-center justify-content-between">
-                                            <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>
-                                            <div>
-                                                <a href="#" class="mr-4"><i class="fa fa-share-alt"
-                                                        aria-hidden="true"></i> Share(04)</a>
-                                                <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download
-                                                    (12)</a>
+                                        <div class="poca-music-content">
+                                            <span class="music-published-date">December 8, 2018</span>
+                                            <h2>Episode 202 - The Last Blockbuster</h2>
+                                            <div class="music-meta-data">
+                                                <p>By <a href="#" class="music-author">Admin</a> | <a href="#"
+                                                        class="music-catagory">Tutorials</a> | <a href="#"
+                                                        class="music-duration">00:02:56</a></p>
+                                            </div>
+                                            <!-- Music Player -->
+                                            <div class="poca-music-player">
+                                                <audio preload="auto" controls>
+                                                    <source src="{{asset('bootstrap_assets/audio/dummy-audio.mp3')}}">
+                                                </audio>
+                                            </div>
+                                            <!-- Likes, Share & Download -->
+                                            <div
+                                                class="likes-share-download d-flex align-items-center justify-content-between">
+                                                <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>
+                                                <div>
+                                                    <a href="#" class="mr-4"><i class="fa fa-share-alt"
+                                                            aria-hidden="true"></i> Share(04)</a>
+                                                    <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download
+                                                        (12)</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -294,9 +243,66 @@
                             </div>
                         </div>
                     </div>
+    
+                    <!-- Single Welcome Slide -->
+                    <div class="welcome-welcome-slide bg-img bg-overlay"
+                        style="background-image: url({{asset('bootstrap_assets/img/bg-img/3.jpg')}});">
+                        <div class="container h-100">
+                            <div class="row h-100 align-items-center">
+                                <div class="col-12">
+                                    <!-- Welcome Text -->
+                                    <div class="welcome-text">
+                                        <h2 data-animation="fadeInUp" data-delay="100ms">Discover Today</h2>
+                                        <h5 data-animation="fadeInUp" data-delay="300ms">Please schedule a podcast post, to
+                                            make it visible here.</h5>
+                                        <div class="welcome-btn-group">
+                                            <a href="#" class="btn poca-btn m-2 ml-0 active" data-animation="fadeInUp"
+                                                data-delay="500ms">Subscribe with iTunes</a>
+                                            <a href="#" class="btn poca-btn btn-2 m-2" data-animation="fadeInUp"
+                                                data-delay="700ms">Subscribe with RSS</a>
+                                        </div>
+                                    </div>
+                                    <!-- Welcome Music Area -->
+                                    <div class="poca-music-area mt-100 d-flex align-items-center flex-wrap"
+                                        data-animation="fadeInUp" data-delay="900ms">
+                                        <div class="poca-music-thumbnail">
+                                            <img src="{{asset('bootstrap_assets/./img/bg-img/4.jpg')}}" alt="">
+                                        </div>
+                                        <div class="poca-music-content">
+                                            <span class="music-published-date">December 7, 2018</span>
+                                            <h2>Episode 201 - The Last Blockbuster</h2>
+                                            <div class="music-meta-data">
+                                                <p>By <a href="#" class="music-author">Admin</a> | <a href="#"
+                                                        class="music-catagory">Tutorials</a> | <a href="#"
+                                                        class="music-duration">00:02:56</a></p>
+                                            </div>
+                                            <!-- Music Player -->
+                                            <div class="poca-music-player">
+                                                <audio preload="auto" controls>
+                                                    <source src="{{asset('bootstrap_assets/audio/dummy-audio.mp3')}}">
+                                                </audio>
+                                            </div>
+                                            <!-- Likes, Share & Download -->
+                                            <div
+                                                class="likes-share-download d-flex align-items-center justify-content-between">
+                                                <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>
+                                                <div>
+                                                    <a href="#" class="mr-4"><i class="fa fa-share-alt"
+                                                            aria-hidden="true"></i> Share(04)</a>
+                                                    <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download
+                                                        (12)</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
                 </div>
 
-            </div>
+            
         </section>
         <!-- ***** Welcome Area End ***** -->
 
