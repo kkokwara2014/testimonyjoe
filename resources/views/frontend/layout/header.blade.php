@@ -1,209 +1,129 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="testimonyjoe">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-		<title>@yield('title','Centiville - Home')</title>
+        <!-- Title -->
+        <title>@yield('title')</title>
 
-		<!-- Google font -->
-		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+        <!-- Favicon -->
+        <link rel="icon" href="{{asset('bootstrap_assets/img/core-img/favicon.ico')}}">
 
-		<!-- Bootstrap -->
-		<link type="text/css" rel="stylesheet" href="{{asset('bootstrap_assets/css/bootstrap.min.css')}}" />
+        <!-- Core Stylesheet -->
+        <link rel="stylesheet" href="{{asset('bootstrap_assets/style.css')}}">
 
-		<!-- Slick -->
-		<link type="text/css" rel="stylesheet" href="{{asset('bootstrap_assets/css/slick.css')}}" />
-		<link type="text/css" rel="stylesheet" href="{{asset('bootstrap_assets/css/slick-theme.css')}}" />
+    </head>
 
-		<!-- nouislider -->
-		<link type="text/css" rel="stylesheet" href="{{asset('bootstrap_assets/css/nouislider.min.css')}}" />
+    <body>
+        <!-- Preloader -->
+        <div id="preloader">
+            <div class="preloader-thumbnail">
+                <img src="{{asset('bootstrap_assets/img/core-img/preloader.png')}}" alt="">
+            </div>
+        </div>
 
-		<!-- Font Awesome Icon -->
-		<link rel="stylesheet" href="{{asset('bootstrap_assets/css/font-awesome.min.css')}}">
+        <!-- ***** Header Area Start ***** -->
+        <header class="header-area">
+            <!-- Main Header Start -->
+            <div class="container">
+            <div class="main-header-area">
+                <div class="classy-nav-container breakpoint-off">
+                    <!-- Classy Menu -->
+                    <nav class="classy-navbar justify-content-between" id="pocaNav">
 
-		<!-- Custom stlylesheet -->
-		<link type="text/css" rel="stylesheet" href="{{asset('bootstrap_assets/css/style.css')}}" />
+                        <!-- Logo -->
+                        <a class="nav-brand" href="index.html"><img src="{{asset('bootstrap_assets/img/core-img/logo.png')}}"
+                        alt=""></a>
+                        {{-- <a class="nav-brand" href="index.html">Testimonyjoe</a> --}}
 
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
 
-	</head>
+                        <!-- Menu -->
+                        <div class="classy-menu">
 
-	<body>
-		<!-- HEADER -->
-		<header>
-			<!-- TOP HEADER -->
-			<div id="top-header">
-				<div class="container">
-					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i> +234-803-744-9743</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i> services@centiville.com</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> Onitsha, Anambra State, Nigeria</a></li>
-					</ul>
-					<ul class="header-links pull-right">
-						{{-- <li><a href="#"><i class="fa fa-dollar"></i> USD</a></li> --}}
-						<li class="dropdown">
-							{{-- <a href="{{route('help')}}"><i class="fa fa-question-circle-o"></i> Help</a> --}}
-							<a class="dropdown-toggle" data-toggle="dropdown" id="dropdown04" aria-haspopup="true"
-								aria-expanded="false">
-								<i class="fa fa-question-circle-o"></i>
-								<span>Help</span>
+                            <!-- Menu Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
 
-							</a>
-							<div class="dropdown-menu" aria-labelledby="dropdown04">
-								<div class="row" style="margin-top: 10px;">
-									<div class="col-md-12" <p><a href="#" style="color:#212120; margin-left: 10px;">
-											Buying products</a></p>
-										<p><a href="#" style="color: #212120; margin-left: 10px;"> Returning product</a>
-										</p>
-									</div>
-								</div>
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul id="nav">
+                                    <li class="current-item"><a href="#">Home</a></li>
+                                    <li><a href="#">About</a>
+                                        <ul class="dropdown">
+                                            <li><a href="#">- Testimony Joe</a></li>
+                                            <li><a href="#">- Holy Ghost Studio</a></li>
 
-							</div>
-						</li>
-						<li class="dropdown">
+                                            <li><a href="#">- Dropdown</a>
+                                                <ul class="dropdown">
+                                                    <li><a href="#">- Dropdown Item</a></li>
+                                                    <li><a href="#">- Dropdown Item</a>
+                                                        <ul class="dropdown">
+                                                            <li><a href="#">- Even Dropdown</a></li>
+                                                            <li><a href="#">- Even Dropdown</a></li>
+                                                            <li><a href="#">- Even Dropdown</a></li>
+                                                            <li><a href="#">- Even Dropdown</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="#">- Dropdown Item</a></li>
+                                                    <li><a href="#">- Dropdown Item</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
 
-							<a class="dropdown-toggle" data-toggle="dropdown" id="dropdown04" aria-haspopup="true"
-								aria-expanded="false">
-								<i class="fa fa-user-circle"></i>
-								<span>Sign Up</span>
+                                    <li><a href="#">Albums</a>
+                                        <ul class="dropdown">
+                                            <li><a href="#">- Recent Albums</a></li>
+                                            <li><a href="#">- All Albums</a></li>
 
-							</a>
-							<div class="dropdown-menu" aria-labelledby="dropdown04">
-								<div class="row" style="margin-top: 10px;">
-									<div class="col-md-12">
-										<p><a href="{{route('register.shopowner')}}" style="color:#212120; margin-left: 10px;"> <span
-													class="fa fa-user-circle-o"></span> Shop Owner</a></p>
-										<p><a href="{{route('register.customer')}}" style="color: #212120; margin-left: 10px;"><span
-													class="fa fa-user-circle-o"></span> Customer</a></p>
-									</div>
-								</div>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Event</a>
+                                        <ul class="dropdown">
+                                            <li><a href="#">- Upcoming Events</a></li>
+                                            <li><a href="#">- On-going Event</a></li>
+                                            <li><a href="#">- Archived Event</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Gallery</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
 
-							</div>
+                                <!-- Top Search Area -->
+                                <div class="top-search-area">
+                                    <form action="index.html" method="post">
+                                        <input type="search" name="top-search-bar" class="form-control"
+                                            placeholder="Search and hit enter...">
+                                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                    </form>
+                                </div>
 
+                                <!-- Top Social Area -->
+                                <div class="top-social-area">
+                                    <a href="#" class="fa fa-facebook" aria-hidden="true"></a>
+                                    <a href="#" class="fa fa-twitter" aria-hidden="true"></a>
+                                    {{-- <a href="#" class="fa fa-pinterest" aria-hidden="true"></a> --}}
+                                    <a href="#" class="fa fa-instagram" aria-hidden="true"></a>
+                                    {{-- <a href="#" class="fa fa-youtube-play" aria-hidden="true"></a> --}}
+                                </div>
 
-
-						</li>
-
-					<li><a href="{{route('login')}}"><i class="fa fa-sign-in"></i> Sign In</a></li>
-					</ul>
-				</div>
-			</div>
-			<!-- /TOP HEADER -->
-
-			<!-- MAIN HEADER -->
-			<div id="header">
-				<!-- container -->
-				<div class="container">
-					<!-- row -->
-					<div class="row">
-						<!-- LOGO -->
-						<div class="col-md-3">
-							<div class="header-logo">
-								<a href="#" class="logo">
-									<img src="{{asset('bootstrap_assets/img/logo2.png')}}" alt="">
-
-								</a>
-							</div>
-						</div>
-						<!-- /LOGO -->
-
-						<!-- SEARCH BAR -->
-						<div class="col-md-6">
-							<div class="header-search">
-								<form>
-									<select class="input-select">
-										<option value="0">All Categories</option>
-										<option value="1">Category 01</option>
-										<option value="1">Category 02</option>
-									</select>
-									<input class="input" placeholder="Search here">
-									<button class="search-btn">Search</button>
-								</form>
-							</div>
-						</div>
-						<!-- /SEARCH BAR -->
-
-						<!-- ACCOUNT -->
-						<div class="col-md-3 clearfix">
-							<div class="header-ctn">
-								{{-- <!-- Wishlist -->
-								<div>
-									<a href="#">
-										<i class="fa fa-heart-o"></i>
-										<span>Your Wishlist</span>
-										<div class="qty">2</div>
-									</a>
-								</div>
-								<!-- /Wishlist --> --}}
-
-								<!-- Cart -->
-								<div class="dropdown">
-									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-										<i class="fa fa-shopping-cart"></i>
-										<span>Your Cart</span>
-									<div class="qty">{{Cart::count()}}</div>
-									</a>
-									<div class="cart-dropdown">
-										<div class="cart-list">
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="{{asset('bootstrap_assets/img/product01.png')}}" alt="">
-												</div>
-												<div class="product-body">
-													<h3 class="product-name"><a href="#">product name goes here</a></h3>
-													<h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
-
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="{{asset('bootstrap_assets/img/product02.png')}}" alt="">
-												</div>
-												<div class="product-body">
-													<h3 class="product-name"><a href="#">product name goes here</a></h3>
-													<h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
-										</div>
-										<div class="cart-summary">
-											<small>3 Item(s) selected</small>
-											<h5>SUBTOTAL: &#8358;2940.00</h5>
-										</div>
-										<div class="cart-btns">
-											<a href="#">View Cart</a>
-											<a href="#">Checkout <i class="fa fa-arrow-circle-right"></i></a>
-										</div>
-									</div>
-								</div>
-								<!-- /Cart -->
-
-								<!-- Menu Toogle -->
-								<div class="menu-toggle">
-									<a href="#">
-										<i class="fa fa-bars"></i>
-										<span>Menu</span>
-									</a>
-								</div>
-								<!-- /Menu Toogle -->
-							</div>
-						</div>
-						<!-- /ACCOUNT -->
-					</div>
-					<!-- row -->
-				</div>
-				<!-- container -->
-			</div>
-			<!-- /MAIN HEADER -->
-		</header>
-		<!-- /HEADER -->
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            
+            </div>
+        </header>
+        <!-- ***** Header Area End ***** -->
