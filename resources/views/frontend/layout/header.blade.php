@@ -37,7 +37,7 @@
                     <nav class="classy-navbar justify-content-between" id="pocaNav">
 
                         <!-- Logo -->
-                        <a class="nav-brand" href="index.html"><img src="{{asset('bootstrap_assets/img/core-img/logo.png')}}"
+                        <a class="nav-brand" href="{{route('index')}}"><img src="{{asset('bootstrap_assets/img/core-img/logo.png')}}"
                         alt=""></a>
                         {{-- <a class="nav-brand" href="index.html">Testimonyjoe</a> --}}
 
@@ -57,11 +57,11 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul id="nav">
-                                    <li class="current-item"><a href="#">Home</a></li>
+                                <li class="current-item"><a href="{{route('index')}}">Home</a></li>
                                     <li><a href="#">About</a>
                                         <ul class="dropdown">
-                                            <li><a href="#">- Testimony Joe</a></li>
-                                            <li><a href="#">- Holy Ghost Studio</a></li>
+                                        <li><a href="{{route('abouttestimonyjoe')}}">- Testimony Joe</a></li>
+                                        <li><a href="{{route('aboutholyghoststudio')}}">- Holy Ghost Studio</a></li>
 
                                             <li><a href="#">- Dropdown</a>
                                                 <ul class="dropdown">

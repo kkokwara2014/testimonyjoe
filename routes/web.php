@@ -15,6 +15,8 @@
 //     return view('welcome');
 // });
 Route::get('/','FrontendController@index')->name('index');
+Route::get('/about/testimonyjoe','FrontendController@abouttestimonyjoe')->name('abouttestimonyjoe');
+Route::get('/about/holyghoststudio','FrontendController@aboutholyghoststudio')->name('aboutholyghoststudio');
 
 Auth::routes();
 
