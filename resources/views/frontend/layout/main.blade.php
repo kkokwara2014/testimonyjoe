@@ -1,6 +1,6 @@
 @include('frontend.layout.header')
 
-@include('frontend.layout.navbar')
+{{-- @include('frontend.layout.navbar') --}}
 
 @yield('content')
 

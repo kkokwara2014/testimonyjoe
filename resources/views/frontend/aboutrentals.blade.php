@@ -1,6 +1,6 @@
 @extends('frontend.layout.main')
 
-@section('title','Albums')
+@section('title','Equipment Rentals')
 
 @section('content')
 <!-- ***** Breadcrumb Area Start ***** -->

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,19 +26,18 @@
             </div>
         </div>
 
+
         <!-- ***** Header Area Start ***** -->
         <header class="header-area">
             <!-- Main Header Start -->
-            <div class="container">
             <div class="main-header-area">
                 <div class="classy-nav-container breakpoint-off">
                     <!-- Classy Menu -->
                     <nav class="classy-navbar justify-content-between" id="pocaNav">
 
                         <!-- Logo -->
-                        <a class="nav-brand" href="{{route('index')}}"><img src="{{asset('bootstrap_assets/img/core-img/logo.png')}}"
-                        alt=""></a>
-                        {{-- <a class="nav-brand" href="index.html">Testimonyjoe</a> --}}
+                        <a class="nav-brand" href="#"><img
+                                src="{{asset('bootstrap_assets/img/core-img/logo.png')}}" alt=""></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -57,12 +55,14 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul id="nav">
-                                <li class="current-item"><a href="{{route('index')}}">Home</a></li>
-                                    <li><a href="#">About</a>
+                                    <li class="current-item"><a href="{{route('index')}}">Home</a></li>
+                                    <li><a href="">About</a>
                                         <ul class="dropdown">
-                                        <li><a href="{{route('abouttestimonyjoe')}}">- Testimony Joe</a></li>
-                                        <li><a href="{{route('aboutholyghoststudio')}}">- Holy Ghost Studio</a></li>
-
+                                            <li><a href="{{route('abouttestimonyjoe')}}">- Testimony Joe</a></li>
+                                            <li><a href="{{route('aboutholyghoststudio')}}">- Holy Ghost Studio</a></li>
+                                            <li><a href="{{route('aboutrentals')}}">- Rentals</a></li>
+                                            
+{{--                                             
                                             <li><a href="#">- Dropdown</a>
                                                 <ul class="dropdown">
                                                     <li><a href="#">- Dropdown Item</a></li>
@@ -77,26 +77,20 @@
                                                     <li><a href="#">- Dropdown Item</a></li>
                                                     <li><a href="#">- Dropdown Item</a></li>
                                                 </ul>
-                                            </li>
+                                            </li> --}}
                                         </ul>
                                     </li>
-
-                                    <li><a href="#">Albums</a>
+                                    <li><a href="{{route('album')}}">Album</a></li>
+                                    <li><a href="{{route('booking')}}">Booking</a></li>
+                                    <li><a href="{{route('event')}}">Event</a></li>
+                                    <li><a href="{{route('gallery')}}">Gallery</a></li>
+                                    {{-- <li><a href="#">Blog</a>
                                         <ul class="dropdown">
-                                            <li><a href="#">- Recent Albums</a></li>
-                                            <li><a href="#">- All Albums</a></li>
-
+                                            <li><a href="#">- Blog</a></li>
+                                            <li><a href="#">- Blog Details</a></li>
                                         </ul>
-                                    </li>
-                                    <li><a href="#">Event</a>
-                                        <ul class="dropdown">
-                                            <li><a href="#">- Upcoming Events</a></li>
-                                            <li><a href="#">- On-going Event</a></li>
-                                            <li><a href="#">- Archived Event</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Gallery</a></li>
-                                    <li><a href="#">Contact</a></li>
+                                    </li> --}}
+                                    <li><a href="{{route('contact')}}">Contact</a></li>
                                 </ul>
 
                                 <!-- Top Search Area -->
@@ -112,9 +106,7 @@
                                 <div class="top-social-area">
                                     <a href="#" class="fa fa-facebook" aria-hidden="true"></a>
                                     <a href="#" class="fa fa-twitter" aria-hidden="true"></a>
-                                    {{-- <a href="#" class="fa fa-pinterest" aria-hidden="true"></a> --}}
                                     <a href="#" class="fa fa-instagram" aria-hidden="true"></a>
-                                    {{-- <a href="#" class="fa fa-youtube-play" aria-hidden="true"></a> --}}
                                 </div>
 
                             </div>
@@ -122,8 +114,6 @@
                         </div>
                     </nav>
                 </div>
-            </div>
-            
             </div>
         </header>
         <!-- ***** Header Area End ***** -->
