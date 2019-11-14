@@ -22,7 +22,7 @@
         <!-- Preloader -->
         <div id="preloader">
             <div class="preloader-thumbnail">
-                <img src="{{asset('bootstrap_assets/./img/core-img/preloader.png')}}" alt="">
+                <img src="{{asset('bootstrap_assets/img/core-img/preloader.png')}}" alt="">
             </div>
         </div>
 
