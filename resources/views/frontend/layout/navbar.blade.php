@@ -1,11 +1,13 @@
 <!-- Nav Start -->
 <div class="classynav">
     <ul id="nav">
-        <li class="current-item"><a href="{{route('index')}}">Home</a></li>
+        <li class="{{ (request()->is('/'))?'active':'' }}"><a href="{{url('/')}}">Home</a></li>
         <li><a href="#">About</a>
             <ul class="dropdown">
-                <li><a href="{{route('abouttestimonyjoe')}}">- Testimony Joe</a></li>
-                <li><a href="{{route('aboutholyghoststudio')}}">- Holy Ghost Studio</a>
+                <li class="{{ (request()->is('about/testimonyjoe'))?'active':'' }}"><a
+                        href="{{url('about/testimonyjoe')}}">- Testimony Joe</a></li>
+                <li class="{{ (request()->is('about/holyghoststudio'))?'active':'' }}"><a
+                        href="{{url('about/holyghoststudio')}}">- Holy Ghost Studio</a>
                 </li>
 
                 <li><a href="#">- Dropdown</a>
@@ -28,27 +30,28 @@
 
         <li><a href="#">Albums</a>
             <ul class="dropdown">
-            <li><a href="{{route('album')}}">- All Albums</a></li>
+                <li class="{{ (request()->is('album'))?'active':'' }}"><a href="{{url('album')}}">- All Albums</a></li>
             </ul>
         </li>
         <li><a href="#">Event</a>
             <ul class="dropdown">
-            <li><a href="{{route('event')}}">- Upcoming Events</a></li>
-                <li><a href="{{route('event')}}">- On-going Event</a></li>
-                <li><a href="{{route('event')}}">- Archived Event</a></li>
+                <li class="{{ (request()->is('event'))?'active':'' }}"><a href="{{url('event')}}">- Upcoming Events</a>
+                </li>
+                <li class="{{ (request()->is('event'))?'active':'' }}"><a href="{{url('event')}}">- On-going Event</a>
+                </li>
+                <li class="{{ (request()->is('event'))?'active':'' }}"><a href="{{url('event')}}">- Archived Event</a>
+                </li>
             </ul>
         </li>
-    <li><a href="{{route('gallery')}}">Gallery</a></li>
-    <li><a href="{{route('contact')}}">Contact</a></li>
+        <li class="{{ (request()->is('gallery'))?'active':'' }}"><a href="{{url('gallery')}}">Gallery</a></li>
+        <li class="{{ (request()->is('contact'))?'active':'' }}"><a href="{{url('contact')}}">Contact</a></li>
     </ul>
 
     <!-- Top Search Area -->
     <div class="top-search-area">
         <form action="index.html" method="post">
-            <input type="search" name="top-search-bar" class="form-control"
-                placeholder="Search and hit enter...">
-            <button type="submit"><i class="fa fa-search"
-                    aria-hidden="true"></i></button>
+            <input type="search" name="top-search-bar" class="form-control" placeholder="Search and hit enter...">
+            <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
         </form>
     </div>
 

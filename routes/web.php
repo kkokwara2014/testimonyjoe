@@ -14,18 +14,21 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/','FrontendController@index')->name('index');
-Route::get('/about/testimonyjoe','FrontendController@abouttestimonyjoe')->name('abouttestimonyjoe');
-Route::get('/about/holyghoststudio','FrontendController@aboutholyghoststudio')->name('aboutholyghoststudio');
-Route::get('/about/equipment/rentals','FrontendController@aboutrentals')->name('aboutrentals');
-Route::get('contact','FrontendController@contact')->name('contact');
-Route::get('gallery','FrontendController@gallery')->name('gallery');
-Route::get('event','FrontendController@event')->name('event');
-Route::get('album','FrontendController@album')->name('album');
-Route::get('booking','FrontendController@booking')->name('booking');
+Route::get('/', 'FrontendController@index')->name('index');
+
+Route::prefix('/about')->group(function () {
+    Route::get('/testimonyjoe', 'FrontendController@abouttestimonyjoe')->name('abouttestimonyjoe');
+    Route::get('/holyghoststudio', 'FrontendController@aboutholyghoststudio')->name('aboutholyghoststudio');
+    Route::get('/equipment/rentals', 'FrontendController@aboutrentals')->name('aboutrentals');
+});
+
+Route::get('contact', 'FrontendController@contact')->name('contact');
+Route::get('gallery', 'FrontendController@gallery')->name('gallery');
+Route::get('event', 'FrontendController@event')->name('event');
+Route::get('album', 'FrontendController@album')->name('album');
+Route::get('booking', 'FrontendController@booking')->name('booking');
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
