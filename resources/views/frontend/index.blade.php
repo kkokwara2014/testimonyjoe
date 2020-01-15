@@ -13,7 +13,7 @@
 
         <!-- Single Welcome Slide -->
         <div class="welcome-welcome-slide bg-img bg-overlay"
-            style="background-image: url({{asset('bootstrap_assets/img/bg-img/1.jpg')}});">
+            style="background-image: url({{asset('bootstrap_assets/img/bg-img/tj_new.jpg')}});">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
