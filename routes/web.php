@@ -16,6 +16,29 @@ use Illuminate\Support\Facades\Auth;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
+// Authentication Routes...
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+
+
+// Password Reset Routes...
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
+
+
+Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
+Route::get('email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify');
+Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+
+
+
+Route::get('/logout', 'Auth\LoginController@userLogout')->name('user.logout');
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+
+
 Route::get('/', 'FrontendController@index')->name('index');
 
 Route::prefix('/about')->group(function () {
@@ -31,7 +54,7 @@ Route::get('album', 'FrontendController@album')->name('album');
 Route::get('booking', 'FrontendController@booking')->name('booking');
 
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -40,6 +63,8 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], funct
 
     Route::get('/', 'AdminController@index')->name('dashboard.index');
     Route::resource('admin','AdminController');
+
+    Route::get('register/admin', 'Auth\RegisterController@showRegistrationForm')->name('register.admin');
 
     Route::resource('category', 'CategoryController');
     Route::resource('equipment', 'EquipmentController');
