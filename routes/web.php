@@ -33,8 +33,6 @@ Route::get('email/verify', 'Auth\VerificationController@show')->name('verificati
 Route::get('email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify');
 Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
-
-
 Route::get('/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
@@ -64,7 +62,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], funct
     Route::get('/', 'AdminController@index')->name('dashboard.index');
     Route::resource('admin','AdminController');
 
-    Route::get('register/admin', 'Auth\RegisterController@showRegistrationForm')->name('register.admin');
+    // Route::get('register/admin', 'Auth\RegisterController@showRegistrationForm')->name('register.admin');
 
     Route::resource('category', 'CategoryController');
     Route::resource('equipment', 'EquipmentController');

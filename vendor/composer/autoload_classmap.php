@@ -7,8 +7,12 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Album' => $baseDir . '/app/Album.php',
+    'App\\Albumcategory' => $baseDir . '/app/Albumcategory.php',
+    'App\\Booking' => $baseDir . '/app/Booking.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Contact' => $baseDir . '/app/Contact.php',
+    'App\\Equipcategory' => $baseDir . '/app/Equipcategory.php',
+    'App\\Equipment' => $baseDir . '/app/Equipment.php',
     'App\\Event' => $baseDir . '/app/Event.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Gallery' => $baseDir . '/app/Gallery.php',

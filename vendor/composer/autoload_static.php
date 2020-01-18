@@ -401,8 +401,12 @@ class ComposerStaticInita34766bd4e05ebbc3995ee087fabeb57
 
     public static $classMap = array (
         'App\\Album' => __DIR__ . '/../..' . '/app/Album.php',
+        'App\\Albumcategory' => __DIR__ . '/../..' . '/app/Albumcategory.php',
+        'App\\Booking' => __DIR__ . '/../..' . '/app/Booking.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Contact' => __DIR__ . '/../..' . '/app/Contact.php',
+        'App\\Equipcategory' => __DIR__ . '/../..' . '/app/Equipcategory.php',
+        'App\\Equipment' => __DIR__ . '/../..' . '/app/Equipment.php',
         'App\\Event' => __DIR__ . '/../..' . '/app/Event.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Gallery' => __DIR__ . '/../..' . '/app/Gallery.php',
