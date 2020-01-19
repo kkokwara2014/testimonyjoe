@@ -20,6 +20,10 @@
     <link rel="stylesheet"
     href="{{asset('bootstrap_assets/css/bootstrap-datepicker.min.css')}}">
 
+        <!-- Date Picker -->
+    <link rel="stylesheet"
+    href="{{asset('bootstrap_assets/css/jquery.timepicker.min.css')}}">
+
     </head>
 
     <body>

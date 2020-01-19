@@ -71,7 +71,7 @@
                                     </div>
                                     <div class="col-12">
                                         <label for="">Event Time</label>
-                                        <input type="time" name="eventtime" class="form-control mb-30">
+                                        <input  type="text" name="eventtime" id="inputtime" class="form-control mb-30 timepicker">
                                     </div>
                                     <div class="col-12">
                                         <label for="">Additional Information</label>

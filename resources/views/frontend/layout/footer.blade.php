@@ -99,20 +99,33 @@
 <!-- datepicker -->
 <script src="{{asset('bootstrap_assets/js/bootstrap-datepicker.min.js')}}">
 
-// Popper js
-<script src="{{asset('bootstrap_assets/js/popper.min.js')}}"></script>
-// Bootstrap js
+// timepicker
+<script src="{{asset('bootstrap_assets/js/jquery.timepicker.min.js')}}">
+    
+
+<script src="{{asset('bootstrap_assets/js/popper.min.js')}}">
+</script>
+
 <script src="{{asset('bootstrap_assets/js/bootstrap.min.js')}}"></script>
-// All js
+
 <script src="{{asset('bootstrap_assets/js/poca.bundle.js')}}"></script>
-// Active js
+
 <script src="{{asset('bootstrap_assets/js/default-assets/active.js')}}"></script>
 
 <script>
     //Date picker
     $('#datepicker').datepicker({
       autoclose: true
-    })
+    });
+    $('#datetimepicker3').datetimepicker({
+        format: 'LT'
+    });
+
+    $('#inputtime').pickatime({
+// 12 or 24 hour
+twelvehour: true,
+});
+    
 </script>
 </body>
 
