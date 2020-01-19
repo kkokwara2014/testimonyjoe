@@ -72,13 +72,13 @@
               {{ csrf_field() }}
               <div class="row">
                 <div class="col-12">
-                  <input type="text" name="message-name" class="form-control mb-30" placeholder="Your Name">
+                  <input type="text" name="sender" class="form-control mb-30" placeholder="Your Name">
                 </div>
                 <div class="col-12">
-                  <input type="email" name="message-email" class="form-control mb-30" placeholder="Your Email">
+                  <input type="email" name="email" class="form-control mb-30" placeholder="Your Email">
                 </div>
                 <div class="col-12">
-                  <textarea name="message" class="form-control mb-30" placeholder="Your Message"></textarea>
+                  <textarea name="messagebody" class="form-control mb-30" placeholder="Your Message"></textarea>
                 </div>
                 <div class="col-12">
                   <button type="submit" class="btn poca-btn">Send Message</button>

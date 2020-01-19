@@ -51,21 +51,30 @@
                                 {{ csrf_field() }}
                                 <div class="row">
                                     <div class="col-12">
+                                        <label for="">Your Full Name</label>
                                         <input type="text" name="fullname" class="form-control mb-30"
                                             placeholder="Your Full Name">
                                     </div>
                                     <div class="col-12">
+                                        <label for="">Your Email</label>
                                         <input type="email" name="email" class="form-control mb-30"
                                             placeholder="Your Email">
                                     </div>
                                     <div class="col-12">
+                                        <label for="">Your Phone Number</label>
                                         <input type="tel" name="phone" class="form-control mb-30"
                                             placeholder="Your Phone Number" maxlength="11">
                                     </div>
                                     <div class="col-12">
-                                        <input type="date" name="dateofceremony" class="form-control mb-30">
+                                        <label for="">Event Date</label>
+                                        <input type="date" name="eventdate" class="form-control mb-30">
                                     </div>
                                     <div class="col-12">
+                                        <label for="">Event Time</label>
+                                        <input type="time" name="eventtime" class="form-control mb-30">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="">Additional Information</label>
                                         <textarea name="message" class="form-control mb-30"
                                             placeholder="Your Message"></textarea>
                                     </div>
