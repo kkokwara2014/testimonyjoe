@@ -67,7 +67,7 @@
                                     </div>
                                     <div class="col-12">
                                         <label for="">Event Date</label>
-                                        <input type="date" name="eventdate" class="form-control mb-30">
+                                        <input type="text" id="datepicker" name="eventdate" placeholder="Enter event date" class="form-control mb-30">
                                     </div>
                                     <div class="col-12">
                                         <label for="">Event Time</label>
