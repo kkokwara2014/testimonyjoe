@@ -64,9 +64,12 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], funct
 
     // Route::get('register/admin', 'Auth\RegisterController@showRegistrationForm')->name('register.admin');
 
+    Route::resource('albums', 'AlbumController');
     Route::resource('category', 'CategoryController');
+    Route::resource('contacts', 'ContactController');
+    Route::resource('events', 'EventController');
+    Route::resource('gallery', 'GalleryController');
     Route::resource('equipment', 'EquipmentController');
-    // Route::('contact', 'ContactController');getget
     
     Route::get('all/admins', 'AdminController@admins')->name('all.admin');
     Route::get('admins/{id}/show', 'AdminController@show')->name('admins.show');
