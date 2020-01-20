@@ -96,36 +96,30 @@
 <!-- jQuery js -->
 <script src="{{asset('bootstrap_assets/js/jquery.min.js')}}"></script>
 
-<!-- datepicker -->
-<script src="{{asset('bootstrap_assets/js/bootstrap-datepicker.min.js')}}">
-
-// timepicker
-<script src="{{asset('bootstrap_assets/js/jquery.timepicker.min.js')}}">
-    
-
 <script src="{{asset('bootstrap_assets/js/popper.min.js')}}">
 </script>
 
-<script src="{{asset('bootstrap_assets/js/bootstrap.min.js')}}"></script>
-
 <script src="{{asset('bootstrap_assets/js/poca.bundle.js')}}"></script>
-
 <script src="{{asset('bootstrap_assets/js/default-assets/active.js')}}"></script>
 
+
+<!-- datepicker -->
+<script src="{{asset('bootstrap_assets/js/bootstrap-datepicker.min.js')}}">
+    // timepicker
+<script src="{{asset('bootstrap_assets/js/jquery.timepicker.min.js')}}">
+    
+<script src="{{asset('bootstrap_assets/js/bootstrap.min.js')}}"></script>
+
 <script>
+    $(document).ready(function(){
     //Date picker
     $('#datepicker').datepicker({
       autoclose: true
     });
-    $('#datetimepicker3').datetimepicker({
-        format: 'LT'
-    });
 
-    $('#inputtime').pickatime({
-// 12 or 24 hour
-twelvehour: true,
+    $('input.timepicker').timepicker({});
 });
-    
+  
 </script>
 </body>
 
