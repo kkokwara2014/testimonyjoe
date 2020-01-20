@@ -44,8 +44,7 @@
                     <nav class="classy-navbar justify-content-between" id="pocaNav">
 
                         <!-- Logo -->
-                        <a class="nav-brand" href="#"><img
-                                src="{{asset('bootstrap_assets/img/core-img/logo.png')}}" alt=""></a>
+                        <a class="nav-brand" href="#"><img src="{{asset('bootstrap_assets/img/core-img/logo.png')}}" alt=""></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
