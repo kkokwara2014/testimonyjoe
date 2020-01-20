@@ -2,7 +2,7 @@
   <div class="pull-right hidden-xs">
     Powered by Done-Right Systems Inc.
   </div>
-  <strong>Copyright &copy; 2019 centiville.com</strong> All rights
+  <strong>Copyright &copy; 2019 testimonyjoe.com</strong> All rights
   reserved.
 </footer>
 
