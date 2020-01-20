@@ -4,11 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\User;
-
-use Illuminate\Support\Facades\Auth;
-
-class AdminController extends Controller
+class BookingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +13,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-
-        return view('admin.index', compact('user'));
+        //
     }
 
     /**
@@ -40,26 +34,7 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'lastname' => 'required|string',
-            'firstname' => 'required|string',
-            'email' => 'required|email|unique:users',
-            'phone' => 'required',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
-
-        $user = new User;
-        $user->lastname = $request->lastname;
-        $user->firstname = $request->firstname;
-        $user->email = $request->email;
-        $user->phone = $request->phone;
-        $user->password = bcrypt($request->password);
-        $user->role_id = $request->role_id;
-        $user->isactive = $request->isactive;
-
-        $user->save();
-
-        return back()->with('success', 'New Admin has been created successfully!');
+        //
     }
 
     /**
@@ -104,8 +79,6 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        $user=User::where('id',$id)->delete();
-
-        return back();
+        //
     }
 }
