@@ -65,6 +65,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], funct
     // Route::get('register/admin', 'Auth\RegisterController@showRegistrationForm')->name('register.admin');
 
     Route::resource('albums', 'AlbumController');
+    Route::resource('bookings', 'BookingController');
     Route::resource('category', 'CategoryController');
     Route::resource('contacts', 'ContactController');
     Route::resource('events', 'EventController');
