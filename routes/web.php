@@ -51,6 +51,7 @@ Route::get('gallery', 'FrontendController@gallery')->name('gallery');
 Route::get('event', 'FrontendController@event')->name('event');
 Route::get('album', 'FrontendController@album')->name('album');
 Route::get('booking', 'FrontendController@booking')->name('booking');
+Route::post('save/booking', 'BookingController@saveBooking')->name('save.booking');
 
 
 // Auth::routes();
@@ -69,6 +70,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], funct
     Route::resource('booking', 'BookingController');
     Route::resource('category', 'CategoryController');
     Route::get('all/contacts', 'ContactController@getAllContacts')->name('contact.index');
+    Route::post('delete/{id}/contact', 'ContactController@removeContact')->name('contact.destroy');
     Route::resource('event', 'EventController');
     Route::resource('gallery', 'GalleryController');
     Route::resource('equipment', 'EquipmentController');

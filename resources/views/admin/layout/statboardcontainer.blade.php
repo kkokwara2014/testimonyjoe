@@ -3,7 +3,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            {{ucfirst(Request::segment(2))}}
+            {{ucfirst(Request::segment(2)).' '.(ucfirst(Request::segment(3))!=''?ucfirst(Request::segment(3)):'')}}
             <small>Control panel</small>
           </h1>
           {{-- <ol class="breadcrumb">
@@ -11,6 +11,6 @@
               <li class="active">Dashboard</li>
             </ol> --}}
         </section>
-      
+
         <!-- Main content -->
         <section class="content">

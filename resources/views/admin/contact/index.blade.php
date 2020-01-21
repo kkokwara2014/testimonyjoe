@@ -16,27 +16,29 @@
                 <div class="box">
                     <!-- /.box-header -->
                     <div class="box-body">
-                        @if (count($contacts)>0)
+                        @if (count($allcontacts)>0)
 
                         <table id="example1" class="table table-responsive table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>Sender</th>
                                     <th>Email</th>
-                                    <th>Subject</th>
+
                                     <th>Message</th>
+                                    <th>Date</th>
+
                                     <th>Delete</th>
 
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($contacts as $contact)
+                                @foreach ($allcontacts as $contact)
                                 <tr>
 
                                     <td>{{$contact->sender}}</td>
                                     <td>{{$contact->email}}</td>
-                                    <td>{{$contact->subject}}</td>
-                                    <td>{{$contact->messagecontent}}</td>
+                                    <td>{{$contact->messagebody}}</td>
+                                    <td>{{$contact->created_at->diffForHumans()}}</td>
 
                                     <td>
                                         <form id="delete-form-{{$contact->id}}" style="display: none"
@@ -65,8 +67,10 @@
                                 <tr>
                                     <th>Sender</th>
                                     <th>Email</th>
-                                    <th>Subject</th>
+
                                     <th>Message</th>
+                                    <th>Date</th>
+
                                     <th>Delete</th>
                                 </tr>
                             </tfoot>

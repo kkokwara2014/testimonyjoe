@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Repositories\Contact\ContactRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ContactController extends Controller
 {
@@ -16,9 +17,11 @@ class ContactController extends Controller
 
 public function getAllContacts(){
 
+    $user=Auth::user();
     $allcontacts=$this->cont->getAll();
 
-    return response()->json($allcontacts);
+    // return response()->json($allcontacts);
+    return view('admin.contact.index',compact('allcontacts','user'));
 }
 
 public function saveContact(Request $request){

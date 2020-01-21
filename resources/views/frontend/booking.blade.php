@@ -17,17 +17,17 @@
 <div class="breadcumb--con">
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            {{-- <div class="col-12">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{route('index')}}"><i class="fa fa-home"></i> Home</a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">@yield('title')</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">@yield('title')</li>
+            </ol>
+            </nav>
+        </div> --}}
     </div>
+</div>
 </div>
 <!-- ***** Breadcrumb Area End ***** -->
 
@@ -37,7 +37,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12 col-lg-12">
                 <div class="about-us-content">
-                    {{-- <img src="{{asset('bootstrap_assets/img/bg-img/20.jpg')}}" class="mb-30" alt=""> --}}
+
                     <h1>Booking Form</h1>
 
                     <p>Please fill the form appropriately to book us for your ceremony.</p>
@@ -46,8 +46,11 @@
                     <div class="row">
 
                         <div class="col-md-7">
+                            <p>
+                                @include('frontend.messages.success')
+                            </p>
                             <!-- Form -->
-                            <form action="#" method="post">
+                        <form action="{{route('save.booking')}}" method="post">
                                 {{ csrf_field() }}
                                 <div class="row">
                                     <div class="col-12">
@@ -67,15 +70,20 @@
                                     </div>
                                     <div class="col-12">
                                         <label for="">Event Date</label>
-                                        <input type="text" id="datepicker" name="eventdate" placeholder="Enter event date" class="form-control mb-30">
+                                        <input type="text" id="datepicker" name="eventdate"
+                                            placeholder="Enter event date" class="form-control mb-30">
                                     </div>
                                     <div class="col-12">
                                         <label for="">Event Time</label>
-                                        <input  type="time" name="eventtime" class="form-control mb-30 timepicker">
+                                        <input type="time" name="eventtime" class="form-control mb-30 timepicker">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="">Event Venue</label>
+                                        <input type="text" name="location" class="form-control mb-30" placeholder="Event Location">
                                     </div>
                                     <div class="col-12">
                                         <label for="">Additional Information</label>
-                                        <textarea name="message" class="form-control mb-30"
+                                        <textarea name="additionalinfo" class="form-control mb-30"
                                             placeholder="Your Message"></textarea>
                                     </div>
                                     <div class="col-12">
