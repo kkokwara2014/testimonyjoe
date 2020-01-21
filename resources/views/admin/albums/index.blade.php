@@ -98,12 +98,12 @@
                         <div class="modal-body">
                             <div>
                                 <label for="">Album Title <strong style="color:red;">*</strong> </label>
-                                <input type="text" class="form-control" name="name" placeholder="Product Name">
+                                <input type="text" class="form-control" name="title" placeholder="Album Title">
                             </div>
 
                             <div>
                                 <label for="">Category <strong style="color:red;">*</strong></label>
-                                <select name="category_id" class="form-control">
+                                <select name="albumcategory_id" class="form-control">
                                     <option selected="disabled">Select Category</option>
                                     @foreach ($albumcategories as $albumcategory)
                                     <option value="{{$albumcategory->id}}">{{$albumcategory->name}}</option>
@@ -116,11 +116,12 @@
                                 <textarea name="description" class="form-control" cols="10" rows="2"
                                     placeholder="Description"></textarea>
                             </div>
-
+                            <br>
                             <div>
                                 <label for="">Upload Album Image <strong style="color:red;">*</strong></label>
                                 <input type="file" name="albumimage">
                             </div>
+                            <br>
                             <div>
                                 <label for="">Upload Music File <strong style="color:red;">*</strong></label>
                                 <input type="file" name="filename">

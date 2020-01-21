@@ -70,14 +70,16 @@ class AlbumController extends Controller
         //    create an instance of Album
         $album = new Album;
         $album->title = $request->title;
+        $album->description = $request->description;
         $album->user_id = $request->user_id;
+        $album->albumcategory_id = $request->albumcategory_id;
         $album->filename = $filenameToStore;
         $album->albumimage = $formInput['albumimage'];
 
         $album->save();
 
         
-        return redirect()->route('albums.index');
+        return redirect()->route('album.index');
     }
 
     /**
