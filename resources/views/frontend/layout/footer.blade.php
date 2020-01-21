@@ -107,8 +107,16 @@
 <script src="{{asset('bootstrap_assets/js/bootstrap-datepicker.min.js')}}">
     // timepicker
 <script src="{{asset('bootstrap_assets/js/jquery.timepicker.min.js')}}">
-    
+
 <script src="{{asset('bootstrap_assets/js/bootstrap.min.js')}}"></script>
+
+<script>
+    window.setTimeout(function() {
+    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+        $(this).remove();
+    });
+}, 5000);
+</script>
 
 <script>
     $(document).ready(function(){
@@ -119,7 +127,7 @@
 
     $('input.timepicker').timepicker({});
 });
-  
+
 </script>
 </body>
 
