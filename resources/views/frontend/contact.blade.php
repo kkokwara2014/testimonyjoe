@@ -68,7 +68,7 @@
               <h5>Don't hesitate to contact us</h5>
             </div>
             <!-- Form -->
-            <form action="#" method="post">
+        <form action="{{route('save.contact')}}" method="post">
               {{ csrf_field() }}
               <div class="row">
                 <div class="col-12">

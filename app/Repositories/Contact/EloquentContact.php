@@ -14,7 +14,9 @@ class EloquentContact implements ContactRepository
     }
 
     public function getAll(){
-        return $this->contact->all();
+        return $this->contact
+            ->orderBy('created_at','desc')
+            ->get();
     }
     public function getById($id){
         return $this->contact->findById($id);
@@ -24,7 +26,8 @@ class EloquentContact implements ContactRepository
         return $this->contact->create($data);
     }
 
-    public function delete($contactId){
-
+    public function delete($id){
+        $this->getById($id)->delete();
+        return true;
     }
 }

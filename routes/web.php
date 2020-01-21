@@ -46,6 +46,7 @@ Route::prefix('/about')->group(function () {
 });
 
 Route::get('contact', 'FrontendController@contact')->name('contact');
+Route::post('save/contact', 'FrontendController@contact')->name('contact');
 Route::get('gallery', 'FrontendController@gallery')->name('gallery');
 Route::get('event', 'FrontendController@event')->name('event');
 Route::get('album', 'FrontendController@album')->name('album');
@@ -67,11 +68,11 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], funct
     Route::resource('album', 'AlbumController');
     Route::resource('booking', 'BookingController');
     Route::resource('category', 'CategoryController');
-    Route::resource('contact', 'ContactController');
+    Route::get('all/contact', 'ContactController');
     Route::resource('event', 'EventController');
     Route::resource('gallery', 'GalleryController');
     Route::resource('equipment', 'EquipmentController');
-    
+
     Route::get('all/admins', 'AdminController@admins')->name('all.admin');
     Route::get('admins/{id}/show', 'AdminController@show')->name('admins.show');
     Route::post('admins/{id}/activate', 'AdminController@activate')->name('admins.activate');
