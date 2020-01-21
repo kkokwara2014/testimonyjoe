@@ -70,7 +70,8 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        //
+        $users = User::find($id);
+        return view('admin.admins.show', array('user' => Auth::user()), compact('users'));
     }
 
     /**
@@ -81,7 +82,8 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        //
+        $users = User::where('id', $id)->first();
+        return view('admin.admins.edit', array('user' => Auth::user()), compact('users'));
     }
 
     /**
@@ -93,7 +95,15 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+        ]);
+
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->save();
+
+        return redirect(route('admin.index'));
     }
 
     /**

@@ -20,6 +20,7 @@ class CreateAlbumsTable extends Migration
             $table->string('albumimage');
             $table->integer('user_id');
             $table->integer('albumcategory_id');
+            $table->string('filename');
             $table->timestamps();
         });
     }
