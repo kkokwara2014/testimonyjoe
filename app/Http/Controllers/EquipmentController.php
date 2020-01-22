@@ -79,7 +79,8 @@ class EquipmentController extends Controller
      */
     public function edit($id)
     {
-        $equipments = Equipment::where('id', $id)->first();
+        $equipments = Equipment::find( $id);
+        // $equipments = Equipment::where('id', $id)->first();
         return view('admin.equipment.edit', array('user' => Auth::user()), compact('equipments'));
     }
 
