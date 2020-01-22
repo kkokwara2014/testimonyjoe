@@ -33,27 +33,27 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($events as $booking)
+                                @foreach ($events as $event)
                                 <tr>
 
-                                    <td>{{$booking->fullname}}</td>
-                                    {{-- <td>{{$booking->email}}</td> --}}
-                                    <td>{{$booking->phone}}</td>
-                                    <td>{{$booking->eventdate}}</td>
-                                    <td>{{$booking->eventtime}}</td>
-                                    <td>{{$booking->location}}</td>
-                                    <td>{{$booking->additionalinfo}}</td>
+                                    <td>{{$event->fullname}}</td>
+                                    {{-- <td>{{$event->email}}</td> --}}
+                                    <td>{{$event->phone}}</td>
+                                    <td>{{$event->eventdate}}</td>
+                                    <td>{{$event->eventtime}}</td>
+                                    <td>{{$event->location}}</td>
+                                    <td>{{$event->additionalinfo}}</td>
 
                                     <td>
-                                        <form id="delete-form-{{$booking->id}}" style="display: none"
-                                            action="{{ route('booking.destroy',$booking->id) }}" method="post">
+                                        <form id="delete-form-{{$event->id}}" style="display: none"
+                                            action="{{ route('event.destroy',$event->id) }}" method="post">
                                             {{ csrf_field() }}
                                             {{method_field('DELETE')}}
                                         </form>
                                         <a href="" onclick="
                                                             if (confirm('Are you sure you want to delete this?')) {
                                                                 event.preventDefault();
-                                                            document.getElementById('delete-form-{{$booking->id}}').submit();
+                                                            document.getElementById('delete-form-{{$event->id}}').submit();
                                                             } else {
                                                                 event.preventDefault();
                                                             }
@@ -84,7 +84,7 @@
 
                         @else
                         <p class="badge badge-pill badge-warning" style="background-color:red; color:seashell">No
-                            bookings yet!</p>
+                            events yet!</p>
                         @endif
 
                     </div>

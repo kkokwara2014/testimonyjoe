@@ -40,4 +40,17 @@ class User extends Authenticatable
     public function role(){
         return $this->belongsTo(Role::class);
     }
+
+    public function event(){
+        return $this->hasMany(Event::class);
+    }
+    public function gallery(){
+        return $this->hasMany(Gallery::class);
+    }
+    public function album(){
+        return $this->hasMany(Album::class);
+    }
+    public function equipment(){
+        return $this->hasMany(Equipment::class);
+    }
 }

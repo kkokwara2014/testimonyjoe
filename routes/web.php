@@ -87,7 +87,9 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], funct
     Route::resource('gallery', 'GalleryController');
 
     //for Equipment
-    Route::resource('equipment', 'EquipmentController');
+    Route::get('all/equipment', 'EquipmentController@index')->name('equipment.index');
+    Route::post('save/equipment', 'EquipmentController@store')->name('equipment.store');
+    Route::post('delete/{id}/equipment', 'EquipmentController@destroy')->name('equipment.destroy');
 
     //for Admins
     Route::get('all/admins', 'AdminController@admins')->name('all.admin');

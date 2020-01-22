@@ -18,7 +18,7 @@ class EventController extends Controller
         $user=Auth::user();
         $events=Event::orderBy('created_at','desc')->get();
 
-        return view('admin.event.index',compact('events','user'));
+        return view('admin.events.index',compact('events','user'));
     }
 
 
