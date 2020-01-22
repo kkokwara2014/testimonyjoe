@@ -16,13 +16,13 @@
                 <div class="box">
                     <!-- /.box-header -->
                     <div class="box-body">
-                        @if (count($allcontacts)>0)
+                        @if (count($bookings)>0)
 
                         <table id="example1" class="table table-responsive table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>Sender</th>
-                                    <th>Email</th>
+                                    {{-- <th>Email</th> --}}
                                     <th>Phone</th>
                                     <th>Event Date</th>
                                     <th>Event Time</th>
@@ -37,12 +37,12 @@
                                 <tr>
 
                                     <td>{{$booking->fullname}}</td>
-                                    <td>{{$booking->email}}</td>
+                                    {{-- <td>{{$booking->email}}</td> --}}
                                     <td>{{$booking->phone}}</td>
                                     <td>{{$booking->eventdate}}</td>
                                     <td>{{$booking->eventtime}}</td>
                                     <td>{{$booking->location}}</td>
-                                    <td>{{$booking->aditionalinfo}}</td>
+                                    <td>{{$booking->additionalinfo}}</td>
 
                                     <td>
                                         <form id="delete-form-{{$booking->id}}" style="display: none"
@@ -71,7 +71,7 @@
                             <tfoot>
                                 <tr>
                                     <th>Sender</th>
-                                    <th>Email</th>
+                                    {{-- <th>Email</th> --}}
                                     <th>Phone</th>
                                     <th>Event Date</th>
                                     <th>Event Time</th>

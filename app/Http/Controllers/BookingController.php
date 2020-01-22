@@ -30,7 +30,7 @@ class BookingController extends Controller
             'location'=>'required',
         ]);
 
-            $bookingRef=rand(499738,964726);
+        $bookingRef=rand(499738,964726);
         $booking=new Booking;
         $booking->bookingref=$bookingRef;
         $booking->fullname=$request->fullname;

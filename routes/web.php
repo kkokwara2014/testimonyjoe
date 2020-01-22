@@ -68,16 +68,24 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], funct
 
     Route::resource('album', 'AlbumController');
 
+    // for booking
     Route::get('all/bookings', 'BookingController@index')->name('booking.index');
     Route::post('delete/{id}/booking', 'BookingController@destroy')->name('booking.destroy');
 
     Route::resource('category', 'CategoryController');
     Route::get('all/contacts', 'ContactController@getAllContacts')->name('contact.index');
     Route::post('delete/{id}/contact', 'ContactController@removeContact')->name('contact.destroy');
+
+    //for Events
     Route::resource('event', 'EventController');
+
+    //for Gallery
     Route::resource('gallery', 'GalleryController');
+
+    //for Equipment
     Route::resource('equipment', 'EquipmentController');
 
+    //for Admins
     Route::get('all/admins', 'AdminController@admins')->name('all.admin');
     Route::get('admins/{id}/show', 'AdminController@show')->name('admins.show');
     Route::post('admins/{id}/activate', 'AdminController@activate')->name('admins.activate');
