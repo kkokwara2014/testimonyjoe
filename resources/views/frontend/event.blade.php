@@ -18,13 +18,13 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <nav aria-label="breadcrumb">
+                {{-- <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{route('index')}}"><i class="fa fa-home"></i> Home</a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">@yield('title')</li>
-                    </ol>
-                </nav>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">@yield('title')</li>
+                </ol>
+                </nav> --}}
             </div>
         </div>
     </div>
@@ -35,13 +35,21 @@
 <section class="about-us-area section-padding-0-80 mt-50">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 col-lg-10">
+            <div class="col-12 col-lg-8">
                 <div class="about-us-content">
-                    <img src="{{asset('bootstrap_assets/img/bg-img/20.jpg')}}" class="mb-30" alt="">
                     <h1>@yield('title')</h1>
-                   
-                   
-                    
+                    <hr>
+
+
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="about-us-content">
+
+                    <h1>Useful Links</h1>
+                    <hr>
+
+
                 </div>
             </div>
         </div>

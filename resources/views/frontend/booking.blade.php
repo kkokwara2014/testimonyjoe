@@ -35,17 +35,17 @@
 <section class="about-us-area section-padding-0-80 mt-50">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-12 col-lg-12">
+            <div class="col-12 col-lg-8">
                 <div class="about-us-content">
-
-                    <h1>Booking Form</h1>
+                    <h1>@yield('title')</h1>
+                    <hr>
 
                     <p>Please fill the form appropriately to book us for your ceremony.</p>
                     <br>
 
                     <div class="row">
 
-                        <div class="col-md-7">
+                        <div class="col-md-10">
                             <p>
                                 @include('frontend.messages.success')
                             </p>
@@ -92,12 +92,21 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="col-md-5"></div>
+                        {{-- <div class="col-md-5"></div> --}}
                     </div>
+
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="about-us-content">
+
+                    <h1>Useful Links</h1>
+                    <hr>
 
 
                 </div>
             </div>
+
         </div>
     </div>
 </section>

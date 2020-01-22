@@ -15,6 +15,7 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('bookingref');
             $table->string('fullname');
             $table->string('email');
             $table->string('phone');
@@ -22,7 +23,7 @@ class CreateBookingsTable extends Migration
             $table->string('eventtime');
             $table->string('location');
             $table->string('additionalinfo');
-            $table->tinyInteger('isdone');
+            $table->tinyInteger('isdone')->default('0');
             $table->timestamps();
         });
     }
