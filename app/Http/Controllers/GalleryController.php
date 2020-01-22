@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Gallery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+use Image;
 
 class GalleryController extends Controller
 {
@@ -13,18 +17,12 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        //
+        $user=Auth::user();
+        $galleries=Gallery::orderBy('created_at','desc')->get();
+
+        return view('admin.gallery.index',compact('galleries','user'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -34,7 +32,29 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $formInput = $request->except('image');
+        $this->validate($request, [
+            'caption' => 'required',
+            'image' => 'required|image|mimes:png,jpg,jpeg|max:10000',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(600, 600)->save(public_path('gallery_images/' . $imageName));
+
+            $formInput['image'] = $imageName;
+        }
+
+        $gallery = new Gallery;
+        $gallery->caption = $request->caption;
+        $gallery->description = $request->description;
+        $gallery->user_id = $request->user_id;
+        $gallery->image = $formInput['image'];
+
+        $gallery->save();
+
+        return redirect()->route('gallery.index');
     }
 
     /**
@@ -79,6 +99,8 @@ class GalleryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Gallery::where('id',$id)->delete();
+
+        return redirect()->back();
     }
 }

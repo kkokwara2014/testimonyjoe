@@ -40,11 +40,10 @@
                                 @foreach ($galleries as $gallery)
                                 <tr>
 
-                                    <td>{{$gallery->name}}</td>
-                                    <td>&#163;{{$gallery->price}}</td>
+                                    <td>{{$gallery->caption}}</td>
                                     <td>{{$gallery->description}}</td>
                                     <td>{{$gallery->user->firstname.' '.$gallery->user->lastname}}</td>
-                                    {{-- <td><a href="{{ route('gallerys.show',$gallery->id) }}"><span
+                                    {{-- <td><a href="{{ route('gallery.show',$gallery->id) }}"><span
                                         class="fa fa-eye fa-2x text-primary"></span></a></td> --}}
 
 
@@ -107,8 +106,9 @@
                             <div class="form-group">
                                 <label for="">Caption <strong style="color:red;">*</strong></label>
                                 <input id="caption" type="text"
-                                    class="form-control{{ $errors->has('caption') ? ' is-invalid' : '' }}" name="caption"
-                                    value="{{ old('caption') }}" required autofocus placeholder="Gallery Caption">
+                                    class="form-control{{ $errors->has('caption') ? ' is-invalid' : '' }}"
+                                    name="caption" value="{{ old('caption') }}" required autofocus
+                                    placeholder="Gallery Caption">
 
                                 @if ($errors->has('caption'))
                                 <span class="invalid-feedback" role="alert">
