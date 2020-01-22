@@ -4,7 +4,8 @@
 
 @section('content')
 <!-- ***** Breadcrumb Area Start ***** -->
-<div class="breadcumb-area bg-img bg-overlay" style="background-image: url({{asset('bootstrap_assets/img/bg-img/2.jpg')}});">
+<div class="breadcumb-area bg-img bg-overlay"
+    style="background-image: url({{asset('bootstrap_assets/img/bg-img/2.jpg')}});">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12">
@@ -40,7 +41,7 @@
                 <div class="about-us-content">
                     <h1>Useful Links</h1>
                     <hr>
-
+                    @include('frontend.layout.usefullinks')
 
                 </div>
             </div>

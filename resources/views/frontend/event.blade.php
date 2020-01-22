@@ -42,6 +42,7 @@
 
                     <h1>Useful Links</h1>
                     <hr>
+                    @include('frontend.layout.usefullinks')
 
 
                 </div>
