@@ -34,10 +34,9 @@ class EquipmentController extends Controller
     {
         $formInput = $request->except('image');
         $this->validate($request, [
-            'title' => 'required',
-            'albumcategory_id' => 'required',
+            'name' => 'required',
+            'price' => 'required',
             'image' => 'required|image|mimes:png,jpg,jpeg|max:10000',
-            'filename' => 'required|file|max:5000|mimes:mp3,mp4,wma,wav',
         ]);
 
         if ($request->hasFile('image')) {
@@ -57,9 +56,7 @@ class EquipmentController extends Controller
 
         $equipment->save();
 
-
         return redirect()->route('equipment.index');
-
 
     }
 

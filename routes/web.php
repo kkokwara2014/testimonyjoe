@@ -84,7 +84,9 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], funct
     Route::post('delete/{id}/event', 'EventController@destroy')->name('event.destroy');
 
     //for Gallery
-    Route::resource('gallery', 'GalleryController');
+    Route::get('all/gallery', 'GalleryController@index')->name('gallery.index');
+    Route::post('save/gallery', 'GalleryController@store')->name('gallery.store');
+    Route::post('delete/{id}/gallery', 'GalleryController@destroy')->name('gallery.destroy');
 
     //for Equipment
     Route::get('all/equipment', 'EquipmentController@index')->name('equipment.index');
