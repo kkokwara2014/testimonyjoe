@@ -31,6 +31,7 @@
                                     <th>Created By</th>
                                     {{-- <th>View Details</th> --}}
 
+                                    <th>Edit</th>
                                     <th>Delete</th>
 
 
@@ -44,10 +45,10 @@
                                     <td>&#163;{{$equipment->price}}</td>
                                     <td>{{$equipment->description}}</td>
                                     <td>{{$equipment->user->firstname.' '.$equipment->user->lastname}}</td>
-                                    {{-- <td><a href="{{ route('equipments.show',$equipment->id) }}"><span
+                                    {{-- <td><a href="{{ route('equipment.show',$equipment->id) }}"><span
                                         class="fa fa-eye fa-2x text-primary"></span></a></td> --}}
 
-
+<td><a href="{{ route('equipment.edit',$equipment->id) }}"><span class="fa fa-edit fa-2x text-primary"></span></a></td>
 
                                     <td>
                                         <form id="delete-form-{{$equipment->id}}" style="display: none"
@@ -79,6 +80,7 @@
                                     <th>Created By</th>
                                     {{-- <th>View Details</th> --}}
 
+                                    <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
                             </tfoot>

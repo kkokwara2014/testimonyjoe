@@ -87,11 +87,16 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], funct
     Route::get('all/gallery', 'GalleryController@index')->name('gallery.index');
     Route::post('save/gallery', 'GalleryController@store')->name('gallery.store');
     Route::post('show/{id}/gallery', 'GalleryController@show')->name('gallery.show');
+    Route::get('edit/{id}/gallery', 'GalleryController@edit')->name('gallery.edit');
+    Route::post('update/{id}/gallery', 'GalleryController@update')->name('gallery.update');
     Route::post('delete/{id}/gallery', 'GalleryController@destroy')->name('gallery.destroy');
 
     //for Equipment
     Route::get('all/equipment', 'EquipmentController@index')->name('equipment.index');
     Route::post('save/equipment', 'EquipmentController@store')->name('equipment.store');
+    Route::post('show/{id}/equipment', 'EquipmentController@show')->name('equipment.show');
+    Route::get('edit/{id}/equipment', 'EquipmentController@edit')->name('equipment.edit');
+    Route::post('update/{id}/equipment', 'EquipmentController@update')->name('equipment.update');
     Route::post('delete/{id}/equipment', 'EquipmentController@destroy')->name('equipment.destroy');
 
     //for Admins

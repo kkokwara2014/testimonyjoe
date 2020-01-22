@@ -76,7 +76,8 @@ class GalleryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $galleries = Gallery::where('id', $id)->first();
+        return view('admin.gallery.edit', array('user' => Auth::user()), compact('galleries'));
     }
 
     /**
@@ -88,7 +89,29 @@ class GalleryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $formInput = $request->except('image');
+        $this->validate($request, [
+            'caption' => 'required',
+            'image' => 'required|image|mimes:png,jpg,jpeg|max:10000',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(600, 600)->save(public_path('gallery_images/' . $imageName));
+
+            $formInput['image'] = $imageName;
+        }
+
+        $gallery = Gallery::find($id);
+        $gallery->caption = $request->caption;
+        $gallery->description = $request->description;
+        $gallery->user_id = $request->user_id;
+        $gallery->image = $formInput['image'];
+
+        $gallery->save();
+
+        return redirect()->route('gallery.index');
     }
 
     /**

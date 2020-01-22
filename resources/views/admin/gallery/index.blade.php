@@ -31,6 +31,7 @@
                                     <th>Created By</th>
                                     {{-- <th>View Details</th> --}}
 
+                                    <th>Edit</th>
                                     <th>Delete</th>
 
 
@@ -47,7 +48,10 @@
                                         class="fa fa-eye fa-2x text-primary"></span></a></td> --}}
 
 
-
+                                    <td>
+                                        <a href="{{ route('gallery.edit',$gallery->id) }}"><span
+                                                class="fa fa-edit fa-2x text-primary"></span></a>
+                                    </td>
                                     <td>
                                         <form id="delete-form-{{$gallery->id}}" style="display: none"
                                             action="{{ route('gallery.destroy',$gallery->id) }}" method="post">
@@ -77,6 +81,7 @@
                                     <th>Created By</th>
                                     {{-- <th>View Details</th> --}}
 
+                                    <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
                             </tfoot>

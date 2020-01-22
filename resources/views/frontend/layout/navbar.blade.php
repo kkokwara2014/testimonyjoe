@@ -33,7 +33,7 @@
                 <li class="{{ (request()->is('album'))?'active':'' }}"><a href="{{url('album')}}">- All Albums</a></li>
             </ul>
         </li>
-        <li><a href="#">Event</a>
+        {{-- <li><a href="#">Event</a>
             <ul class="dropdown">
                 <li class="{{ (request()->is('event'))?'active':'' }}"><a href="{{url('event')}}">- Upcoming Events</a>
                 </li>
@@ -42,7 +42,7 @@
                 <li class="{{ (request()->is('event'))?'active':'' }}"><a href="{{url('event')}}">- Archived Event</a>
                 </li>
             </ul>
-        </li>
+        </li> --}}
         <li class="{{ (request()->is('gallery'))?'active':'' }}"><a href="{{url('gallery')}}">Gallery</a></li>
         <li class="{{ (request()->is('contact'))?'active':'' }}"><a href="{{url('contact')}}">Contact</a></li>
     </ul>

@@ -79,7 +79,8 @@ class EquipmentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $equipments = Equipment::where('id', $id)->first();
+        return view('admin.equipment.edit', array('user' => Auth::user()), compact('equipments'));
     }
 
     /**
@@ -91,7 +92,30 @@ class EquipmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $formInput = $request->except('image');
+        $this->validate($request, [
+            'name' => 'required',
+            'price' => 'required',
+            'image' => 'required|image|mimes:png,jpg,jpeg|max:10000',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(600, 600)->save(public_path('equipment_images/' . $imageName));
+
+            $formInput['image'] = $imageName;
+        }
+        $equipment = Equipment::find($id);
+        $equipment->name = $request->name;
+        $equipment->price = $request->price;
+        $equipment->description = $request->description;
+        $equipment->user_id = $request->user_id;
+        $equipment->image = $formInput['image'];
+
+        $equipment->save();
+
+        return redirect()->route('equipment.index');
     }
 
     /**

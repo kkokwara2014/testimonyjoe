@@ -14,7 +14,7 @@
 <br>
 <a href="{{route('booking')}}"><span class="fa fa-arrow-circle-o-right"></span> Booking</a>
 <br>
-<a href="{{route('event')}}"><span class="fa fa-arrow-circle-o-right"></span> Event</a>
+{{-- <a href="{{route('event')}}"><span class="fa fa-arrow-circle-o-right"></span> Event</a> --}}
 <br>
 <a href="{{route('gallery')}}"><span class="fa fa-arrow-circle-o-right"></span> Gallery</a>
 <br>
