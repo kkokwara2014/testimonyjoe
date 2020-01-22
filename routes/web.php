@@ -73,11 +73,15 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], funct
     Route::post('delete/{id}/booking', 'BookingController@destroy')->name('booking.destroy');
 
     Route::resource('category', 'CategoryController');
+
+    //for contacts
     Route::get('all/contacts', 'ContactController@getAllContacts')->name('contact.index');
     Route::post('delete/{id}/contact', 'ContactController@removeContact')->name('contact.destroy');
 
     //for Events
-    Route::resource('event', 'EventController');
+    Route::get('all/events', 'EventController@index')->name('event.index');
+    Route::post('save/event', 'EventController@store')->name('event.store');
+    Route::post('delete/{id}/event', 'EventController@destroy')->name('event.destroy');
 
     //for Gallery
     Route::resource('gallery', 'GalleryController');
