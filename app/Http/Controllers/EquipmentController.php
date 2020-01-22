@@ -17,9 +17,9 @@ class EquipmentController extends Controller
     public function index()
     {
         $user=Auth::user();
-        $equipment=Equipment::orderBy('created_at','desc')->get();
+        $equipments=Equipment::orderBy('created_at','desc')->get();
 
-        return view('admin.equipment.index',compact('equipment','user'));
+        return view('admin.equipment.index',compact('equipments','user'));
     }
 
 
