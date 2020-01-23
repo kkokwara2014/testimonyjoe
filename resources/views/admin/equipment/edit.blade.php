@@ -19,7 +19,7 @@
                 <div class="box">
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <form action="{{ route('equipment.update',$equipments->id) }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('equipment.update',$equipment->id) }}" method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             {{method_field('PUT')}}
 
@@ -27,20 +27,20 @@
                                 <label for="">Equipment Name <strong style="color:red;">*</strong></label>
                                 <input id="name" type="text"
                                     class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name"
-                            value="{{ old('name') }}" required autofocus placeholder="Equipment Name" value="{{$equipments->name}}">
+                            value="{{ old('name') }}" required autofocus value="{{$equipment->name}}">
 
                                 @if ($errors->has('name'))
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('name') }}</strong>
                                 </span>
                                 @endif
-
                             </div>
+                            
                             <div class="form-group">
                                 <label for="">Equipment Price <strong style="color:red;">*</strong></label>
-                                <input id="price" type="text" maxlength="4"
+                                <input type="text" maxlength="4"
                                     class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}" name="price"
-                            value="{{ old('price') }}" required autofocus placeholder="Equipment Price" value="{{$equipments->price}}">
+                            value="{{ old('price') }}" required autofocus value="{{$equipment->price}}">
 
                                 @if ($errors->has('price'))
                                 <span class="invalid-feedback" role="alert">
@@ -53,12 +53,12 @@
                             <div class="form-group">
                                 <label for="">Equipment Description</label>
                                 <textarea class="form-control" name="description" cols="30" rows="3"
-                            placeholder="Your Description">{{$equipments->description!=''?$equipments->description:''}}</textarea>
+                            >{{$equipment->description!=''?$equipment->description:''}}</textarea>
                             </div>
 
                             <div>
                                 <label for="">Upload Equipment Image <strong style="color:red;">*</strong></label>
-                            <input type="file" name="image" value="{{$equipments->image}}">
+                            <input type="file" name="image" value="{{$equipment->image}}">
                             </div>
                             <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                             <br>
