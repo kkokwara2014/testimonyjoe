@@ -58,7 +58,6 @@ class AlbumController extends Controller
             $image = $request->file('albumimage');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
             Image::make($image)->resize(600, 600)->save(public_path('albums/' . $imageName));
-
             $formInput['albumimage'] = $imageName;
         }
 

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Album extends Model
 {
 
+    protected $fillable=[];
 
     public function albumcategory(){
         return $this->belongsTo(Albumcategory::class);
