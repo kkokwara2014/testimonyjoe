@@ -62,8 +62,8 @@ class AlbumController extends Controller
         }
 
         if ($request->hasFile('filename')) {
-            $audiofile = $request->file('filename');
-            $filenameWithTime = time() . '_' . $request->filename->getClientOriginalName(). '.' . $audiofile->getClientOriginalExtension();
+            // $audiofile = $request->file('filename');
+            $filenameWithTime = time() . '_' . $request->filename->getClientOriginalName();
             $filenameToStore = $request->filename->storeAs('public/albums', $filenameWithTime);
         }
 
