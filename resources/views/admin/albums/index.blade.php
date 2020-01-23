@@ -124,7 +124,7 @@
                             <br>
                             <div>
                                 <label for="">Upload Music File <strong style="color:red;">*</strong></label>
-                                <input type="file" name="filename">
+                                <input type="file" name="audio">
                             </div>
                         </div>
                         <input type="hidden" name="user_id" value="{{Auth::user()->id}}">

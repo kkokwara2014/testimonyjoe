@@ -50,10 +50,10 @@ class AlbumController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'albumcategory_id' => 'required',
-            // 'albumimage' => 'required|image|mimes:png,jpg,jpeg|max:10000',
-            // 'filename' => 'required|file|mimes:audio/mpeg,mpga,mp3,wav,aac',
-            'albumimage' => 'required',
-            'filename' => 'required',
+            'albumimage' => 'required|image|mimes:png,jpg,jpeg|max:10000',
+            'audio' => 'required|file|mimes:audio/mpeg,mpga,mp3,wav,aac',
+            // 'albumimage' => 'required',
+            // 'audio' => 'required',
         ]);
 
         if ($request->hasFile('albumimage')) {
@@ -63,11 +63,11 @@ class AlbumController extends Controller
             $formInput['albumimage'] = $imageName;
         }
 
-        if ($request->hasFile('filename')) {
-            $audiofile = $request->file('filename');
+        if ($request->hasFile('audio')) {
+            $audiofile = $request->file('audio');
             $destination_path=public_path().'/albums/album_files';
-            $extension=$audiofile->getClientOriginalExtension();
-            $files=$audiofile->getClientOriginalName();
+            $extension=$request->file('audio')->getClientOriginalExtension();
+            $files=$request->file('audio')->getClientOriginalName();
             $audioFileName=$files.'_'.time().'.'.$extension;
             $audiofile->move($destination_path,$audioFileName);
             // $filenameWithTime = time() . '_' . $request->filename->getClientOriginalName();

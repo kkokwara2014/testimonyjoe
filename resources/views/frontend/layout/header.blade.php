@@ -89,14 +89,9 @@
                                     </li>
                                     <li><a href="{{route('album')}}">Album</a></li>
                                     <li><a href="{{route('booking')}}">Booking</a></li>
-                                    <li><a href="{{route('event')}}">Event</a></li>
+                                    {{-- <li><a href="{{route('event')}}">Event</a></li> --}}
                                     <li><a href="{{route('gallery')}}">Gallery</a></li>
-                                    {{-- <li><a href="#">Blog</a>
-                                        <ul class="dropdown">
-                                            <li><a href="#">- Blog</a></li>
-                                            <li><a href="#">- Blog Details</a></li>
-                                        </ul>
-                                    </li> --}}
+                                    
                                     <li><a href="{{route('contact')}}">Contact</a></li>
                                 </ul>
 
