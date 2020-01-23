@@ -48,12 +48,11 @@ class AlbumController extends Controller
     {
         $formInput = $request->except('albumimage');
         $this->validate($request, [
-            'title' => 'required',
+            'albumtitle' => 'required',
             'albumcategory_id' => 'required',
             'albumimage' => 'required|image|mimes:png,jpg,jpeg|max:10000',
             'audio' => 'required|file|mimes:audio/mpeg,mpga,mp3,wav,aac',
-            // 'albumimage' => 'required',
-            // 'audio' => 'required',
+           
         ]);
 
         if ($request->hasFile('albumimage')) {
@@ -76,7 +75,7 @@ class AlbumController extends Controller
 
         //    create an instance of Album
         $album = new Album;
-        $album->title = $request->title;
+        $album->title = $request->albumtitle;
         $album->description = $request->description;
         $album->user_id = $request->user_id;
         $album->albumcategory_id = $request->albumcategory_id;

@@ -98,7 +98,7 @@
                         <div class="modal-body">
                             <div>
                                 <label for="">Album Title <strong style="color:red;">*</strong> </label>
-                                <input type="text" class="form-control" name="title" placeholder="Album Title">
+                                <input type="text" class="form-control" name="albumtitle" placeholder="Album Title">
                             </div>
 
                             <div>
