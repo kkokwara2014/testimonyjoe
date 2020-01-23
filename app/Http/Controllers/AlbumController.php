@@ -50,21 +50,28 @@ class AlbumController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'albumcategory_id' => 'required',
-            'albumimage' => 'required|image|mimes:png,jpg,jpeg|max:10000',
-            'filename' => 'required|file|mimes:audio/mpeg,mpga,mp3,wav,aac',
+            // 'albumimage' => 'required|image|mimes:png,jpg,jpeg|max:10000',
+            // 'filename' => 'required|file|mimes:audio/mpeg,mpga,mp3,wav,aac',
+            'albumimage' => 'required',
+            'filename' => 'required',
         ]);
 
         if ($request->hasFile('albumimage')) {
             $image = $request->file('albumimage');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(600, 600)->save(public_path('albums/' . $imageName));
+            Image::make($image)->resize(600, 600)->save(public_path('albums/album_images/' . $imageName));
             $formInput['albumimage'] = $imageName;
         }
 
         if ($request->hasFile('filename')) {
-            // $audiofile = $request->file('filename');
-            $filenameWithTime = time() . '_' . $request->filename->getClientOriginalName();
-            $filenameToStore = $request->filename->storeAs('public/albums', $filenameWithTime);
+            $audiofile = $request->file('filename');
+            $destination_path=public_path().'/albums/album_files';
+            $extension=$audiofile->getClientOriginalExtension();
+            $files=$audiofile->getClientOriginalName();
+            $audioFileName=$files.'_'.time().'.'.$extension;
+            $audiofile->move($destination_path,$audioFileName);
+            // $filenameWithTime = time() . '_' . $request->filename->getClientOriginalName();
+            // $filenameToStore = $request->filename->storeAs('public/albums', $filenameWithTime);
         }
 
         //    create an instance of Album
@@ -74,7 +81,8 @@ class AlbumController extends Controller
         $album->user_id = $request->user_id;
         $album->albumcategory_id = $request->albumcategory_id;
         $album->albumimage = $formInput['albumimage'];
-        $album->filename = $filenameToStore;
+        // $album->filename = $filenameToStore;
+        $album->filename = $audioFileName;
 
         $album->save();
 

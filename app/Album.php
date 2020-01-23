@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Album extends Model
 {
 
-    protected $fillable=[];
+    protected $fillable=['title','description','albumimage','user_id','albumcategory_id','filename'];
 
     public function albumcategory(){
         return $this->belongsTo(Albumcategory::class);
