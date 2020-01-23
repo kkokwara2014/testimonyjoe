@@ -51,7 +51,7 @@ class AlbumController extends Controller
             'title' => 'required',
             'albumcategory_id' => 'required',
             'albumimage' => 'required|image|mimes:png,jpg,jpeg|max:10000',
-            'filename' => 'required|file|max:5000|mimes:mp3,mp4,wma,wav',
+            'filename' => 'required|file|mimes:audio/mpeg,mpga,mp3,wav,aac',
         ]);
 
         if ($request->hasFile('albumimage')) {
@@ -62,7 +62,8 @@ class AlbumController extends Controller
         }
 
         if ($request->hasFile('filename')) {
-            $filenameWithTime = time() . '_' . $request->filename->getClientOriginalName();
+            $audiofile = $request->file('filename');
+            $filenameWithTime = time() . '_' . $request->filename->getClientOriginalName(). '.' . $audiofile->getClientOriginalExtension();
             $filenameToStore = $request->filename->storeAs('public/albums', $filenameWithTime);
         }
 
@@ -72,8 +73,8 @@ class AlbumController extends Controller
         $album->description = $request->description;
         $album->user_id = $request->user_id;
         $album->albumcategory_id = $request->albumcategory_id;
-        $album->filename = $filenameToStore;
         $album->albumimage = $formInput['albumimage'];
+        $album->filename = $filenameToStore;
 
         $album->save();
 
