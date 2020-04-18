@@ -10,7 +10,7 @@ class BookingController extends Controller
 {
     public function __construct()
     {
-
+        $this->middleware(['admin'])->except(['create','store']);
     }
 
     public function index(){
@@ -20,7 +20,11 @@ class BookingController extends Controller
         return view('admin.bookings.index',compact('bookings','user'));
     }
 
-    public function saveBooking(Request $request){
+    public function create(){
+
+    }
+
+    public function store(Request $request){
         $this->validate($request,[
             'fullname'=>'required',
             'email'=>'required',
