@@ -1,134 +1,186 @@
-<!-- ***** Footer Area Start ***** -->
-<footer class="footer-area section-padding-80-0">
-    <div class="container">
-        <div class="row">
 
-            <!-- Single Footer Widget -->
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="single-footer-widget mb-80">
-                    <!-- Widget Title -->
-                    <h4 class="widget-title">About Us</h4>
+    <!-- Footer Area Start -->
+    <footer class="footer-area">
+        <!-- Main Footer Area -->
+        <div class="main-footer-area section-padding-80-0">
+            <div class="container">
+                <div class="row justify-content-between">
 
-                    <p>It is a long established fact that a reader will be distracted by the readable content.
-                    </p>
-                    <div class="copywrite-content">
-                        <p>&copy;
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-md-4 col-xl-3">
+                        <div class="single-footer-widget mb-80">
+                            <!-- Footer Logo -->
+                            <a href="#" class="footer-logo"><img src="{{ asset('bootstrap2_assets/img/core-img/logo2.png') }}" alt=""></a>
 
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script>
-                                document.write(new Date().getFullYear());
-                            </script> All rights reserved | testimonyjoe.com
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
+                            <p class="mb-30">Lorem ipsum dolor sit amet, consectet adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                            <!-- Footer Content -->
+                            <div class="footer-content">
+
+                                <!-- Single Contact Info -->
+                                <div class="single-contact-info d-flex">
+                                    <div class="icon">
+                                        <i class="icon_pin"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>24 No. Amazing Valley, Aewsome St. New York, USA</p>
+                                    </div>
+                                </div>
+
+                                <!-- Single Contact Info -->
+                                <div class="single-contact-info d-flex">
+                                    <div class="icon">
+                                        <i class="icon_phone"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>+11 123 4567890</p>
+                                    </div>
+                                </div>
+
+                                <!-- Single Contact Info -->
+                                <div class="single-contact-info d-flex">
+                                    <div class="icon">
+                                        <i class="icon_mail_alt"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>info.colorlib@gmail.com</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-md-4 col-xl-3">
+                        <div class="single-footer-widget mb-80">
+
+                            <!-- Widget Title -->
+                            <h4 class="widget-title">Twitter Feed</h4>
+
+                            <!-- Single Twitter Feed -->
+                            <div class="single-twitter-feed d-flex">
+                                <div class="tweet-icon">
+                                    <i class="fa fa-twitter"></i>
+                                </div>
+                                <div class="tweet">
+                                    <p><a href="#">Kerem Suer</a> @kerem American conducts it first ever done strike Qaeda</p>
+                                </div>
+                            </div>
+
+                            <!-- Single Twitter Feed -->
+                            <div class="single-twitter-feed d-flex">
+                                <div class="tweet-icon">
+                                    <i class="fa fa-twitter"></i>
+                                </div>
+                                <div class="tweet">
+                                    <p><a href="#">Axel Hervelle</a> @axel_hervelle Tens of thousands attend rallies held in D.C.</p>
+                                </div>
+                            </div>
+
+                            <!-- Single Twitter Feed -->
+                            <div class="single-twitter-feed d-flex">
+                                <div class="tweet-icon">
+                                    <i class="fa fa-twitter"></i>
+                                </div>
+                                <div class="tweet">
+                                    <p><a href="#">Chris Pratt</a> @chris_pratt Hundreds of protesters shut down meeting.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-md-4 col-xl-3">
+                        <div class="single-footer-widget mb-80">
+                            <!-- Widget Title -->
+                            <h4 class="widget-title">Instagram</h4>
+
+                            <!-- Instagram Area -->
+                            <div class="razo-instagram-area d-flex flex-wrap">
+                                <!-- Single Instagram Feed -->
+                                <div class="single-instagram-feed">
+                                    <a href="#"><img src="{{ asset('bootstrap2_assets/img/bg-img/2.jpg') }}" alt=""></a>
+                                </div>
+
+                                <!-- Single Instagram Feed -->
+                                <div class="single-instagram-feed">
+                                    <a href="#"><img src="{{ asset('bootstrap2_assets/img/bg-img/3.jpg') }}" alt=""></a>
+                                </div>
+
+                                <!-- Single Instagram Feed -->
+                                <div class="single-instagram-feed">
+                                    <a href="#"><img src="{{ asset('bootstrap2_assets/img/bg-img/4.jpg') }}" alt=""></a>
+                                </div>
+
+                                <!-- Single Instagram Feed -->
+                                <div class="single-instagram-feed">
+                                    <a href="#"><img src="{{ asset('bootstrap2_assets/img/bg-img/5.jpg') }}" alt=""></a>
+                                </div>
+
+                                <!-- Single Instagram Feed -->
+                                <div class="single-instagram-feed">
+                                    <a href="#"><img src="{{ asset('bootstrap2_assets/img/bg-img/6.jpg') }}" alt=""></a>
+                                </div>
+
+                                <!-- Single Instagram Feed -->
+                                <div class="single-instagram-feed">
+                                    <a href="#"><img src="{{ asset('bootstrap2_assets/img/bg-img/7.jpg') }}" alt=""></a>
+                                </div>
+
+                                <!-- Single Instagram Feed -->
+                                <div class="single-instagram-feed">
+                                    <a href="#"><img src="{{ asset('bootstrap2_assets/img/bg-img/8.jpg') }}" alt=""></a>
+                                </div>
+
+                                <!-- Single Instagram Feed -->
+                                <div class="single-instagram-feed">
+                                    <a href="#"><img src="{{ asset('bootstrap2_assets/img/bg-img/9.jpg') }}" alt=""></a>
+                                </div>
+
+                                <!-- Single Instagram Feed -->
+                                <div class="single-instagram-feed">
+                                    <a href="#"><img src="{{ asset('bootstrap2_assets/img/bg-img/10.jpg') }}" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Single Footer Widget -->
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="single-footer-widget mb-80">
-                    <!-- Widget Title -->
-                    <h4 class="widget-title">Categories</h4>
-
-                    <!-- Catagories Nav -->
-                    <nav>
-                        <ul class="catagories-nav">
-                            <li><a href="#">Entrepreneurship</a></li>
-                            <li><a href="#">Media</a></li>
-                            <li><a href="#">Tech</a></li>
-                            <li><a href="#">Tutorials</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-
-            <!-- Single Footer Widget -->
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="single-footer-widget mb-80">
-                    <!-- Widget Title -->
-                    <h4 class="widget-title">Lastest Episodes</h4>
-
-                    <!-- Single Latest Episodes -->
-                    <div class="single-latest-episodes">
-                        <p class="episodes-date">December 9, 2018</p>
-                        <a href="#" class="episodes-title">Episode 205 - See Ya In Three!</a>
-                    </div>
-                    <!-- Single Latest Episodes -->
-                    <div class="single-latest-episodes">
-                        <p class="episodes-date">December 8, 2018</p>
-                        <a href="#" class="episodes-title">Episode 204 - See Ya In Two!</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single Footer Widget -->
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="single-footer-widget mb-80">
-                    <!-- Widget Title -->
-                    <h4 class="widget-title">Follow Us</h4>
-                    <!-- Social Info -->
-                    <div class="footer-social-info">
-                        <a href="#" class="facebook" data-toggle="tooltip" data-placement="top" title="Facebook"><i
-                                class="fa fa-facebook"></i></a>
-                        <a href="#" class="twitter" data-toggle="tooltip" data-placement="top" title="Twitter"><i
-                                class="fa fa-twitter"></i></a>
-                        {{-- <a href="#" class="pinterest" data-toggle="tooltip" data-placement="top"
-                                    title="Pinterest"><i class="fa fa-pinterest"></i></a> --}}
-                        <a href="#" class="instagram" data-toggle="tooltip" data-placement="top" title="Instagram"><i
-                                class="fa fa-instagram"></i></a>
-                        {{-- <a href="#" class="youtube" data-toggle="tooltip" data-placement="top"
-                                    title="YouTube"><i class="fa fa-youtube-play"></i></a> --}}
-                    </div>
-                    <!-- App Download Button -->
-                    <div class="app-download-button mt-30">
-                        <a href="#"><img src="{{asset('bootstrap_assets/./img/core-img/app-store.png')}}" alt=""></a>
-                        <a href="#"><img src="{{asset('bootstrap_assets/./img/core-img/google-play.png')}}" alt=""></a>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </div>
-</footer>
-<!-- ***** Footer Area End ***** -->
+        <!-- Main Footer Area End -->
 
-<!-- ******* All JS ******* -->
-<!-- jQuery js -->
-<script src="{{asset('bootstrap_assets/js/jquery.min.js')}}"></script>
+        <!-- Copywrite Text -->
+        <div class="copywrite-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Copywrite Text -->
+                        <div class="copywrite-text">
+                            <p>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> testimonyjoe.com | All rights reserved.
+</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Area End -->
 
-<script src="{{asset('bootstrap_assets/js/popper.min.js')}}">
-</script>
+    <!-- All JS Files -->
 
-<script src="{{asset('bootstrap_assets/js/poca.bundle.js')}}"></script>
-<script src="{{asset('bootstrap_assets/js/default-assets/active.js')}}"></script>
+    <!-- jQuery -->
+    <script src="{{ asset('bootstrap2_assets/js/jquery.min.js')}}"></script>
+    <!-- Popper -->
+    <script src="{{ asset('bootstrap2_assets/js/popper.min.js')}}"></script>
+    <!-- Bootstrap -->
+    <script src="{{ asset('bootstrap2_assets/js/bootstrap.min.js')}}"></script>
+    <!-- All Plugins -->
+    <script src="{{ asset('bootstrap2_assets/js/razo.bundle.js')}}"></script>
+    <!-- Active -->
+    <script src="{{ asset('bootstrap2_assets/js/default-assets/active.js')}}"></script>
 
-
-<!-- datepicker -->
-<script src="{{asset('bootstrap_assets/js/bootstrap-datepicker.min.js')}}">
-    // timepicker
-<script src="{{asset('bootstrap_assets/js/jquery.timepicker.min.js')}}">
-
-<script src="{{asset('bootstrap_assets/js/bootstrap.min.js')}}"></script>
-
-<script>
-    window.setTimeout(function() {
-    $(".alert").fadeTo(500, 0).slideUp(500, function(){
-        $(this).remove();
-    });
-}, 5000);
-</script>
-
-<script>
-    $(document).ready(function(){
-    //Date picker
-    $('#datepicker').datepicker({
-      autoclose: true
-    });
-
-    $('input.timepicker').timepicker({});
-});
-
-</script>
 </body>
 
 </html>

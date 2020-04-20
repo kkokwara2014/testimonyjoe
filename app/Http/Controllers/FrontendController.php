@@ -9,12 +9,7 @@ class FrontendController extends Controller
     public function index(){
         return view('frontend.tj');
     }
-    public function abouttestimonyjoe(){
-        return view('frontend.abouttestimonyjoe');
-    }
-    public function aboutholyghoststudio(){
-        return view('frontend.aboutstudio');
-    }
+
     public function gallery(){
         return view('frontend.gallery');
     }
@@ -27,9 +22,7 @@ class FrontendController extends Controller
     public function event(){
         return view('frontend.event');
     }
-    public function aboutrentals(){
-        return view('frontend.aboutrentals');
-    }
+
     public function booking(){
         return view('frontend.booking');
     }

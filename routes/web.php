@@ -40,9 +40,9 @@ Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/', 'FrontendController@index')->name('index');
 
 Route::prefix('/about')->group(function () {
-    Route::get('/testimonyjoe', 'FrontendController@abouttestimonyjoe')->name('abouttestimonyjoe');
-    Route::get('/holyghoststudio', 'FrontendController@aboutholyghoststudio')->name('aboutholyghoststudio');
-    Route::get('/equipment/rentals', 'FrontendController@aboutrentals')->name('aboutrentals');
+    Route::get('/testimonyjoe', 'AboutController@testimonyjoe')->name('abouttestimonyjoe');
+    Route::get('/holyghoststudio', 'AboutController@holyghoststudio')->name('aboutholyghoststudio');
+    Route::get('/equipment/rentals', 'AboutController@rental')->name('aboutrental');
 });
 
 Route::get('contact', 'FrontendController@contact')->name('contact');
@@ -78,7 +78,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], funct
     Route::get('all/bookings', 'BookingController@index')->name('booking.index');
     Route::post('delete/{id}/booking', 'BookingController@destroy')->name('booking.destroy');
 
-   
+
     //for contacts
     Route::get('all/contacts', 'ContactController@getAllContacts')->name('contact.index');
     Route::post('delete/{id}/contact', 'ContactController@removeContact')->name('contact.destroy');
