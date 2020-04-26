@@ -1,4 +1,4 @@
-@include('frontend.layout.main')
+@extends('frontend.layout.main')
 
 @section('title','Testimonyjoe | Home')
 
@@ -13,202 +13,139 @@
                 <div class="weekly-news-area mb-50">
                     <!-- Section Heading -->
                     <div class="section-heading">
-                        <h2>Blog New</h2>
+                        <h2>Testimony Joe</h2>
                     </div>
 
                     <!-- Featured Post Area -->
-                    <div class="featured-post-area bg-img bg-overlay mb-30"
+                    {{-- <div class="featured-post-area bg-img bg-overlay mb-30"
                         style="background-image: url({{asset('bootstrap2_assets/img/bg-img/11.jpg')}});">
-                        <!-- Post Overlay -->
-                        <div class="post-overlay">
-                            <div class="post-meta">
-                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 2.1k</a>
-                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 3.6k</a>
-                            </div>
-                            <a href="single-blog.html" class="post-title">The light and music exposition hits los
-                                angeles in the fashion week</a>
+                    <!-- Post Overlay -->
+                    <div class="post-overlay">
+                        <div class="post-meta">
+                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 2.1k</a>
+                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 3.6k</a>
                         </div>
+                        <a href="single-blog.html" class="post-title">The light and music exposition hits los
+                            angeles in the fashion week</a>
                     </div>
+                </div> --}}
 
-                    <div class="row">
+                <div class="row">
 
-                        <!-- Single Post Area -->
-                        <div class="col-12 col-md-6">
-                            <div class="razo-single-post d-flex mb-30">
-                                <!-- Post Thumbnail -->
-                                <div class="post-thumbnail">
-                                    <a href="single-blog.html"><img
-                                            src="{{ asset('bootstrap2_assets/img/bg-img/13.jpg') }}" alt=""></a>
-                                </div>
-                                <!-- Post Content -->
-                                <div class="post-content">
-                                    <div class="post-meta">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 2.1k</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 3.6k</a>
-                                    </div>
-                                    <a href="single-blog.html" class="post-title">Drug bust leads police to underground
-                                        tunnel</a>
-                                </div>
+                    <!-- Single Post Area -->
+                    <div class="col-12 col-md-6">
+                        <div class="razo-single-post d-flex mb-30">
+                            <!-- Post Thumbnail -->
+                            <div class="post-thumbnail">
+                                <a href="#"><img src="{{ asset('bootstrap2_assets/img/bg-img/13.jpg') }}" alt=""></a>
                             </div>
-                        </div>
-
-                        <!-- Single Post Area -->
-                        <div class="col-12 col-md-6">
-                            <div class="razo-single-post d-flex mb-30">
-                                <!-- Post Thumbnail -->
-                                <div class="post-thumbnail">
-                                    <a href="single-blog.html"><img
-                                            src="{{ asset('bootstrap2_assets/img/bg-img/14.jpg') }}" alt=""></a>
+                            <!-- Post Content -->
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 2.1k</a>
+                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 3.6k</a>
                                 </div>
-                                <!-- Post Content -->
-                                <div class="post-content">
-                                    <div class="post-meta">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 2.1k</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 3.6k</a>
-                                    </div>
-                                    <a href="single-blog.html" class="post-title">Hear abuse victims' messages for the
-                                        Pope</a>
-                                </div>
+                                <a href="#" class="post-title">Drug bust leads police to underground
+                                    tunnel</a>
                             </div>
-                        </div>
-
-                        <!-- Single Post Area -->
-                        <div class="col-12 col-md-6">
-                            <div class="razo-single-post d-flex mb-30">
-                                <!-- Post Thumbnail -->
-                                <div class="post-thumbnail">
-                                    <a href="single-blog.html"><img
-                                            src="{{ asset('bootstrap2_assets/img/bg-img/15.jpg') }}" alt=""></a>
-                                </div>
-                                <!-- Post Content -->
-                                <div class="post-content">
-                                    <div class="post-meta">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 2.1k</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 3.6k</a>
-                                    </div>
-                                    <a href="single-blog.html" class="post-title">New Mexico uspects' attorneys file to
-                                        have all</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Post Area -->
-                        <div class="col-12 col-md-6">
-                            <div class="razo-single-post d-flex mb-30">
-                                <!-- Post Thumbnail -->
-                                <div class="post-thumbnail">
-                                    <a href="single-blog.html"><img
-                                            src="{{ asset('bootstrap2_assets/img/bg-img/16.jpg') }}" alt=""></a>
-                                </div>
-                                <!-- Post Content -->
-                                <div class="post-content">
-                                    <div class="post-meta">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 2.1k</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 3.6k</a>
-                                    </div>
-                                    <a href="single-blog.html" class="post-title">Trump tweets false white supremacist
-                                        talking</a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- Trending News Area -->
-            <div class="col-12 col-md-4">
-                <div class="trending-news-area mb-50">
-
-                    <!-- Section Heading -->
-                    <div class="section-heading">
-                        <h2>Trending</h2>
-                    </div>
-
-                    <!-- Featured Post Area -->
-                    <div class="featured-post-area small-featured-post bg-img bg-overlay mb-30"
-                        style="background-image: url({{ asset('bootstrap2_assets/img/bg-img/12.jpg') }});">
-                        <!-- Post Overlay -->
-                        <div class="post-overlay">
-                            <div class="post-meta">
-                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 2.1k</a>
-                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 3.6k</a>
-                            </div>
-                            <a href="single-blog.html" class="post-title">Hawaii braces for Hurricane Lane</a>
                         </div>
                     </div>
 
                     <!-- Single Post Area -->
-                    <div class="razo-single-post d-flex mb-30">
-                        <!-- Post Thumbnail -->
-                        <div class="post-thumbnail">
-                            <a href="single-blog.html"><img src="{{ asset('bootstrap2_assets/img/bg-img/17.jpg') }}"
-                                    alt=""></a>
-                        </div>
-                        <!-- Post Content -->
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 2.1k</a>
-                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 3.6k</a>
+                    <div class="col-12 col-md-6">
+                        <div class="razo-single-post d-flex mb-30">
+                            <!-- Post Thumbnail -->
+                            <div class="post-thumbnail">
+                                <a href="single-blog.html"><img src="{{ asset('bootstrap2_assets/img/bg-img/14.jpg') }}"
+                                        alt=""></a>
                             </div>
-                            <a href="single-blog.html" class="post-title">Hurricane Lane brings 19 inches of rain</a>
+                            <!-- Post Content -->
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 2.1k</a>
+                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 3.6k</a>
+                                </div>
+                                <a href="single-blog.html" class="post-title">Hear abuse victims' messages for the
+                                    Pope</a>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Single Post Area -->
-                    <div class="razo-single-post d-flex mb-30">
-                        <!-- Post Thumbnail -->
-                        <div class="post-thumbnail">
-                            <a href="single-blog.html"><img src="{{ asset('bootstrap2_assets/img/bg-img/18.jpg') }}"
-                                    alt=""></a>
-                        </div>
-                        <!-- Post Content -->
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 2.1k</a>
-                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 3.6k</a>
+                    <div class="col-12 col-md-6">
+                        <div class="razo-single-post d-flex mb-30">
+                            <!-- Post Thumbnail -->
+                            <div class="post-thumbnail">
+                                <a href="single-blog.html"><img src="{{ asset('bootstrap2_assets/img/bg-img/15.jpg') }}"
+                                        alt=""></a>
                             </div>
-                            <a href="single-blog.html" class="post-title">What these victims want the Pope to know</a>
+                            <!-- Post Content -->
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 2.1k</a>
+                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 3.6k</a>
+                                </div>
+                                <a href="single-blog.html" class="post-title">New Mexico uspects' attorneys file to
+                                    have all</a>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Single Post Area -->
-                    <div class="razo-single-post d-flex mb-30">
-                        <!-- Post Thumbnail -->
-                        <div class="post-thumbnail">
-                            <a href="single-blog.html"><img src="{{ asset('bootstrap2_assets/img/bg-img/19.jpg') }}"
-                                    alt=""></a>
-                        </div>
-                        <!-- Post Content -->
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 2.1k</a>
-                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 3.6k</a>
+                    <div class="col-12 col-md-6">
+                        <div class="razo-single-post d-flex mb-30">
+                            <!-- Post Thumbnail -->
+                            <div class="post-thumbnail">
+                                <a href="single-blog.html"><img src="{{ asset('bootstrap2_assets/img/bg-img/16.jpg') }}"
+                                        alt=""></a>
                             </div>
-                            <a href="single-blog.html" class="post-title">What happens if you don't have a will?</a>
-                        </div>
-                    </div>
-
-                    <!-- Single Post Area -->
-                    <div class="razo-single-post d-flex mb-30">
-                        <!-- Post Thumbnail -->
-                        <div class="post-thumbnail">
-                            <a href="single-blog.html"><img src="{{ asset('bootstrap2_assets/img/bg-img/20.jpg') }}"
-                                    alt=""></a>
-                        </div>
-                        <!-- Post Content -->
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 2.1k</a>
-                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 3.6k</a>
+                            <!-- Post Content -->
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 2.1k</a>
+                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 3.6k</a>
+                                </div>
+                                <a href="single-blog.html" class="post-title">Trump tweets false white supremacist
+                                    talking</a>
                             </div>
-                            <a href="single-blog.html" class="post-title">Giuliani: No reason for Trump impeachment</a>
                         </div>
                     </div>
 
                 </div>
             </div>
         </div>
+
+        <!-- Trending News Area -->
+        <div class="col-12 col-md-4">
+            <div class="trending-news-area mb-50">
+
+                <!-- Section Heading -->
+                <div class="section-heading">
+                    <h2>Useful Links</h2>
+                </div>
+
+                <!-- Featured Post Area -->
+                {{-- <div class="featured-post-area small-featured-post bg-img bg-overlay mb-30"
+                    style="background-image: url({{ asset('bootstrap2_assets/img/bg-img/12.jpg') }});">
+                    <!-- Post Overlay -->
+                    <div class="post-overlay">
+                        <div class="post-meta">
+                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 2.1k</a>
+                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 3.6k</a>
+                        </div>
+                        <a href="single-blog.html" class="post-title">Hawaii braces for Hurricane Lane</a>
+                    </div>
+                </div> --}}
+
+                <div>
+                    @include('frontend.layout.usefullinks')
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
     </div>
 </section>
 <!-- Blog Area End -->
@@ -221,13 +158,13 @@
             <!-- Section Heading -->
             <div class="col-sm-6">
                 <div class="section-heading white">
-                    <h2>Music Chart</h2>
+                    <h2>Tracks</h2>
                 </div>
             </div>
             <!-- Show All Button -->
             <div class="col-sm-6">
                 <div class="show-all-button mb-50 text-right">
-                    <a href="#" class="btn show-all-btn">Show All Trending (Top 10)</a>
+                    <a href="#" class="btn show-all-btn"><span class="fa fa-eye"></span> All Tracks</a>
                 </div>
             </div>
         </div>
@@ -236,7 +173,7 @@
             <div class="col-12">
 
                 <!-- Single Music Chart -->
-                <div class="single-music-chart d-flex align-items-center justify-content-between wow fadeInUp"
+                <div class="single-music-chart d-flex align-items-center justify-content-between wow fadeInUp mb-2"
                     data-wow-delay="100ms">
                     <!-- Music Content -->
                     <div class="music-content d-flex align-items-center">
@@ -257,12 +194,12 @@
                     </div>
                     <!-- Music Price -->
                     <div class="music-price">
-                        <a href="#" class="btn razo-btn btn-2">$12.99</a>
+                        {{-- <a href="#" class="btn razo-btn btn-2">$12.99</a> --}}
                     </div>
                 </div>
 
                 <!-- Single Music Chart -->
-                <div class="single-music-chart d-flex align-items-center justify-content-between wow fadeInUp"
+                <div class="single-music-chart d-flex align-items-center justify-content-between wow fadeInUp mb-2"
                     data-wow-delay="300ms">
                     <!-- Music Content -->
                     <div class="music-content d-flex align-items-center">
@@ -283,12 +220,12 @@
                     </div>
                     <!-- Music Price -->
                     <div class="music-price">
-                        <a href="#" class="btn razo-btn btn-2">$10.99</a>
+                        {{-- <a href="#" class="btn razo-btn btn-2">$10.99</a> --}}
                     </div>
                 </div>
 
                 <!-- Single Music Chart -->
-                <div class="single-music-chart d-flex align-items-center justify-content-between wow fadeInUp"
+                <div class="single-music-chart d-flex align-items-center justify-content-between wow fadeInUp mb-2"
                     data-wow-delay="500ms">
                     <!-- Music Content -->
                     <div class="music-content d-flex align-items-center">
@@ -309,12 +246,12 @@
                     </div>
                     <!-- Music Price -->
                     <div class="music-price">
-                        <a href="#" class="btn razo-btn btn-2">$10.99</a>
+                        {{-- <a href="#" class="btn razo-btn btn-2">$10.99</a> --}}
                     </div>
                 </div>
 
                 <!-- Single Music Chart -->
-                <div class="single-music-chart d-flex align-items-center justify-content-between wow fadeInUp"
+                <div class="single-music-chart d-flex align-items-center justify-content-between wow fadeInUp mb-2"
                     data-wow-delay="700ms">
                     <!-- Music Content -->
                     <div class="music-content d-flex align-items-center">
@@ -335,12 +272,12 @@
                     </div>
                     <!-- Music Price -->
                     <div class="music-price">
-                        <a href="#" class="btn razo-btn btn-2">$10.99</a>
+                        {{-- <a href="#" class="btn razo-btn btn-2">$10.99</a> --}}
                     </div>
                 </div>
 
                 <!-- Single Music Chart -->
-                <div class="single-music-chart d-flex align-items-center justify-content-between wow fadeInUp"
+                <div class="single-music-chart d-flex align-items-center justify-content-between wow fadeInUp mb-2"
                     data-wow-delay="900ms">
                     <!-- Music Content -->
                     <div class="music-content d-flex align-items-center">
@@ -361,7 +298,7 @@
                     </div>
                     <!-- Music Price -->
                     <div class="music-price">
-                        <a href="#" class="btn razo-btn btn-2">$10.99</a>
+                        {{-- <a href="#" class="btn razo-btn btn-2">$10.99</a> --}}
                     </div>
                 </div>
 
@@ -370,147 +307,6 @@
     </div>
 </section>
 <!-- Music Charts Area End -->
-
-<!-- Trending Video Area Start -->
-{{-- <section class="razo-trending-video-area section-padding-80-0 mb-50">
-    <div class="container">
-        <div class="row">
-            <!-- Section Heading -->
-            <div class="col-12">
-                <div class="section-heading text-center">
-                    <h2>Trending Video</h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <!-- Featured Trending Video -->
-            <div class="col-12">
-                <div class="featured-trending-video mb-30 wow fadeInUp" data-wow-delay="100ms">
-                    <iframe src="https://www.youtube.com/embed/zRvhQ5Rf6-U"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-            </div>
-
-            <!-- Single Post Area -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="razo-single-post d-flex mb-30 wow fadeInUp" data-wow-delay="100ms">
-                    <!-- Post Thumbnail -->
-                    <div class="post-thumbnail">
-                        <a href="single-blog.html"><img src="{{ asset('bootstrap2_assets/img/bg-img/2.jpg') }}"
-                                alt=""></a>
-                    </div>
-                    <!-- Post Content -->
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 2.1k</a>
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 3.6k</a>
-                        </div>
-                        <a href="single-blog.html" class="post-title">Epileptic boy's cannabis let through border</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single Post Area -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="razo-single-post d-flex mb-30 wow fadeInUp" data-wow-delay="300ms">
-                    <!-- Post Thumbnail -->
-                    <div class="post-thumbnail">
-                        <a href="single-blog.html"><img src="{{ asset('bootstrap2_assets/img/bg-img/3.jpg') }}"
-                                alt=""></a>
-                    </div>
-                    <!-- Post Content -->
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 2.1k</a>
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 3.6k</a>
-                        </div>
-                        <a href="single-blog.html" class="post-title">Ben Affleck completes addic treatment</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single Post Area -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="razo-single-post d-flex mb-30 wow fadeInUp" data-wow-delay="500ms">
-                    <!-- Post Thumbnail -->
-                    <div class="post-thumbnail">
-                        <a href="single-blog.html"><img src="{{ asset('bootstrap2_assets/img/bg-img/4.jpg') }}"
-                                alt=""></a>
-                    </div>
-                    <!-- Post Content -->
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 2.1k</a>
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 3.6k</a>
-                        </div>
-                        <a href="single-blog.html" class="post-title">Boaters have close call with humpback whale</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single Post Area -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="razo-single-post d-flex mb-30 wow fadeInUp" data-wow-delay="700ms">
-                    <!-- Post Thumbnail -->
-                    <div class="post-thumbnail">
-                        <a href="single-blog.html"><img src="{{ asset('bootstrap2_assets/img/bg-img/5.jpg') }}"
-                                alt=""></a>
-                    </div>
-                    <!-- Post Content -->
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 2.1k</a>
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 3.6k</a>
-                        </div>
-                        <a href="single-blog.html" class="post-title">Suspect in Mollie Tibbetts' killing gave false</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single Post Area -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="razo-single-post d-flex mb-30 wow fadeInUp" data-wow-delay="900ms">
-                    <!-- Post Thumbnail -->
-                    <div class="post-thumbnail">
-                        <a href="single-blog.html"><img src="{{ asset('bootstrap2_assets/img/bg-img/6.jpg') }}"
-                                alt=""></a>
-                    </div>
-                    <!-- Post Content -->
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 2.1k</a>
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 3.6k</a>
-                        </div>
-                        <a href="single-blog.html" class="post-title">Some of Mollie Tibbetts' family don't want</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single Post Area -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="razo-single-post d-flex mb-30 wow fadeInUp" data-wow-delay="1200ms">
-                    <!-- Post Thumbnail -->
-                    <div class="post-thumbnail">
-                        <a href="single-blog.html"><img src="{{ asset('bootstrap2_assets/img/bg-img/7.jpg') }}"
-                                alt=""></a>
-                    </div>
-                    <!-- Post Content -->
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 2.1k</a>
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 3.6k</a>
-                        </div>
-                        <a href="single-blog.html" class="post-title">Trump: Impeach somebody who's done great job?</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section> --}}
-<!-- Trending Video Area End -->
 
 <!-- App Download Area Start -->
 <section class="razo-app-download-area section-padding-80-0 bg-img bg-overlay jarallax"
@@ -677,7 +473,7 @@
             <!-- Section Heading -->
             <div class="col-sm-6">
                 <div class="section-heading white">
-                    <h2>Latest News</h2>
+                    <h2>Gallery</h2>
                 </div>
             </div>
             <!-- Show All Button -->

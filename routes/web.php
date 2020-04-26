@@ -45,7 +45,7 @@ Route::prefix('/about')->group(function () {
     Route::get('/equipment/rentals', 'AboutController@rental')->name('aboutrental');
 });
 
-Route::get('contact', 'FrontendController@contact')->name('contact');
+Route::get('contact', 'FrontendController@contact')->name('contactus');
 Route::post('save/contact', 'ContactController@saveContact')->name('save.contact');
 Route::get('gallery', 'FrontendController@gallery')->name('gallery');
 Route::get('event', 'FrontendController@event')->name('event');

@@ -1,123 +1,363 @@
 @extends('frontend.layout.main')
 
-@section('title','Contact Us')
+@section('title','Testimonyjoe | Contact Us')
 
 @section('content')
 
-<!-- ***** Breadcrumb Area Start ***** -->
-<div class="breadcumb-area bg-img bg-overlay"
-    style="background-image: url({{asset('bootstrap_assets/img/bg-img/2.jpg')}});">
-    <div class="container h-100">
-        <div class="row h-100 align-items-center">
-            <div class="col-12">
-                <h2 class="title mt-70">@yield('title')</h2>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="breadcumb--con">
+<!-- Blog Area Start -->
+<section class="razo-blog-area section-padding-80-0">
     <div class="container">
         <div class="row">
-            <div class="col-12">
-
-            </div>
-        </div>
-    </div>
-</div>
-<!-- ***** Breadcrumb Area End ***** -->
-
-<!-- ***** Contact Area Start ***** -->
-<section class="poca-contact-area mt-50 mb-100">
-    <div class="container">
-        {{-- <div class="row">
-        <div class="col-12">
-          <div class="google-maps mb-100">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11956.9355465873!2d24.0768412544878!3d56.9550599906977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eecfb0e5073ded%3A0x400cfcd68f2fe30!2z4Kaw4Ka_4KaX4Ka-LCDgprLgp43gpq_gpr7gpp_gp43gpq3gpr_gpoY!5e0!3m2!1sbn!2sbd!4v1543911160102"
-              allowfullscreen></iframe>
-          </div>
-        </div>
-      </div> --}}
-
-        <div class="row">
-            <!-- Contact Information -->
-            <div class="col-12 col-md-6">
-                <div class="contact-information">
-                    <div class="contact-heading mb-50">
-                        <h2>Contact Details</h2>
-                        <h6>We will be happy to assist you with any question</h6>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing esed diam nonumy eirmod tempor invidunt ut
-                            labore et dolore magna. Integer vehicula mauris libero, at molestie eros imperdiet sit amet.
-                            Suspendisse mattis ante sit amet ante.</p>
+            <!-- Weekly News Area -->
+            <div class="col-12 col-md-8">
+                <div class="weekly-news-area mb-50">
+                    <!-- Section Heading -->
+                    <div class="section-heading">
+                        <h2>Contact Us</h2>
                     </div>
-
-
-                    <h5><span class="fa fa-map-marker"></span> 40 Baria Sreet 133/2 NewYork City, US</h5>
-                    <h5><span class="fa fa-phone"></span> +01-3-8888-6868</h5>
-                    <h5><span class="fa fa-envelope"></span> talktous@testimonyjoe.com </h5>
-                    {{-- <h5><span class="fa fa-map-marker"></span> Mon - Fri: 8:00 AM to 6:00 PM</h5> --}}
-                </div>
-            </div>
-
-            <!-- Contact Form -->
-            <div class="col-12 col-md-6">
-                {{-- class="contact-form" --}}
-                <div>
-                    <div class="contact-heading">
-                        <h2>Get In Touch</h2>
-                        <h5>Don't hesitate to contact us</h5>
-                    </div>
-                    <!-- Form -->
-                    <p>
-                        @include('frontend.messages.success')
+                    <p style="text-align: justify">
+                        We would be highly grateful to read from you; therefore, we
+                        implore you to leave a message for us and we surely will get
+                        back to you. Thank you.
                     </p>
-                    <form action="{{route('save.contact')}}" method="post">
-                        {{ csrf_field() }}
-                        <div class="row">
-                            <div class="col-12">
-                                <input type="text" name="sender" class="form-control mb-30" placeholder="Your Name">
-                            </div>
-                            <div class="col-12">
-                                <input type="email" name="email" class="form-control mb-30" placeholder="Your Email">
-                            </div>
-                            <div class="col-12">
-                                <textarea name="messagebody" class="form-control mb-30"
-                                    placeholder="Your Message"></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button type="submit" class="btn poca-btn">Send Message</button>
+
+                    <div class="row">
+
+                        <!-- Single Post Area -->
+                        <div class="col-12 col-md-12">
+                            <!-- Leave A Reply -->
+                            <div class="razo-contact-form">
+                                {{-- <h2 class="mb-4">Leave A Comment</h2> --}}
+
+                                <!-- Form -->
+                                <form action="#" method="post">
+                                    {{ csrf_field() }}
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <input type="text" name="sender" class="form-control mb-30"
+                                                placeholder="Your Full Name">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <input type="email" name="email" class="form-control mb-30"
+                                                placeholder="Your Email">
+                                        </div>
+                                        <div class="col-12">
+                                            <textarea name="messagebody" class="form-control mb-30"
+                                                placeholder="Your message"></textarea>
+
+
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="btn razo-btn btn-3 mt-15">Post Comment</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                    </form>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trending News Area -->
+            <div class="col-12 col-md-4">
+                <div class="trending-news-area mb-50">
+
+                    <!-- Section Heading -->
+                    <div class="section-heading">
+                        <h2>Useful Links</h2>
+                    </div>
+
+
+                    <div>
+                        @include('frontend.layout.usefullinks')
+                    </div>
+
+
+
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- ***** Contact Area End ***** -->
+<!-- Blog Area End -->
 
-<!-- ***** Newsletter Area Start ***** -->
-<section class="poca-newsletter-area bg-img bg-overlay pt-50 jarallax"
-    style="background-image: url({{asset('bootstrap_assets/img/bg-img/15.jpg')}});">
-    {{-- <div class="container">
-            <div class="row align-items-center">
-                <!-- Newsletter Content -->
-                <div class="col-12 col-lg-6">
-                    <div class="newsletter-content mb-50">
-                        <h2>Sign Up To Newsletter</h2>
-                        <h6>Subscribe to receive info on our latest news and episodes</h6>
+<!-- Music Charts Area Start -->
+<section class="razo-music-charts-area section-padding-80 bg-overlay bg-img jarallax"
+    style="background-image: url({{ asset('bootstrap2_assets/img/bg-img/31.jpg') }});">
+    <div class="container">
+        <div class="row">
+            <!-- Section Heading -->
+            <div class="col-sm-6">
+                <div class="section-heading white">
+                    <h2>Tracks</h2>
+                </div>
+            </div>
+            <!-- Show All Button -->
+            <div class="col-sm-6">
+                <div class="show-all-button mb-50 text-right">
+                    <a href="#" class="btn show-all-btn"><span class="fa fa-eye"></span> All Tracks</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+
+                <!-- Single Music Chart -->
+                <div class="single-music-chart d-flex align-items-center justify-content-between wow fadeInUp mb-2"
+                    data-wow-delay="100ms">
+                    <!-- Music Content -->
+                    <div class="music-content d-flex align-items-center">
+                        <div class="sl-number">
+                            <h5>1.</h5>
+                        </div>
+                        <div class="music-thumb">
+                            <img src="{{ asset('bootstrap2_assets/img/bg-img/25.jpg') }}" alt="">
+                        </div>
+                        <div class="audio-player">
+                            <audio preload="auto" controls>
+                                <source src="{{ asset('bootstrap2_assets/audio/dummy-audio.mp3') }}">
+                            </audio>
+                        </div>
+                        <div class="music-title">
+                            <h5>Way Back Home - <span>RadioDaily Show</span></h5>
+                        </div>
+                    </div>
+                    <!-- Music Price -->
+                    <div class="music-price">
+                        {{-- <a href="#" class="btn razo-btn btn-2">$12.99</a> --}}
                     </div>
                 </div>
-                <!-- Newsletter Form -->
-                <div class="col-12 col-lg-6">
-                    <div class="newsletter-form mb-50">
-                        <form action="#" method="post">
-                            <input type="email" name="nl-email" class="form-control" placeholder="Your Email">
-                            <button type="submit" class="btn">Subscribe</button>
-                        </form>
+
+                <!-- Single Music Chart -->
+                <div class="single-music-chart d-flex align-items-center justify-content-between wow fadeInUp mb-2"
+                    data-wow-delay="300ms">
+                    <!-- Music Content -->
+                    <div class="music-content d-flex align-items-center">
+                        <div class="sl-number">
+                            <h5>2.</h5>
+                        </div>
+                        <div class="music-thumb">
+                            <img src="{{ asset('bootstrap2_assets/img/bg-img/26.jpg') }}" alt="">
+                        </div>
+                        <div class="audio-player">
+                            <audio preload="auto" controls>
+                                <source src="{{ asset('bootstrap2_assets/audio/dummy-audio.mp3') }}">
+                            </audio>
+                        </div>
+                        <div class="music-title">
+                            <h5>Goodbye &amp; Good Riddance - <span>Juice World</span></h5>
+                        </div>
+                    </div>
+                    <!-- Music Price -->
+                    <div class="music-price">
+                        {{-- <a href="#" class="btn razo-btn btn-2">$10.99</a> --}}
+                    </div>
+                </div>
+
+                <!-- Single Music Chart -->
+                <div class="single-music-chart d-flex align-items-center justify-content-between wow fadeInUp mb-2"
+                    data-wow-delay="500ms">
+                    <!-- Music Content -->
+                    <div class="music-content d-flex align-items-center">
+                        <div class="sl-number">
+                            <h5>3.</h5>
+                        </div>
+                        <div class="music-thumb">
+                            <img src="{{ asset('bootstrap2_assets/img/bg-img/27.jpg') }}" alt="">
+                        </div>
+                        <div class="audio-player">
+                            <audio preload="auto" controls>
+                                <source src="{{ asset('bootstrap2_assets/audio/dummy-audio.mp3') }}">
+                            </audio>
+                        </div>
+                        <div class="music-title">
+                            <h5>The Greatest Showman - <span>Soundtrack</span></h5>
+                        </div>
+                    </div>
+                    <!-- Music Price -->
+                    <div class="music-price">
+                        {{-- <a href="#" class="btn razo-btn btn-2">$10.99</a> --}}
+                    </div>
+                </div>
+
+                <!-- Single Music Chart -->
+                <div class="single-music-chart d-flex align-items-center justify-content-between wow fadeInUp mb-2"
+                    data-wow-delay="700ms">
+                    <!-- Music Content -->
+                    <div class="music-content d-flex align-items-center">
+                        <div class="sl-number">
+                            <h5>4.</h5>
+                        </div>
+                        <div class="music-thumb">
+                            <img src="{{ asset('bootstrap2_assets/img/bg-img/28.jpg') }}" alt="">
+                        </div>
+                        <div class="audio-player">
+                            <audio preload="auto" controls>
+                                <source src="{{ asset('bootstrap2_assets/audio/dummy-audio.mp3') }}">
+                            </audio>
+                        </div>
+                        <div class="music-title">
+                            <h5>Mamma Mia! Here We Go Again - <span>Soundtrack</span></h5>
+                        </div>
+                    </div>
+                    <!-- Music Price -->
+                    <div class="music-price">
+                        {{-- <a href="#" class="btn razo-btn btn-2">$10.99</a> --}}
+                    </div>
+                </div>
+
+                <!-- Single Music Chart -->
+                <div class="single-music-chart d-flex align-items-center justify-content-between wow fadeInUp mb-2"
+                    data-wow-delay="900ms">
+                    <!-- Music Content -->
+                    <div class="music-content d-flex align-items-center">
+                        <div class="sl-number">
+                            <h5>5.</h5>
+                        </div>
+                        <div class="music-thumb">
+                            <img src="{{ asset('bootstrap2_assets/img/bg-img/29.jpg') }}" alt="">
+                        </div>
+                        <div class="audio-player">
+                            <audio preload="auto" controls>
+                                <source src="{{ asset('bootstrap2_assets/audio/dummy-audio.mp3') }}">
+                            </audio>
+                        </div>
+                        <div class="music-title">
+                            <h5>Pray For The Wicked - <span>Panic! At The Disco</span></h5>
+                        </div>
+                    </div>
+                    <!-- Music Price -->
+                    <div class="music-price">
+                        {{-- <a href="#" class="btn razo-btn btn-2">$10.99</a> --}}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Music Charts Area End -->
+
+<!-- App Download Area Start -->
+<section class="razo-app-download-area section-padding-80-0 bg-img bg-overlay jarallax"
+    style="background-image: url({{ asset('bootstrap2_assets/img/bg-img/21.jpg') }});">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- App Thumbnail -->
+            <div class="col-12 col-md-6">
+                <div class="app-thumbnail mb-80">
+                    <img src="{{ asset('bootstrap2_assets/img/bg-img/mockup-iphone.png') }}" alt="">
+                </div>
+            </div>
+            <!-- App Download Text -->
+            <div class="col-12 col-md-6">
+                <div class="app-download-text mb-80">
+                    <span>Download app and Enjoy radio &amp; music</span>
+                    <h2>Radio Music</h2>
+                    <p>Radio app plus is a app that lets you download videos and music from social network, Youtube,
+                        etc. You may also download and play the latest HD series and movies, and also watch free live
+                        television. This app is also available for Android and Ios.</p>
+                    <div class="app-download-btn">
+                        <a href="#"><img src="{{ asset('bootstrap2_assets/img/core-img/google-play.png') }}" alt=""></a>
+                        <a href="#"><img src="{{ asset('bootstrap2_assets/img/core-img/app-store.png') }}" alt=""></a>
                     </div>
                 </div>
             </div>
-        </div> --}}
+        </div>
+    </div>
 </section>
-<!-- ***** Newsletter Area End ***** -->
+<!-- App Download Area End -->
+
+
+<!-- Latest News Area Start -->
+<section class="razo-latest-news-area section-padding-80 bg-overlay bg-img jarallax"
+    style="background-image: url(img/bg-img/32.jpg);">
+    <div class="container">
+        <div class="row align-items-end">
+            <!-- Section Heading -->
+            <div class="col-sm-6">
+                <div class="section-heading white">
+                    <h2>Gallery</h2>
+                </div>
+            </div>
+            <!-- Show All Button -->
+            <div class="col-sm-6">
+                <div class="show-all-button mb-50 text-right">
+                    <a href="#" class="btn show-all-btn">Show All Blog</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Razo Latest News Slide -->
+    <div class="razo-latest-news-slide owl-carousel">
+
+        <!-- Single Latest News Area -->
+        <div class="razo-single-latest-news-area bg-overlay bg-img"
+            style="background-image: url({{ asset('bootstrap2_assets/img/bg-img/22.jpg') }});">
+            <!-- Post Content -->
+            <div class="post-content">
+                <a href="#" class="post-title">The light and music exposition hits los angeles</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </div>
+            <!-- Post Date -->
+            <div class="post-date">
+                <h2>24</h2>
+                <p>March</p>
+            </div>
+            <!-- Read More -->
+            <div class="read-more-btn">
+                <a href="#" class="btn">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+            </div>
+        </div>
+
+        <!-- Single Latest News Area -->
+        <div class="razo-single-latest-news-area bg-overlay bg-img"
+            style="background-image: url({{ asset('bootstrap2_assets/img/bg-img/23.jpg') }});">
+            <!-- Post Content -->
+            <div class="post-content">
+                <a href="#" class="post-title">The light and music exposition hits los angeles</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </div>
+            <!-- Post Date -->
+            <div class="post-date">
+                <h2>24</h2>
+                <p>March</p>
+            </div>
+            <!-- Read More -->
+            <div class="read-more-btn">
+                <a href="#" class="btn">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+            </div>
+        </div>
+
+        <!-- Single Latest News Area -->
+        <div class="razo-single-latest-news-area bg-overlay bg-img"
+            style="background-image: url({{ asset('bootstrap2_assets/img/bg-img/24.jpg') }});">
+            <!-- Post Content -->
+            <div class="post-content">
+                <a href="#" class="post-title">The light and music exposition hits los angeles</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </div>
+            <!-- Post Date -->
+            <div class="post-date">
+                <h2>24</h2>
+                <p>March</p>
+            </div>
+            <!-- Read More -->
+            <div class="read-more-btn">
+                <a href="#" class="btn">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- Latest News Area End -->
+
 @endsection

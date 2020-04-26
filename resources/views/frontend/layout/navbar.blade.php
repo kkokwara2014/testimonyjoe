@@ -36,9 +36,10 @@
                             </ul>
                         </li>
                         <li><a href="#">Albums</a></li>
-                        <li><a href="#">Booking</a></li>
+                        <li><a href="{{ route('booking') }}">Booking</a></li>
                         <li><a href="#">Events</a></li>
                         <li><a href="#">Gallery</a></li>
+                        <li><a href="{{ route('contactus') }}">Contact</a></li>
                         <li><a href="#">More</a>
                             <div class="megamenu">
                                 <ul class="single-mega cn-col-4">

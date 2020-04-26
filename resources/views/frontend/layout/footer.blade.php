@@ -56,12 +56,12 @@
                         <div class="single-footer-widget mb-80">
 
                             <!-- Widget Title -->
-                            <h4 class="widget-title">Twitter Feed</h4>
+                            <h4 class="widget-title">Facebook Feed</h4>
 
                             <!-- Single Twitter Feed -->
                             <div class="single-twitter-feed d-flex">
                                 <div class="tweet-icon">
-                                    <i class="fa fa-twitter"></i>
+                                    <i class="fa fa-facebook-official"></i>
                                 </div>
                                 <div class="tweet">
                                     <p><a href="#">Kerem Suer</a> @kerem American conducts it first ever done strike Qaeda</p>
@@ -71,7 +71,7 @@
                             <!-- Single Twitter Feed -->
                             <div class="single-twitter-feed d-flex">
                                 <div class="tweet-icon">
-                                    <i class="fa fa-twitter"></i>
+                                    <i class="fa fa-facebook-official"></i>
                                 </div>
                                 <div class="tweet">
                                     <p><a href="#">Axel Hervelle</a> @axel_hervelle Tens of thousands attend rallies held in D.C.</p>
@@ -81,7 +81,7 @@
                             <!-- Single Twitter Feed -->
                             <div class="single-twitter-feed d-flex">
                                 <div class="tweet-icon">
-                                    <i class="fa fa-twitter"></i>
+                                    <i class="fa fa-facebook-official"></i>
                                 </div>
                                 <div class="tweet">
                                     <p><a href="#">Chris Pratt</a> @chris_pratt Hundreds of protesters shut down meeting.</p>
