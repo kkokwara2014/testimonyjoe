@@ -1,35 +1,8 @@
 @extends('frontend.layout.main')
 
-@section('title','Admin Login')
+@section('title','Login')
 
 @section('content')
-<!-- ***** Breadcrumb Area Start ***** -->
-<div class="breadcumb-area bg-img bg-overlay"
-    style="background-image: url({{asset('bootstrap_assets/img/bg-img/2.jpg')}});">
-    <div class="container h-100">
-        <div class="row h-100 align-items-center">
-            <div class="col-12">
-                <h2 class="title mt-70">@yield('title')</h2>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="breadcumb--con">
-    <div class="container">
-        <div class="row">
-            {{-- <div class="col-12">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{route('index')}}"><i class="fa fa-home"></i> Home</a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">@yield('title')</li>
-                    </ol>
-                </nav>
-            </div> --}}
-        </div>
-    </div>
-</div>
-<!-- ***** Breadcrumb Area End ***** -->
 
 <!-- ****** About Us Area Start ******* -->
 <section class="about-us-area section-padding-0-80 mt-50">
@@ -39,7 +12,7 @@
                 <div class="about-us-content">
                     {{-- <img src="{{asset('bootstrap_assets/img/bg-img/20.jpg')}}" class="mb-30" alt=""> --}}
                     {{-- <h1>@yield('title')</h1>             --}}
-                            
+
                                 <div class="card">
                                     {{-- <div class="card-header"></div> --}}
 
@@ -49,13 +22,13 @@
                                             @csrf
                                             <div class="form-group row">
                                                 <label for="email"
-                                                    class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                                    class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address/Phone') }}</label>
 
-                                                <div class="col-md-6">
-                                                    <input id="email" type="email"
+                                                <div class="col-md-8">
+                                                    <input id="email" type="text"
                                                         class="form-control @error('email') is-invalid @enderror"
                                                         name="email" value="{{ old('email') }}" required
-                                                        autocomplete="email" autofocus placeholder="Email Address">
+                                                        autocomplete="email" autofocus placeholder="Email Address or Phone Number">
 
                                                     @error('email')
                                                     <span class="invalid-feedback" role="alert">
@@ -69,7 +42,7 @@
                                                 <label for="password"
                                                     class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
-                                                <div class="col-md-6">
+                                                <div class="col-md-8">
                                                     <input id="password" type="password"
                                                         class="form-control @error('password') is-invalid @enderror"
                                                         name="password" required autocomplete="current-password" placeholder="Password">
@@ -112,7 +85,7 @@
                                         <br>
                                     </div>
                                 </div>
-                           
+
                 </div>
             </div>
         </div>

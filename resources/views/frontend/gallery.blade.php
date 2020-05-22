@@ -3,27 +3,7 @@
 @section('title','Gallery')
 
 @section('content')
-<!-- ***** Breadcrumb Area Start ***** -->
-<div class="breadcumb-area bg-img bg-overlay"
-    style="background-image: url({{asset('bootstrap_assets/img/bg-img/2.jpg')}});">
-    <div class="container h-100">
-        <div class="row h-100 align-items-center">
-            <div class="col-12">
-                <h2 class="title mt-70">@yield('title')</h2>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="breadcumb--con">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
 
-            </div>
-        </div>
-    </div>
-</div>
-<!-- ***** Breadcrumb Area End ***** -->
 
 <!-- ****** About Us Area Start ******* -->
 <section class="about-us-area section-padding-0-80 mt-50">

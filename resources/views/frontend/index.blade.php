@@ -9,26 +9,13 @@
     <div class="container">
         <div class="row">
             <!-- Weekly News Area -->
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-md-9">
                 <div class="weekly-news-area mb-50">
                     <!-- Section Heading -->
                     <div class="section-heading">
-                        <h2>Testimony Joe</h2>
+                        <h2>Welcome</h2>
                     </div>
 
-                    <!-- Featured Post Area -->
-                    {{-- <div class="featured-post-area bg-img bg-overlay mb-30"
-                        style="background-image: url({{asset('bootstrap2_assets/img/bg-img/11.jpg')}});">
-                    <!-- Post Overlay -->
-                    <div class="post-overlay">
-                        <div class="post-meta">
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 2.1k</a>
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 3.6k</a>
-                        </div>
-                        <a href="single-blog.html" class="post-title">The light and music exposition hits los
-                            angeles in the fashion week</a>
-                    </div>
-                </div> --}}
 
                 <div class="row">
 
@@ -116,7 +103,7 @@
         </div>
 
         <!-- Trending News Area -->
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-3">
             <div class="trending-news-area mb-50">
 
                 <!-- Section Heading -->
@@ -309,7 +296,7 @@
 <!-- Music Charts Area End -->
 
 <!-- App Download Area Start -->
-<section class="razo-app-download-area section-padding-80-0 bg-img bg-overlay jarallax"
+{{-- <section class="razo-app-download-area section-padding-80-0 bg-img bg-overlay jarallax"
     style="background-image: url({{ asset('bootstrap2_assets/img/bg-img/21.jpg') }});">
     <div class="container">
         <div class="row align-items-center">
@@ -335,7 +322,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- App Download Area End -->
 
 <!-- Weekly Sehedule Area Start -->
@@ -479,7 +466,7 @@
             <!-- Show All Button -->
             <div class="col-sm-6">
                 <div class="show-all-button mb-50 text-right">
-                    <a href="#" class="btn show-all-btn">Show All Blog</a>
+                    <a href="{{ route('gallery') }}" class="btn show-all-btn">Show All Galleries</a>
                 </div>
             </div>
         </div>

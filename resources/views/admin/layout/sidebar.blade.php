@@ -31,10 +31,10 @@
 
       <li><a href="{{route('album.index')}}"><i class="fa fa-xing"></i> Albums</a></li>
       <li><a href="{{route('booking.index')}}"><i class="fa fa-leanpub"></i> Bookings</a></li>
-      <li><a href="{{route('contact.index')}}"><i class="fa fa-envelope-o"></i> Contacts</a></li>
+      <li><a href="#"><i class="fa fa-envelope-o"></i> Contacts</a></li>
       {{-- <li><a href="{{route('event.index')}}"><i class="fa fa-tasks"></i> Events</a></li> --}}
       <li><a href="{{route('gallery.index')}}"><i class="fa fa-newspaper-o"></i> Gallery</a></li>
-      <li><a href="{{route('equipment.index')}}"><i class="fa fa-ils"></i> Equipment</a></li>
+      <li><a href="#"><i class="fa fa-ils"></i> Equipment</a></li>
 
       {{-- <li><a href="{{route('admin.index')}}"><i class="fa fa-user-plus"></i> Admins</a></li> --}}
 

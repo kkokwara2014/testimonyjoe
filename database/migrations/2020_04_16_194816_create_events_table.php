@@ -17,7 +17,7 @@ class CreateEventsTable extends Migration
             $table->engine='InnoDB';
             $table->bigIncrements('id')->unsigned();
             $table->string('title');
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->string('venue');
             $table->text('description')->nullable();
             $table->string('eventdate');

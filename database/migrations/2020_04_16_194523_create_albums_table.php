@@ -17,7 +17,7 @@ class CreateAlbumsTable extends Migration
             $table->engine='InnoDB';
             $table->bigIncrements('id')->unsigned();
             $table->string('title');
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->string('artistfullname');
             $table->string('yearofpub');
             $table->bigInteger('albumcategory_id')->unsigned()->index();

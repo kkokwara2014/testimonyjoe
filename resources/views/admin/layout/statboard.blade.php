@@ -4,10 +4,10 @@
     <div class="row">
 
       @if (Auth::user()->role->id==1)
-          
+
       <div class="col-lg-3 col-md-3">
         <!-- small box -->
-        <div class="small-box bg-aqua">
+        <div class="small-box bg-orange">
           <div class="inner">
           <h3>0</h3>
 
@@ -16,7 +16,7 @@
           <div class="icon">
             <i class="fa fa-envelope"></i>
           </div>
-          
+
         </div>
       </div>
       <!-- ./col -->
@@ -26,28 +26,28 @@
           <div class="inner">
           <h3>0</h3>
 
-            <p>Shops</p>
+            <p>Bookings</p>
           </div>
           <div class="icon">
-            <i class="fa fa-university"></i>
+            <i class="fa fa-leanpub"></i>
           </div>
-         
+
         </div>
       </div>
       <!-- ./col -->
-      
+
       <div class="col-lg-3 col-md-3">
         <!-- small box -->
         <div class="small-box bg-blue-active">
           <div class="inner">
             <h3>0</h3>
 
-            <p>Shop Owners</p>
+            <p>Equipment</p>
           </div>
           <div class="icon">
-            <i class="fa fa-users"></i>
+            <i class="fa fa-ils"></i>
           </div>
-         
+
         </div>
       </div>
       <!-- ./col -->
@@ -62,12 +62,12 @@
           <div class="icon">
             <i class="fa fa-user-plus"></i>
           </div>
-         
+
         </div>
       </div>
       <!-- ./col -->
       @endif
-          
- 
+
+
     </div>
     <!-- /.row -->

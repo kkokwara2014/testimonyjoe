@@ -17,7 +17,7 @@ class CreateEquipmentsTable extends Migration
             $table->engine='InnoDB';
             $table->bigIncrements('id')->unsigned();
             $table->string('name');
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->text('description')->nullable();
             $table->bigInteger('equipcategory_id')->unsigned()->index();
             $table->bigInteger('user_id')->unsigned()->index();

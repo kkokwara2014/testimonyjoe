@@ -1,6 +1,6 @@
 @extends('frontend.layout.main')
 
-@section('title','Testimonyjoe | Booking')
+@section('title','Booking')
 
 @section('content')
 
@@ -37,20 +37,24 @@
                                         </div>
                                         <div class="col-lg-12 col-md-12">
                                             <input type="email" name="email" class="form-control mb-15"
-                                                placeholder="Your Email">
+                                                placeholder="Your Email Address">
+                                        </div>
+                                        <div class="col-lg-12 col-md-12">
+                                            <input type="text" name="phone" class="form-control mb-15"
+                                                placeholder="Your Phone Number" pattern="[0-9]+" maxlength="11">
                                         </div>
                                         <div class="col-lg-12 col-md-12">
                                             <select name="" class="form-control mb-15">
+                                                <option selected="disabled">Select Ceremony Type</option>
                                                 <option value="">Anniversary</option>
                                                 <option value="">Birthday Party</option>
                                                 <option value="">Marriage</option>
                                             </select>
-                                            {{-- <input type="email" name="email" class="form-control mb-30"
-                                                placeholder="Your Email"> --}}
+
                                         </div>
                                         <div class="col-12">
                                             <textarea name="messagebody" class="form-control mb-15"
-                                                placeholder="Your message"></textarea>
+                                                placeholder="Additional Information"></textarea>
 
 
                                         </div>

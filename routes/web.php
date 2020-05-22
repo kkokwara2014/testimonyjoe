@@ -18,8 +18,8 @@ use Illuminate\Support\Facades\Auth;
 // });
 
 // Authentication Routes...
-Route::get('admin/login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('admin/login', 'Auth\LoginController@login');
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
 
 
 // Password Reset Routes...
@@ -45,8 +45,8 @@ Route::prefix('/about')->group(function () {
     Route::get('/equipment/rentals', 'AboutController@rental')->name('aboutrental');
 });
 
-Route::get('contact', 'FrontendController@contact')->name('contactus');
-Route::post('save/contact', 'ContactController@saveContact')->name('save.contact');
+Route::get('contact', 'ContactController@create')->name('contactus');
+Route::post('contact', 'ContactController@store')->name('save.contact');
 Route::get('gallery', 'FrontendController@gallery')->name('gallery');
 Route::get('event', 'FrontendController@event')->name('event');
 Route::get('album', 'FrontendController@album')->name('album');
@@ -80,8 +80,9 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], funct
 
 
     //for contacts
-    Route::get('all/contacts', 'ContactController@getAllContacts')->name('contact.index');
-    Route::post('delete/{id}/contact', 'ContactController@removeContact')->name('contact.destroy');
+    Route::resource('contact', 'ContactController');
+    // Route::get('all/contacts', 'ContactController@getAllContacts')->name('contact.index');
+    // Route::post('delete/{id}/contact', 'ContactController@removeContact')->name('contact.destroy');
 
     //for Events
     Route::get('all/events', 'EventController@index')->name('event.index');

@@ -17,7 +17,7 @@ class CreateTracksTable extends Migration
             $table->engine='InnoDB';
             $table->bigIncrements('id')->unsigned();
             $table->string('title');
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->bigInteger('album_id')->unsigned()->index();
             $table->string('filename');
             $table->foreign('album_id')->references('id')->on('albums')->onDelete('cascade');

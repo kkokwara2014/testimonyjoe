@@ -17,7 +17,7 @@ class CreateGalleriesTable extends Migration
             $table->engine='InnoDB';
             $table->bigIncrements('id')->unsigned();
             $table->string('title');
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->text('description')->nullable();
             $table->bigInteger('user_id')->unsigned()->index();
             $table->string('image');

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 use App\User;
@@ -44,7 +45,10 @@ class LoginController extends Controller
 
     protected function credentials(Request $request)
     {
-        return ['email' => $request->{$this->username()}, 'password' => $request->password, 'isactive' => '1'];
+        if (is_numeric($request->email)) {
+            return ['phone'=>$request->email,'password'=>$request->password, 'isactive' => '1'];
+        }
+        return $request->only($this->username(), 'password');
     }
 
     public function showLoginForm()
@@ -69,7 +73,7 @@ class LoginController extends Controller
 
         // Check if user was successfully loaded, that the password matches
         // and active is not 1. If so, override the default error message.
-        if ($user && \Hash::check($request->password, $user->password) && $user->isactive != 1) {
+        if ($user && Hash::check($request->password, $user->password) && $user->isactive != 1) {
             $errors = [$this->username() => trans('auth.notactivated')];
         }
 
@@ -85,7 +89,6 @@ class LoginController extends Controller
     public function userLogout(Request $request)
     {
         Auth::logout();
-    
         return redirect(route('index'));
     }
 
@@ -93,8 +96,6 @@ class LoginController extends Controller
     {
         if ($user->role_id == 1 || $user->role_id == 2) {
             return redirect('/dashboard');
-        } else {
-            return redirect('/');
         }
     }
 }

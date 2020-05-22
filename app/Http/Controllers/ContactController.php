@@ -2,44 +2,90 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\Contact\ContactRepository;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class ContactController extends Controller
 {
-    private $cont;
-
-    public function __construct(ContactRepository $cont)
+    public function __construct()
     {
-        $this->cont=$cont;
+        $this->middleware(['admin'])->except(['create','store']);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
     }
 
-public function getAllContacts(){
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('frontend.contact');
+    }
 
-    $user=Auth::user();
-    $allcontacts=$this->cont->getAll();
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $this->validate($request,[
 
-    // return response()->json($allcontacts);
-    return view('admin.contact.index',compact('allcontacts','user'));
-}
+        ]);
+        return redirect()->route('contact')->with('success','Your message has been sent!');
+    }
 
-public function saveContact(Request $request){
-    $data=([
-        'sender'=>$request->sender,
-        'email'=>$request->email,
-        'messagebody'=>$request->messagebody,
-    ]);
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
 
-    $this->cont->create($data);
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
 
-    return redirect()->route('contact')->with('success','Your message has been sent!');
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
 
-}
-
-public function removeContact($id){
-    $this->cont->delete($id);
-
-    return back();
-}
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
 }
