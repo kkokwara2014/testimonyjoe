@@ -15,6 +15,8 @@
 
         <div class="row">
             <div class="col-md-12">
+                {{-- for messages --}}
+                @include('admin.messages.success')
 
                 <div class="box">
                     <!-- /.box-header -->
@@ -38,6 +40,7 @@
                                     <td>{{$album->title}}</td>
 
                                     <td>{{$album->albumcategory->name}}</td>
+                                    <td>{{$album->user->firstname.' '.$album->user->lastname}}</td>
                                     <td><a href="{{ route('album.show',$album->id) }}"><span
                                                 class="fa fa-eye fa-2x text-primary"></span></a></td>
 
@@ -96,36 +99,37 @@
                             <h4 class="modal-title"><span class="fa fa-xing"></span> Add Album</h4>
                         </div>
                         <div class="modal-body">
-                            <div>
+                            <div class="form-group">
                                 <label for="">Album Title <strong style="color:red;">*</strong> </label>
-                                <input type="text" class="form-control" name="albumtitle" placeholder="Album Title">
+                                <input type="text" class="form-control" name="title" placeholder="Album Title">
                             </div>
 
-                            <div>
-                                <label for="">Category <strong style="color:red;">*</strong></label>
+                            <div class="form-group">
+                                <label for="">Album Category <strong style="color:red;">*</strong></label>
                                 <select name="albumcategory_id" class="form-control">
-                                    <option selected="disabled">Select Category</option>
+                                    <option selected="disabled">Select Album Category</option>
                                     @foreach ($albumcategories as $albumcategory)
                                     <option value="{{$albumcategory->id}}">{{$albumcategory->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
 
-                            <div>
-                                <label for="">Description </label>
-                                <textarea name="description" class="form-control" cols="10" rows="2"
-                                    placeholder="Description"></textarea>
+                            <div class="form-group">
+                                <label for="">Artist's Full Name <strong style="color:red;">*</strong></label>
+                                <input type="text" name="artistfullname" class="form-control" placeholder="Artist's Full Name">
                             </div>
-                            <br>
+
+                            <div class="form-group">
+                                <label for="">Year of Release </label>
+                                <input type="text" name="yearofpub" id="datepicker" class="form-control" placeholder="Select Year">
+                            </div>
+
                             <div>
                                 <label for="">Upload Album Image <strong style="color:red;">*</strong></label>
-                                <input type="file" name="albumimage">
+                                <input type="file" name="albumimage" required>
                             </div>
-                            <br>
-                            <div>
-                                <label for="">Upload Music File <strong style="color:red;">*</strong></label>
-                                <input type="file" name="audio">
-                            </div>
+
+
                         </div>
                         <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                         <div class="modal-footer">

@@ -9,12 +9,14 @@
     <!-- Left col -->
     <section class="col-lg-12 connectedSortable">
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-default">
-           <span class="fa fa-plus"></span> Add Category
+           <span class="fa fa-plus"></span> Album Category
         </button>
         <br><br>
 
         <div class="row">
             <div class="col-md-7">
+                {{-- for messages --}}
+                @include('admin.messages.success')
 
                 <div class="box">
                     <!-- /.box-header -->
@@ -29,20 +31,20 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($categories as $category)
+                                @foreach ($albumcategories as $albumcategory)
                                 <tr>
-                                    <td>{{$category->name}}</td>
-                                <td><a href="{{ route('category.edit',$category->id) }}"><span class="fa fa-edit fa-2x text-primary"></span></a></td>
+                                    <td>{{$albumcategory->name}}</td>
+                                <td><a href="{{ route('albumcategory.edit',$albumcategory->id) }}"><span class="fa fa-edit fa-2x text-primary"></span></a></td>
                                     <td>
-                                        <form id="delete-form-{{$category->id}}" style="display: none"
-                                            action="{{ route('category.destroy',$category->id) }}" method="post">
+                                        <form id="delete-form-{{$albumcategory->id}}" style="display: none"
+                                            action="{{ route('albumcategory.destroy',$albumcategory->id) }}" method="post">
                                             {{ csrf_field() }}
                                             {{method_field('DELETE')}}
                                         </form>
                                         <a href="" onclick="
                                                             if (confirm('Are you sure you want to delete this?')) {
                                                                 event.preventDefault();
-                                                            document.getElementById('delete-form-{{$category->id}}').submit();
+                                                            document.getElementById('delete-form-{{$albumcategory->id}}').submit();
                                                             } else {
                                                                 event.preventDefault();
                                                             }
@@ -73,16 +75,16 @@
         <div class="modal fade" id="modal-default">
             <div class="modal-dialog">
 
-                <form action="{{ route('category.store') }}" method="post">
+                <form action="{{ route('albumcategory.store') }}" method="post">
                     {{ csrf_field() }}
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title"><span class="fa fa-th"></span> Add Category</h4>
+                            <h4 class="modal-title"><span class="fa fa-th"></span> Add Album Category</h4>
                         </div>
                         <div class="modal-body">
-                            <input type="text" class="form-control" name="name" placeholder="Category Name">
+                            <input type="text" class="form-control" name="name" placeholder="Album Category Name">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -97,7 +99,7 @@
         </div>
         <!-- /.modal -->
 
-       
+
     </section>
     <!-- /.Left col -->
     <!-- right col (We are only adding the ID to make the widgets sortable)-->

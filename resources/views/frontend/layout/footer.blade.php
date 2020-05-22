@@ -150,6 +150,32 @@
 <!-- Active -->
 <script src="{{ asset('bootstrap2_assets/js/default-assets/active.js')}}"></script>
 
+<!-- datepicker -->
+<script src="{{asset('admin_assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}">
+</script>
+<!-- bootstrap time picker -->
+<script src="{{asset('admin_assets/plugins/timepicker/bootstrap-timepicker.min.js')}}"></script>
+
+<script>
+    window.setTimeout(function() {
+      $(".alert").fadeTo(500, 0).slideUp(500, function(){
+          $(this).remove();
+      });
+  }, 5000);
+
+    $(function () {
+        //Date picker
+        $('#datepicker').datepicker({
+            autoclose: true
+        })
+
+         //Time picker start time
+    $('.timepicker').timepicker({
+      showInputs: false,
+    })
+      })
+</script>
+
 </body>
 
 </html>

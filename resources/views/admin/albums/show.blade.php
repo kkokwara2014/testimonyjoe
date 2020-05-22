@@ -9,7 +9,7 @@
     <!-- Left col -->
     <section class="col-lg-12 connectedSortable">
         <div>
-            <a href="{{ route('product.index') }}" class="btn btn-success btn-sm">
+            <a href="{{ route('album.index') }}" class="btn btn-success btn-sm">
                 Back</a>
         </div>
         <br>
@@ -20,26 +20,26 @@
                     <div class="box-body">
                         <div class="row">
                             <div class="col-md-5">
-                                <img src="{{url('product_images',$product->image)}}" alt=""
+                                <img src="{{url('album_images',$album->albumimage)}}" alt=""
                                     class="img-responsive img-rounded" width="250" height="250">
 
                             </div>
                             <div class="col-md-7">
                                 <p>
-                                    <h2>{{$product->name}}</h2>
+                                    <h2>{{$album->title}}</h2>
                                 </p>
                                 <hr>
-                                <div>Unit Price : &#8358;{{$product->price}} </div>
-                                <div>Category : {{$product->category->name}} </div>
-                                <div>Description : {{$product->description}} </div>
-                                <div>Found In : {{$product->shop->businessname.' - '.$product->shop->shopnumber}} </div>
+
+                                <div>Artist : <strong>{{$album->artistfullname}}</strong> </div>
+                                <div>Category : {{$album->albumcategory->name}} </div>
+                                <div>Year of Release : {{$album->yearofpub}} </div>
 
                                 <br>
                                 <div>
-                                    Shop Owner :
-                                    <strong>{{strtoupper($product->shop->user->lastname).', '.$product->shop->user->firstname}}</strong>
+                                    Added by :
+                                    <strong>{{$album->user->firstname.', '.$album->user->lastname}}</strong>
                                 </div>
-                                <div>Phone : {{$product->shop->user->phone}}</div>
+                                <div>Phone : {{$album->user->phone}}</div>
                             </div>
 
                         </div>

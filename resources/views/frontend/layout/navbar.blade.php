@@ -36,7 +36,7 @@
                             </ul>
                         </li>
                         <li><a href="{{ route('album') }}">Tracks</a></li>
-                        <li><a href="{{ route('booking') }}">Booking</a></li>
+                        <li><a href="{{ route('bookings') }}">Booking</a></li>
                         <li><a href="{{ route('event') }}">Events</a></li>
                         <li><a href="{{ route('gallery') }}">Gallery</a></li>
                         <li><a href="{{ route('contactus') }}">Contact</a></li>

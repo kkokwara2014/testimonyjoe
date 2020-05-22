@@ -17,6 +17,12 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{{asset("bootstrap2_assets/style.css")}}">
 
+    <!-- Date Picker -->
+    <link rel="stylesheet"
+      href="{{asset('admin_assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}">
+      <!-- Bootstrap time Picker -->
+<link rel="stylesheet" href="{{asset('admin_assets/plugins/timepicker/bootstrap-timepicker.min.css')}}">
+
 </head>
 
 <body>

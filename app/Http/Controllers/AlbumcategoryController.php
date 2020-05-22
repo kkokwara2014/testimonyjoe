@@ -2,17 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Booking;
+use App\Albumcategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class BookingController extends Controller
+class AlbumcategoryController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware(['admin']);
-
-    }
     /**
      * Display a listing of the resource.
      *
@@ -20,10 +15,9 @@ class BookingController extends Controller
      */
     public function index()
     {
-        $user=Auth::user();
-        $bookings=Booking::latest()->get();
-
-        return view('admin.bookings.index',compact('bookings','user'));
+        $user = Auth::user();
+        $albumcategories=Albumcategory::latest()->get();
+        return view('admin.category.index', compact('user','albumcategories'));
     }
 
     /**
@@ -33,7 +27,7 @@ class BookingController extends Controller
      */
     public function create()
     {
-        return view('frontend.booking');
+        //
     }
 
     /**
@@ -44,7 +38,15 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'name'=>'required'
+        ]);
 
+        $albumcat=new Albumcategory;
+        $albumcat->name=$request->name;
+        $albumcat->save();
+
+        return redirect()->route('albumcategory.index')->with('success','New Album Category created Successfully!');
     }
 
     /**
@@ -66,7 +68,8 @@ class BookingController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = Albumcategory::where('id', $id)->first();
+        return view('admin.category.edit', array('user' => Auth::user()), compact('categories'));
     }
 
     /**
@@ -78,7 +81,15 @@ class BookingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'name'=>'required'
+        ]);
+
+        $albumcat=Albumcategory::find($id);
+        $albumcat->name=$request->name;
+        $albumcat->save();
+
+        return redirect()->route('albumcategory.index')->with('success','New Album Category updated Successfully!');
     }
 
     /**
@@ -89,7 +100,7 @@ class BookingController extends Controller
      */
     public function destroy($id)
     {
-        Booking::where('id',$id)->delete();
+        $categories = Albumcategory::where('id', $id)->delete();
 
         return redirect()->back();
     }

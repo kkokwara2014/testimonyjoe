@@ -9,6 +9,7 @@ use App\Albumcategory;
 use Image;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class AlbumController extends Controller
 {
@@ -48,45 +49,34 @@ class AlbumController extends Controller
     {
         $formInput = $request->except('albumimage');
         $this->validate($request, [
-            'albumtitle' => 'required',
+            'title' => 'required',
+            'artistfullname' => 'required',
+            'yearofpub' => 'required',
             'albumcategory_id' => 'required',
             'albumimage' => 'required|image|mimes:png,jpg,jpeg|max:10000',
-            'audio' => 'required|file|mimes:audio/mpeg,mpga,mp3,wav,aac',
-           
         ]);
 
         if ($request->hasFile('albumimage')) {
             $image = $request->file('albumimage');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(600, 600)->save(public_path('albums/album_images/' . $imageName));
+            Image::make($image)->resize(600, 600)->save(public_path('album_images/' . $imageName));
             $formInput['albumimage'] = $imageName;
-        }
-
-        if ($request->hasFile('audio')) {
-            $audiofile = $request->file('audio');
-            $destination_path=public_path().'/albums/album_files';
-            $extension=$request->file('audio')->getClientOriginalExtension();
-            $files=$request->file('audio')->getClientOriginalName();
-            $audioFileName=$files.'_'.time().'.'.$extension;
-            $audiofile->move($destination_path,$audioFileName);
-            // $filenameWithTime = time() . '_' . $request->filename->getClientOriginalName();
-            // $filenameToStore = $request->filename->storeAs('public/albums', $filenameWithTime);
         }
 
         //    create an instance of Album
         $album = new Album;
-        $album->title = $request->albumtitle;
-        $album->description = $request->description;
-        $album->user_id = $request->user_id;
+        $album->title = $request->title;
+        $album->slug = str_slug($request->title);
+        $album->artistfullname = $request->artistfullname;
+        $album->yearofpub = $request->yearofpub;
         $album->albumcategory_id = $request->albumcategory_id;
+        $album->user_id = $request->user_id;
         $album->albumimage = $formInput['albumimage'];
-        // $album->filename = $filenameToStore;
-        $album->filename = $audioFileName;
 
         $album->save();
 
-        
-        return redirect()->route('album.index');
+
+        return redirect()->route('album.index')->with('success','New Album created Successfully!');
     }
 
     /**
@@ -97,7 +87,10 @@ class AlbumController extends Controller
      */
     public function show($id)
     {
-        //
+        $album=Album::find($id);
+        $albumcategories=Albumcategory::orderBy('name','asc')->get();
+
+        return view('admin.albums.show',array('user'=>Auth::user()),compact('album','albumcategories'));
     }
 
     /**
@@ -108,7 +101,10 @@ class AlbumController extends Controller
      */
     public function edit($id)
     {
-        //
+        $album=Album::where('id',$id)->first();
+        $albumcategories=Albumcategory::orderBy('name','asc')->get();
+
+        return view('admin.albums.edit',array('user'=>Auth::user()),compact('album','albumcategories'));
     }
 
     /**
@@ -120,7 +116,40 @@ class AlbumController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $formInput = $request->except('albumimage');
+        $this->validate($request, [
+            'title' => 'required',
+            'artistfullname' => 'required',
+            'yearofpub' => 'required',
+            'albumcategory_id' => 'required',
+            'albumimage' => 'required|image|mimes:png,jpg,jpeg|max:10000',
+        ]);
+
+        if ($request->hasFile('albumimage')) {
+            $image = $request->file('albumimage');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(600, 600)->save(public_path('album_images/' . $imageName));
+            $formInput['albumimage'] = $imageName;
+        }
+
+        //    create an instance of Album
+        $album = Album::find($id);
+        $album->title = $request->title;
+        $album->slug = str_slug($request->title);
+        $album->artistfullname = $request->artistfullname;
+        $album->yearofpub = $request->yearofpub;
+        $album->albumcategory_id = $request->albumcategory_id;
+        $album->user_id = $request->user_id;
+        if ($request->hasFile('albumimage')=='') {
+            $album->albumimage = $request->albumimage;
+        }else{
+            $album->albumimage = $formInput['albumimage'];
+        }
+
+        $album->save();
+
+
+        return redirect()->route('album.index')->with('success','New Album Updated Successfully!');
     }
 
     /**
@@ -129,8 +158,15 @@ class AlbumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Album $album)
     {
-        //
+        //deleting files from folder
+        File::delete([public_path('album_images/' . $album)]);
+
+        //deleting  files from the database
+        $album->delete();
+
+        //redirecting page
+        return redirect()->back();
     }
 }
