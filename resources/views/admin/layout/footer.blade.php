@@ -247,9 +247,9 @@
 <script>
   window.setTimeout(function() {
     $(".alert").fadeTo(500, 0).slideUp(500, function(){
-        $(this).remove(); 
+        $(this).remove();
     });
-}, 5000);
+}, 3000);
 
   $(function () {
       $('#example1').DataTable({

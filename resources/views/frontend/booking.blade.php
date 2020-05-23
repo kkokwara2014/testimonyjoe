@@ -17,7 +17,8 @@
                     </div>
 
                     {{-- for messages --}}
-                    @include('admin.messages.success')
+                    @include('frontend.messages.success')
+                    @include('frontend.messages.failure')
 
                     <p style="text-align: justify">
                         You can book us for your ceremony. Fill the form and let us keep a date for you. Thank you.
@@ -29,6 +30,7 @@
                         <div class="col-12 col-md-12">
                             <!-- Leave A Reply -->
                             <div class="razo-contact-form">
+
                                 {{-- <h2 class="mb-4">Leave A Comment</h2> --}}
 
                                 <!-- Form -->
@@ -37,36 +39,36 @@
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12">
                                             <input type="text" name="fullname" class="form-control mb-15"
-                                                placeholder="Your Full Name" required>
+                                                placeholder="Your Full Name" required value="{{ old('fullname') }}">
                                         </div>
                                         <div class="col-lg-12 col-md-12">
                                             <input type="email" name="email" class="form-control mb-15"
-                                                placeholder="Your Email Address" required>
+                                                placeholder="Your Email Address" required value="{{ old('email') }}">
                                         </div>
                                         <div class="col-lg-12 col-md-12">
                                             <input type="text" name="phone" class="form-control mb-15"
                                                 placeholder="Your Phone Number" pattern="[0-9]+" maxlength="11"
-                                                required>
+                                                required value="{{ old('phone') }}">
                                         </div>
                                         <div class="col-lg-12 col-md-12">
                                             <select name="eventtype" class="form-control mb-15" required>
                                                 <option selected="disabled">Select Ceremony Type</option>
-                                                <option value="">Anniversary</option>
-                                                <option value="">Birthday Party</option>
-                                                <option value="">Child Dedication</option>
-                                                <option value="">House Warming</option>
-                                                <option value="">Marriage</option>
+                                                <option value="Anniversary">Anniversary</option>
+                                                <option value="Birthday Party">Birthday Party</option>
+                                                <option value="Child Dedication">Child Dedication</option>
+                                                <option value="House Warming">House Warming</option>
+                                                <option value="Marriage">Marriage</option>
                                             </select>
 
                                         </div>
 
                                         <div class="col-lg-6 col-md-6">
                                             <input type="text" name="eventdate" class="form-control mb-15"
-                                                placeholder="Your Event Date" id="datepicker" required>
+                                                placeholder="Your Event Date" id="datepicker" required value="{{ old('eventdate') }}">
                                         </div>
                                         <div class="col-lg-6 col-md-6">
                                             <input type="text" name="eventtime" class="form-control mb-15 timepicker"
-                                                placeholder="Your Event Time" required>
+                                                placeholder="Your Event Time" required value="{{ old('eventtime') }}">
                                         </div>
 
                                         <div class="col-lg-12 col-md-12">
@@ -74,16 +76,13 @@
                                                 <option selected="disabled">Select Location</option>
                                                 @foreach ($locations as $location)
                                                 <option value="{{ $location->name }}">{{ $location->name }}</option>
-
                                                 @endforeach
-
                                             </select>
-
                                         </div>
 
                                         <div class="col-12">
                                             <textarea name="additionalinfo" class="form-control mb-15"
-                                                placeholder="Additional Information"></textarea>
+                                                placeholder="Additional Information">{{ old('additionalinfo') }}</textarea>
                                         </div>
                                         <div class="col-12">
                                             <button type="submit" class="btn razo-btn btn-3 mt-15">Submit</button>
@@ -104,14 +103,9 @@
                     <div class="section-heading">
                         <h2>Useful Links</h2>
                     </div>
-
-
                     <div>
                         @include('frontend.layout.usefullinks')
                     </div>
-
-
-
                 </div>
             </div>
         </div>

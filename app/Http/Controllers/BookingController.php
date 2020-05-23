@@ -33,7 +33,7 @@ class BookingController extends Controller
      */
     public function create()
     {
-        return view('frontend.booking');
+
     }
 
     /**
@@ -89,8 +89,8 @@ class BookingController extends Controller
      */
     public function destroy($id)
     {
-        Booking::where('id',$id)->delete();
-
-        return redirect()->back();
+        $booking=Booking::where('id',$id)->first();
+        $booking->delete();
+        return redirect()->back()->with('failure','Booking with ref #'.$booking->bookingref.' has been deleted!');
     }
 }

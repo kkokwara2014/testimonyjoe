@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -45,11 +45,13 @@ Route::prefix('/about')->group(function () {
     Route::get('/equipment/rentals', 'AboutController@rental')->name('aboutrental');
 });
 
-Route::get('contact', 'ContactController@create')->name('contactus');
-Route::post('contact', 'ContactController@store')->name('save.contact');
+Route::get('contactus', 'SendMessageController@contactus')->name('contactus');
+Route::post('contactus', 'SendMessageController@savecontact')->name('save.contact');
+
 Route::get('gallery', 'FrontendController@gallery')->name('gallery');
 Route::get('event', 'FrontendController@event')->name('event');
 Route::get('album', 'FrontendController@album')->name('album');
+
 Route::get('bookings', 'FrontendController@booking')->name('bookings');
 Route::post('bookings/save', 'FrontendController@savebooking')->name('save.bookings');
 
@@ -70,23 +72,14 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], funct
     Route::resource('albumcategory', 'AlbumcategoryController');
     Route::resource('album', 'AlbumController');
     Route::resource('bookings', 'BookingController');
-    // //for album
-    // Route::get('all/album', 'AlbumController@index')->name('album.index');
-    // Route::post('save/album', 'AlbumController@store')->name('album.store');
-    // Route::post('show/{id}/album', 'AlbumController@show')->name('album.show');
-    // Route::get('edit/{id}/album', 'AlbumController@edit')->name('album.edit');
-    // Route::post('update/{id}/album', 'AlbumController@update')->name('album.update');
-    // Route::post('delete/{id}/album', 'AlbumController@destroy')->name('album.destroy');
 
     // for booking
-    Route::get('all/bookings', 'BookingController@index')->name('booking.index');
-    Route::post('delete/{id}/booking', 'BookingController@destroy')->name('booking.destroy');
+    // Route::get('all/bookings', 'BookingController@index')->name('booking.index');
+    // Route::post('delete/{id}/booking', 'BookingController@destroy')->name('booking.destroy');
 
 
     //for contacts
     Route::resource('contact', 'ContactController');
-    // Route::get('all/contacts', 'ContactController@getAllContacts')->name('contact.index');
-    // Route::post('delete/{id}/contact', 'ContactController@removeContact')->name('contact.destroy');
 
     //for Events
     Route::get('all/events', 'EventController@index')->name('event.index');

@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Contact;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['admin'])->except(['create','store']);
+        $this->middleware(['admin']);
     }
     /**
      * Display a listing of the resource.
@@ -27,7 +28,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        return view('frontend.contact');
+
     }
 
     /**
@@ -38,10 +39,7 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
 
-        ]);
-        return redirect()->route('contact')->with('success','Your message has been sent!');
     }
 
     /**

@@ -24,6 +24,7 @@
                         <table id="example1" class="table table-bordered table-striped table-responsive">
                             <thead>
                                 <tr>
+                                    <th>Album Image</th>
                                     <th>Title</th>
                                     <th>Category</th>
                                     <th>Added By</th>
@@ -37,6 +38,10 @@
                                 @foreach ($albums as $album)
                                 <tr>
 
+                                    <td>
+                                        <img src="{{url('album_images',$album->albumimage)}}" alt=""
+                                        class="img-responsive img-rounded" width="50" height="50">
+                                    </td>
                                     <td>{{$album->title}}</td>
 
                                     <td>{{$album->albumcategory->name}}</td>
@@ -69,6 +74,7 @@
                             </tbody>
                             <tfoot>
                                 <tr>
+                                    <th>Album Image</th>
                                     <th>Title</th>
                                     <th>Category</th>
                                     <th>Added By</th>

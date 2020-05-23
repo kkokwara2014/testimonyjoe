@@ -15,6 +15,10 @@
                     <div class="section-heading">
                         <h2>Contact Us</h2>
                     </div>
+
+                    {{-- for messages --}}
+                    @include('admin.messages.success')
+
                     <p style="text-align: justify">
                         We would be highly grateful to read from you; therefore, we
                         implore you to leave a message for us and we surely will get
@@ -30,20 +34,20 @@
                                 {{-- <h2 class="mb-4">Leave A Comment</h2> --}}
 
                                 <!-- Form -->
-                                <form action="#" method="post">
+                                <form action="{{ route('save.contact') }}" method="post">
                                     {{ csrf_field() }}
                                     <div class="row">
                                         <div class="col-12">
                                             <input type="text" name="sender" class="form-control mb-30"
-                                                placeholder="Your Full Name" autofocus>
+                                                placeholder="Your Full Name" autofocus required>
                                         </div>
                                         <div class="col-12">
                                             <input type="email" name="email" class="form-control mb-30"
-                                                placeholder="Your Email">
+                                                placeholder="Your Email" required>
                                         </div>
                                         <div class="col-12">
                                             <textarea name="messagebody" class="form-control mb-30"
-                                                placeholder="Your message"></textarea>
+                                                placeholder="Your message" required></textarea>
 
 
                                         </div>
