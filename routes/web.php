@@ -45,8 +45,8 @@ Route::prefix('/about')->group(function () {
     Route::get('/equipment/rentals', 'AboutController@rental')->name('aboutrental');
 });
 
-Route::get('contactus', 'SendMessageController@contactus')->name('contactus');
-Route::post('contactus', 'SendMessageController@savecontact')->name('save.contact');
+Route::get('contact/us', 'SendMessageController@contactus')->name('contactus');
+Route::post('contact/us', 'SendMessageController@savecontact')->name('save.contact');
 
 Route::get('gallery', 'FrontendController@gallery')->name('gallery');
 Route::get('event', 'FrontendController@event')->name('event');
@@ -72,6 +72,8 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], funct
     Route::resource('albumcategory', 'AlbumcategoryController');
     Route::resource('album', 'AlbumController');
     Route::resource('bookings', 'BookingController');
+    Route::resource('tracks', 'TracksController');
+
 
     // for booking
     // Route::get('all/bookings', 'BookingController@index')->name('booking.index');
