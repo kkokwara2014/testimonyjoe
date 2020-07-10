@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAlbumsTable extends Migration
+class CreateEquipmentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,18 @@ class CreateAlbumsTable extends Migration
      */
     public function up()
     {
-        Schema::create('albums', function (Blueprint $table) {
+        Schema::create('equipment', function (Blueprint $table) {
             $table->engine='InnoDB';
             $table->bigIncrements('id')->unsigned();
-            $table->string('title');
+            $table->string('name');
             $table->string('slug');
-            $table->string('artistfullname');
-            $table->string('yearofpub');
-            $table->bigInteger('albumcategory_id')->unsigned()->nullable()->index();
+            $table->string('description')->nullable();
+            $table->string('price');
+            $table->bigInteger('equipcategory_id')->unsigned()->nullable()->index();
             $table->bigInteger('user_id')->unsigned()->nullable()->index();
-            $table->string('albumimage');
+            $table->string('image');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('albumcategory_id')->references('id')->on('albumcategories')->onDelete('cascade');
+            $table->foreign('equipcategory_id')->references('id')->on('equipcategories')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -36,6 +36,6 @@ class CreateAlbumsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('albums');
+        Schema::dropIfExists('equipment');
     }
 }
