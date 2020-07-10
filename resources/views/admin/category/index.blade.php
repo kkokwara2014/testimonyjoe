@@ -8,58 +8,70 @@
 <div class="row">
     <!-- Left col -->
     <section class="col-lg-12 connectedSortable">
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-default">
-           <span class="fa fa-plus"></span> Album Category
-        </button>
-        <br><br>
 
         <div class="row">
             <div class="col-md-7">
-                {{-- for messages --}}
-                @include('admin.messages.success')
+
+                @include('admin.messages.failure')
 
                 <div class="box">
                     <!-- /.box-header -->
                     <div class="box-body">
+
                         <table id="example1" class="table table-bordered table-striped table-responsive">
                             <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
+                                    <th>Action</th>
+
 
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($albumcategories as $albumcategory)
+                                @foreach ($albumcategories as $category)
                                 <tr>
-                                    <td>{{$albumcategory->name}}</td>
-                                <td><a href="{{ route('albumcategory.edit',$albumcategory->id) }}"><span class="fa fa-edit fa-2x text-primary"></span></a></td>
-                                    <td>
-                                        <form id="delete-form-{{$albumcategory->id}}" style="display: none"
-                                            action="{{ route('albumcategory.destroy',$albumcategory->id) }}" method="post">
+                                    <td>{{$category->name}}</td>
+                                   <td>
+                                    <div class="dropdown"> <button type="button"
+                                        class="btn btn-primary btn-sm dropdown-toggle"
+                                        id="dropdownMenu1" data-toggle="dropdown"> Action &nbsp;&nbsp;<span
+                                            class="caret"></span> </button>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+
+                                        <li role="presentation"> <a role="menuitem" tabindex="-1" href="{{ route('category.edit',$category->id) }}"><span
+                                            class="fa fa-pencil-square"></span> Edit</a> </li>
+
+                                        <form id="remove-{{$category->id}}" style="display: none"
+                                            action="{{ route('category.destroy',$category->id) }}" method="post">
                                             {{ csrf_field() }}
                                             {{method_field('DELETE')}}
                                         </form>
-                                        <a href="" onclick="
-                                                            if (confirm('Are you sure you want to delete this?')) {
-                                                                event.preventDefault();
-                                                            document.getElementById('delete-form-{{$albumcategory->id}}').submit();
-                                                            } else {
-                                                                event.preventDefault();
-                                                            }
-                                                        "><span class="fa fa-trash fa-2x text-danger"></span>
-                                        </a>
 
-                                    </td>
+                                        <li role="presentation">
+                                            <a role="menuitem" tabindex="-1" href="" onclick="
+                                                                    if (confirm('Delete this?')) {
+                                                                        event.preventDefault();
+                                                                    document.getElementById('remove-{{$category->id}}').submit();
+                                                                    } else {
+                                                                        event.preventDefault();
+                                                                    }
+                                                                "><span class="fa fa-trash-o"></span>
+                                                Delete
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                   </td>
+
                                 </tr>
                                 @endforeach
                             </tbody>
                             <tfoot>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
+                                    <th>Action</th>
+
                                 </tr>
                             </tfoot>
                         </table>
@@ -68,36 +80,34 @@
                 </div>
                 <!-- /.box -->
             </div>
-        </div>
+            <div class="col-md-5">
+                <div class="box">
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        @include('admin.messages.success')
 
+                        <form action="{{ route('albumcategory.store') }}" method="post">
+                            @csrf
+                            <div class="form-group">
+                                <label for="">Name</label>
+                                <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name"
+                                    value="{{ old('name') }}" placeholder="Category Name" autofocus>
 
-        {{-- Data input modal area --}}
-        <div class="modal fade" id="modal-default">
-            <div class="modal-dialog">
+                                    @if ($errors->has('name'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <span style="color: red">{{ $errors->first('name','Enter Item Category name') }}</span>
+                                    </span>
+                                    @endif
+                            </div>
 
-                <form action="{{ route('albumcategory.store') }}" method="post">
-                    {{ csrf_field() }}
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title"><span class="fa fa-th"></span> Add Album Category</h4>
-                        </div>
-                        <div class="modal-body">
-                            <input type="text" class="form-control" name="name" placeholder="Album Category Name">
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Save</button>
-                        </div>
+                            <button type="reset" class="btn btn-default btn-sm">Cancel</button>
+                            <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+
+                        </form>
                     </div>
-                    <!-- /.modal-content -->
-
-                </form>
+                </div>
             </div>
-            <!-- /.modal-dialog -->
         </div>
-        <!-- /.modal -->
 
 
     </section>

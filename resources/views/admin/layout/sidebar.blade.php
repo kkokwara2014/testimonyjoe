@@ -30,12 +30,12 @@
       <li><a href="{{route('user.profile')}}"><i class="fa fa-picture-o"></i> My Profile Photo</a></li>
 
       <li><a href="{{route('albumcategory.index')}}"><i class="fa fa-th"></i> Album Category</a></li>
-      <li><a href="{{route('album.index')}}"><i class="fa fa-xing"></i> Albums</a></li>
-      <li><a href="{{route('tracks.index')}}"><i class="fa fa-music"></i> Tracks</a></li>
-      <li><a href="{{route('bookings.index')}}"><i class="fa fa-leanpub"></i> Bookings</a></li>
+      <li><a href=""><i class="fa fa-xing"></i> Albums</a></li>
+      <li><a href=""><i class="fa fa-music"></i> Tracks</a></li>
+      <li><a href=""><i class="fa fa-leanpub"></i> Bookings</a></li>
       <li><a href="#"><i class="fa fa-envelope-o"></i> Contacts</a></li>
       {{-- <li><a href="{{route('event.index')}}"><i class="fa fa-tasks"></i> Events</a></li> --}}
-      <li><a href="{{route('gallery.index')}}"><i class="fa fa-newspaper-o"></i> Gallery</a></li>
+      <li><a href=""><i class="fa fa-newspaper-o"></i> Gallery</a></li>
       <li><a href="#"><i class="fa fa-ils"></i> Equipment</a></li>
 
       {{-- <li><a href="{{route('admin.index')}}"><i class="fa fa-user-plus"></i> Admins</a></li> --}}

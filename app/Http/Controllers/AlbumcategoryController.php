@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Albumcategory;
-use Illuminate\Http\Request;
+use App\Http\Requests\AlbumcategoryStoreRequest;
+use App\Http\Requests\AlbumcategoryUpdateRequest;
+use Illuminate\Support\Facades\Auth;
 
 class AlbumcategoryController extends Controller
 {
+    public function __construct(){
+        $this->middleware('admin');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +19,8 @@ class AlbumcategoryController extends Controller
      */
     public function index()
     {
-        //
+        $albumcategories = Albumcategory::orderBy('name','asc')->get();
+        return view('admin.category.index', array('user' => Auth::user()), compact('albumcategories'));
     }
 
     /**
@@ -33,7 +39,7 @@ class AlbumcategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AlbumcategoryStoreRequest $request)
     {
         //
     }
@@ -67,7 +73,7 @@ class AlbumcategoryController extends Controller
      * @param  \App\Albumcategory  $albumcategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Albumcategory $albumcategory)
+    public function update(AlbumcategoryUpdateRequest $request, Albumcategory $albumcategory)
     {
         //
     }

@@ -67,6 +67,8 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], funct
     Route::get('/', 'AdminController@index')->name('dashboard.index');
     Route::resource('admin','AdminController');
 
+    Route::resource('albumcategory', 'AlbumcategoryController');
+
     // for booking
 
 

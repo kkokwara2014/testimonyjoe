@@ -16,6 +16,7 @@ class CreateAlbumcategoriesTable extends Migration
         Schema::create('albumcategories', function (Blueprint $table) {
             $table->engine='InnoDB';
             $table->bigIncrements('id')->unsigned();
+            $table->string('name');
             $table->timestamps();
         });
     }

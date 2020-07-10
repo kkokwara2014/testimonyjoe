@@ -8,8 +8,8 @@
 <div class="row">
     <!-- Left col -->
     <section class="col-lg-12 connectedSortable">
-        <a href="{{ route('albumcategory.index') }}" class="btn btn-success">
-           <span class="fa fa-eye"></span> All Album Categories
+        <a href="{{ route('category.index') }}" class="btn btn-success btn-sm">
+           <span class="fa fa-eye"></span> All Categories
         </a>
         <br><br>
 
@@ -19,7 +19,7 @@
                 <div class="box">
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <form action="{{ route('albumcategory.update',$categories->id) }}" method="post">
+                        <form action="{{ route('category.update',$categories->id) }}" method="post">
                             {{ csrf_field() }}
                             {{method_field('PUT')}}
 
@@ -28,8 +28,8 @@
                                 <input type="text" class="form-control" name="name" value="{{$categories->name}}">
                             </div>
                             <br>
-                            <button type="submit" class="btn btn-primary">Update</button>
-                            <a href="{{ route('albumcategory.index') }}" class="btn btn-default">Cancel</a>
+                            <button type="submit" class="btn btn-primary btn-sm">Update</button>
+                            <a href="{{ route('category.index') }}" class="btn btn-default btn-sm">Cancel</a>
 
                     </div>
                     </form>
