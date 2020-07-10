@@ -16,7 +16,6 @@ class CreateAlbumcategoriesTable extends Migration
         Schema::create('albumcategories', function (Blueprint $table) {
             $table->engine='InnoDB';
             $table->bigIncrements('id')->unsigned();
-            $table->string('name');
             $table->timestamps();
         });
     }
@@ -28,8 +27,6 @@ class CreateAlbumcategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::table('albumcategories', function (Blueprint $table) {
-            Schema::dropIfExists('albumcategories');
-        });
+        Schema::dropIfExists('albumcategories');
     }
 }

@@ -67,51 +67,19 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], funct
     Route::get('/', 'AdminController@index')->name('dashboard.index');
     Route::resource('admin','AdminController');
 
-    // Route::get('register/admin', 'Auth\RegisterController@showRegistrationForm')->name('register.admin');
-
-    Route::resource('albumcategory', 'AlbumcategoryController');
-    Route::resource('album', 'AlbumController');
-    Route::resource('bookings', 'BookingController');
-    Route::resource('tracks', 'TracksController');
-
-
     // for booking
-    // Route::get('all/bookings', 'BookingController@index')->name('booking.index');
-    // Route::post('delete/{id}/booking', 'BookingController@destroy')->name('booking.destroy');
 
 
     //for contacts
-    Route::resource('contact', 'ContactController');
+
 
     //for Events
-    Route::get('all/events', 'EventController@index')->name('event.index');
-    Route::post('save/event', 'EventController@store')->name('event.store');
-    Route::post('delete/{id}/event', 'EventController@destroy')->name('event.destroy');
+
 
     //for Gallery
-    Route::get('all/gallery', 'GalleryController@index')->name('gallery.index');
-    Route::post('save/gallery', 'GalleryController@store')->name('gallery.store');
-    Route::post('show/{id}/gallery', 'GalleryController@show')->name('gallery.show');
-    Route::get('edit/{id}/gallery', 'GalleryController@edit')->name('gallery.edit');
-    Route::post('update/{id}/gallery', 'GalleryController@update')->name('gallery.update');
-    Route::post('delete/{id}/gallery', 'GalleryController@destroy')->name('gallery.destroy');
+
 
     //for Equipment
-    Route::get('all/equipment', 'EquipmentController@index')->name('equipment.index');
-    Route::post('save/equipment', 'EquipmentController@store')->name('equipment.store');
-    Route::post('show/{id}/equipment', 'EquipmentController@show')->name('equipment.show');
-    Route::get('edit/{id}/equipment', 'EquipmentController@edit')->name('equipment.edit');
-    Route::post('update/{id}/equipment', 'EquipmentController@update')->name('equipment.update');
-    Route::post('delete/{id}/equipment', 'EquipmentController@destroy')->name('equipment.destroy');
-
-    //for Admins
-    Route::get('all/admins', 'AdminController@admins')->name('all.admin');
-    Route::get('admins/{id}/show', 'AdminController@show')->name('admins.show');
-    Route::post('admins/{id}/activate', 'AdminController@activate')->name('admins.activate');
-    Route::post('admins/{id}/deactivate', 'AdminController@deactivate')->name('admins.deactivate');
-
-    // Route::get('contact','ContactController@index')->name('contact.index');
-    // Route::delete('contact/{id}','ContactController@destroy')->name('contact.destroy');
 
     Route::get('user/profile', 'UserController@profileimage')->name('user.profile');
     Route::post('user/profile', 'UserController@updateprofileimage')->name('user.profile.update');
