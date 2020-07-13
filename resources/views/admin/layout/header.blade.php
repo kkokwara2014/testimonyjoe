@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Testimonyjoe | Dashboard</title>
 
-    		
+
 		<link rel="shortcut icon" type="image/png" href="{{asset('bootstrap_assets/img/logo_amd.png')}}"/>
 
     <!-- Tell the browser to be responsive to screen width -->
@@ -28,6 +28,9 @@
     <!-- Date Picker -->
     <link rel="stylesheet"
       href="{{asset('admin_assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}">
+
+      <!-- Bootstrap time Picker -->
+<link rel="stylesheet" href="{{asset('admin_assets/plugins/timepicker/bootstrap-timepicker.min.css')}}">
     <!-- Daterange picker -->
     <link rel="stylesheet"
       href="{{asset('admin_assets/bower_components/bootstrap-daterangepicker/daterangepicker.css')}}">

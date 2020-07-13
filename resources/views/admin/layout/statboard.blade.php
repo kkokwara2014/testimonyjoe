@@ -9,7 +9,7 @@
         <!-- small box -->
         <div class="small-box bg-orange">
           <div class="inner">
-          <h3>0</h3>
+          <h3>{{ $contacts }}</h3>
 
             <p>Contacts</p>
           </div>
@@ -24,7 +24,7 @@
         <!-- small box -->
         <div class="small-box bg-green">
           <div class="inner">
-          <h3>0</h3>
+          <h3>{{ $bookings }}</h3>
 
             <p>Bookings</p>
           </div>
@@ -40,7 +40,7 @@
         <!-- small box -->
         <div class="small-box bg-blue-active">
           <div class="inner">
-            <h3>0</h3>
+            <h3>{{ $equipment }}</h3>
 
             <p>Equipment</p>
           </div>
@@ -55,9 +55,9 @@
         <!-- small box -->
         <div class="small-box bg-aqua">
           <div class="inner">
-            <h3>1</h3>
+            <h3>{{ $users }}</h3>
 
-            <p>Admins</p>
+            <p>Users</p>
           </div>
           <div class="icon">
             <i class="fa fa-user-plus"></i>

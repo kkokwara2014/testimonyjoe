@@ -20,11 +20,9 @@ class CreateAlbumsTable extends Migration
             $table->string('slug');
             $table->string('artistfullname');
             $table->string('yearofpub');
-            $table->bigInteger('albumcategory_id')->unsigned()->nullable()->index();
             $table->bigInteger('user_id')->unsigned()->nullable()->index();
             $table->string('albumimage');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('albumcategory_id')->references('id')->on('albumcategories')->onDelete('cascade');
             $table->timestamps();
         });
     }

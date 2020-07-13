@@ -45,8 +45,8 @@ Route::prefix('/about')->group(function () {
     Route::get('/equipment/rentals', 'AboutController@rental')->name('aboutrental');
 });
 
-Route::get('contact/us', 'SendMessageController@contactus')->name('contactus');
-Route::post('contact/us', 'SendMessageController@savecontact')->name('save.contact');
+Route::get('contact/us', 'ContactusController@contactus')->name('contactus');
+Route::post('contact/us', 'ContactusController@store')->name('save.contact');
 
 Route::get('gallery', 'FrontendController@gallery')->name('gallery');
 Route::get('event', 'FrontendController@event')->name('event');
@@ -67,21 +67,15 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], funct
     Route::get('/', 'AdminController@index')->name('dashboard.index');
     Route::resource('admin','AdminController');
 
-    Route::resource('albumcategory', 'AlbumcategoryController');
-
-    // for booking
-
-
-    //for contacts
-
-
-    //for Events
-
-
-    //for Gallery
-
-
-    //for Equipment
+    Route::resource('trackcategory', 'TrackcategoryController');
+    Route::resource('album', 'AlbumController');
+    Route::resource('equipcategory', 'EquipcategoryController');
+    Route::resource('equipment', 'EquipmentController');
+    Route::resource('event', 'EventController');
+    Route::resource('gallery', 'GalleryController');
+    Route::resource('contact', 'ContactController');
+    Route::resource('booking', 'BookingController');
+    Route::resource('track', 'TrackController');
 
     Route::get('user/profile', 'UserController@profileimage')->name('user.profile');
     Route::post('user/profile', 'UserController@updateprofileimage')->name('user.profile.update');

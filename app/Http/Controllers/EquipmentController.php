@@ -2,11 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Equipcategory;
 use App\Equipment;
-use Illuminate\Http\Request;
+use App\Http\Requests\EquipmentStoreRequest;
+use App\Http\Requests\EquipmentUpdateRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use Image;
+use Illuminate\Support\Str;
 
 class EquipmentController extends Controller
 {
+    public function __construct(){
+        $this->middleware('admin');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +23,9 @@ class EquipmentController extends Controller
      */
     public function index()
     {
-        //
+        $equipments = Equipment::latest()->get();
+        $equipcategories=Equipcategory::orderBy('name','asc')->get();
+        return view('admin.equipment.index', array('user' => Auth::user()), compact('equipments','equipcategories'));
     }
 
     /**
@@ -33,9 +44,27 @@ class EquipmentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EquipmentStoreRequest $request)
     {
-        //
+        if ($request->hasFile('image')) {
+            //for equipment image
+            $equipmentimage=$request->file('image');
+            $imagefilename = time() . '.' . $request->image->getClientOriginalExtension();
+            Image::make($equipmentimage)->resize(600, 600)->save(public_path('equipment_images/' . $imagefilename));
+
+           $equipment=new Equipment;
+           $equipment->name=$request->name;
+           $equipment->slug=Str::slug($request->name);
+           $equipment->description=$request->description;
+           $equipment->price=$request->price;
+           $equipment->equipcategory_id=$request->equipcategory_id;
+           $equipment->user_id=Auth::user()->id;
+           $equipment->image=$imagefilename;
+           $equipment->save();
+
+       }
+
+        return redirect()->route('equipment.index')->with('success','New Equipment added Successfully!');
     }
 
     /**
@@ -46,7 +75,8 @@ class EquipmentController extends Controller
      */
     public function show(Equipment $equipment)
     {
-        //
+        $equipment = Equipment::find($equipment->id);
+        return view('admin.equipment.show', array('user' => Auth::user()), compact('equipment'));
     }
 
     /**
@@ -57,7 +87,9 @@ class EquipmentController extends Controller
      */
     public function edit(Equipment $equipment)
     {
-        //
+        $equipment = Equipment::where('id',$equipment->id)->first();
+        $equipcategories=Equipcategory::orderBy('name','asc')->get();
+        return view('admin.equipment.edit', array('user' => Auth::user()), compact('equipment','equipcategories'));
     }
 
     /**
@@ -67,9 +99,44 @@ class EquipmentController extends Controller
      * @param  \App\Equipment  $equipment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Equipment $equipment)
+    public function update(EquipmentUpdateRequest $request, Equipment $equipment)
     {
-        //
+        if ($request->hasFile('image')) {
+            //for equipment image
+            $equipmentimage=$request->file('image');
+            $imagefilename = time() . '.' . $request->image->getClientOriginalExtension();
+            Image::make($equipmentimage)->resize(600, 600)->save(public_path('equipment_images/' . $imagefilename));
+
+           $equipment=Equipment::find($equipment->id);
+           $equipment->name=$request->name;
+           if ($request->existing_name!=$request->name) {
+                $equipment->slug=Str::slug($request->name);
+            }
+           $equipment->slug=$equipment->slug;
+           $equipment->description=$request->description;
+           $equipment->price=$request->price;
+           $equipment->equipcategory_id=$request->equipcategory_id;
+           $equipment->user_id=Auth::user()->id;
+           $equipment->image=$imagefilename;
+           $equipment->save();
+
+       }else{
+        $equipment=Equipment::find($equipment->id);
+        $equipment->name=$request->name;
+        if ($request->existing_name!=$request->name) {
+             $equipment->slug=Str::slug($request->name);
+         }
+        $equipment->slug=$equipment->slug;
+        $equipment->description=$request->description;
+        $equipment->price=$request->price;
+        $equipment->equipcategory_id=$request->equipcategory_id;
+        $equipment->user_id=Auth::user()->id;
+        $equipment->image=$request->existing_image;
+        $equipment->save();
+       }
+
+
+        return redirect()->route('equipment.index')->with('success','Equipment updated Successfully!');
     }
 
     /**
@@ -80,6 +147,13 @@ class EquipmentController extends Controller
      */
     public function destroy(Equipment $equipment)
     {
-        //
+        //deleting files from folder
+        File::delete([public_path('equipment_images/' . $equipment->image)]);
+
+        //deleting  files from the database
+        $equipment->delete();
+
+        //redirecting page
+        return redirect()->back()->with('deleted','Equipment deleted successfully!');
     }
 }

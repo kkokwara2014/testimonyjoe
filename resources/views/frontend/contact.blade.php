@@ -46,7 +46,11 @@
                                                 placeholder="Your Email" required>
                                         </div>
                                         <div class="col-12">
-                                            <textarea name="messagebody" class="form-control mb-30"
+                                            <input type="text" name="subject" class="form-control mb-30"
+                                                placeholder="Subject or Title" required>
+                                        </div>
+                                        <div class="col-12">
+                                            <textarea name="body" class="form-control mb-30"
                                                 placeholder="Your message" required></textarea>
 
 

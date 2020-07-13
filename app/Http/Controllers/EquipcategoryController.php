@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Equipcategory;
-use Illuminate\Http\Request;
+use App\Http\Requests\EquipcategoryStoreRequest;
+use App\Http\Requests\EquipcategoryUpdateRequest;
+use Illuminate\Support\Facades\Auth;
 
 class EquipcategoryController extends Controller
 {
+    public function __construct(){
+        $this->middleware('admin');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +19,8 @@ class EquipcategoryController extends Controller
      */
     public function index()
     {
-        //
+        $equipcategories = Equipcategory::orderBy('name','asc')->get();
+        return view('admin.equipcategory.index', array('user' => Auth::user()), compact('equipcategories'));
     }
 
     /**
@@ -33,9 +39,14 @@ class EquipcategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EquipcategoryStoreRequest $request)
     {
-        //
+        $equipcat=new Equipcategory;
+        $equipcat->name=$request->name;
+        $equipcat->save();
+
+        return redirect()->route('equipcategory.index')->with('success','New Equipment Category added successfully!');
+
     }
 
     /**
@@ -57,7 +68,9 @@ class EquipcategoryController extends Controller
      */
     public function edit(Equipcategory $equipcategory)
     {
-        //
+        $equipcat=Equipcategory::where('id',$equipcategory->id)->first();
+
+        return view('admin.equipcategory.edit',array('user' => Auth::user()),compact('equipcat'));
     }
 
     /**
@@ -67,9 +80,13 @@ class EquipcategoryController extends Controller
      * @param  \App\Equipcategory  $equipcategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Equipcategory $equipcategory)
+    public function update(EquipcategoryUpdateRequest $request, Equipcategory $equipcategory)
     {
-        //
+        $equipcat=Equipcategory::find($equipcategory->id);
+        $equipcat->name=$request->name;
+        $equipcat->save();
+
+        return redirect()->route('equipcategory.index')->with('success','Equipment Category updated successfully!');
     }
 
     /**
@@ -80,6 +97,8 @@ class EquipcategoryController extends Controller
      */
     public function destroy(Equipcategory $equipcategory)
     {
-        //
+        $equipcategory->delete();
+
+        return redirect()->back()->with('deleted','Equipment Category deleted successfully!');
     }
 }

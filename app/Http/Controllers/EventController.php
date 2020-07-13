@@ -3,10 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Event;
-use Illuminate\Http\Request;
+use App\Http\Requests\EventStoreRequest;
+use App\Http\Requests\EventUpdateRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
+use Image;
 
 class EventController extends Controller
 {
+    public function __construct(){
+        $this->middleware('admin');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +22,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+        $events = Event::latest()->get();
+        return view('admin.events.index', array('user' => Auth::user()), compact('events'));
     }
 
     /**
@@ -33,9 +42,28 @@ class EventController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EventStoreRequest $request)
     {
-        //
+        if ($request->hasFile('image')) {
+            //for event image
+            $eventimage=$request->file('image');
+            $imagefilename = time() . '.' . $request->image->getClientOriginalExtension();
+            Image::make($eventimage)->resize(600, 600)->save(public_path('event_images/' . $imagefilename));
+
+           $event=new Event;
+           $event->title=$request->title;
+           $event->slug=Str::slug($request->title);
+           $event->venue=$request->venue;
+           $event->eventdate=$request->eventdate;
+           $event->eventtime=$request->eventtime;
+           $event->description=$request->description;
+           $event->user_id=Auth::user()->id;
+           $event->image=$imagefilename;
+           $event->save();
+
+       }
+
+        return redirect()->route('event.index')->with('success','New Event added Successfully!');
     }
 
     /**
@@ -46,7 +74,8 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        //
+        $event = Event::find($event->id);
+        return view('admin.events.show', array('user' => Auth::user()), compact('event'));
     }
 
     /**
@@ -57,7 +86,8 @@ class EventController extends Controller
      */
     public function edit(Event $event)
     {
-        //
+        $event = Event::where('id',$event->id)->first();
+        return view('admin.events.edit', array('user' => Auth::user()), compact('event'));
     }
 
     /**
@@ -67,9 +97,45 @@ class EventController extends Controller
      * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Event $event)
+    public function update(EventUpdateRequest $request, Event $event)
     {
-        //
+        if ($request->hasFile('image')) {
+            //for event image
+            $eventimage=$request->file('image');
+            $imagefilename = time() . '.' . $request->image->getClientOriginalExtension();
+            Image::make($eventimage)->resize(600, 600)->save(public_path('event_images/' . $imagefilename));
+
+           $event=Event::find($event->id);
+           $event->title=$request->title;
+           if ($request->existing_title!=$request->title) {
+                $event->slug=Str::slug($request->title);
+            }
+           $event->slug=$event->slug;
+           $event->venue=$request->venue;
+           $event->eventdate=$request->eventdate;
+           $event->eventtime=$request->eventtime;
+           $event->description=$request->description;
+           $event->user_id=Auth::user()->id;
+           $event->image=$imagefilename;
+           $event->save();
+
+       }else{
+        $event=Event::find($event->id);
+        $event->title=$request->title;
+        if ($request->existing_title!=$request->title) {
+            $event->slug=Str::slug($request->title);
+        }
+        $event->slug=$event->slug;
+        $event->venue=$request->venue;
+        $event->eventdate=$request->eventdate;
+        $event->eventtime=$request->eventtime;
+        $event->description=$request->description;
+        $event->user_id=Auth::user()->id;
+        $event->image=$request->existing_image;
+        $event->save();
+    }
+
+        return redirect()->route('event.index')->with('success','Event updated Successfully!');
     }
 
     /**
@@ -80,6 +146,13 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        //
+        //deleting files from folder
+        File::delete([public_path('event_images/' . $event->image)]);
+
+        //deleting  files from the database
+        $event->delete();
+
+        //redirecting page
+        return redirect()->back()->with('deleted','Event deleted successfully!');
     }
 }

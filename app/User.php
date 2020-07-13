@@ -41,16 +41,20 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
-    public function event(){
+    public function events(){
         return $this->hasMany(Event::class);
     }
-    public function gallery(){
+    public function galleries(){
         return $this->hasMany(Gallery::class);
     }
-    public function album(){
+    public function albums(){
         return $this->hasMany(Album::class);
     }
-    public function equipment(){
+    public function tracks(){
+        return $this->hasMany(Track::class);
+    }
+
+    public function equipments(){
         return $this->hasMany(Equipment::class);
     }
 }

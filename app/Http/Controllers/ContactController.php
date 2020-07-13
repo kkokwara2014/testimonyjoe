@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ContactController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware(['admin']);
+    public function __construct(){
+        $this->middleware('admin');
     }
     /**
      * Display a listing of the resource.
@@ -18,7 +18,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $contacts=Contact::latest()->get();
+        return view('admin.contact.index', array('user' => Auth::user()), compact('contacts'));
     }
 
     /**
@@ -28,7 +29,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -39,16 +40,16 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Contact $contact)
     {
         //
     }
@@ -56,10 +57,10 @@ class ContactController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Contact $contact)
     {
         //
     }
@@ -68,10 +69,10 @@ class ContactController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Contact $contact)
     {
         //
     }
@@ -79,11 +80,13 @@ class ContactController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Contact $contact)
     {
-        //
+        $contact->delete();
+
+        return redirect()->back()->with('deleted','Message deleted successfully!');
     }
 }

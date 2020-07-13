@@ -20,9 +20,11 @@ class CreateTracksTable extends Migration
             $table->string('slug');
             $table->bigInteger('user_id')->nullable()->unsigned()->index();
             $table->bigInteger('album_id')->nullable()->unsigned()->index();
+            $table->bigInteger('trackcategory_id')->nullable()->unsigned()->index();
             $table->string('filename');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('album_id')->references('id')->on('albums')->onDelete('cascade');
+            $table->foreign('trackcategory_id')->references('id')->on('trackcategories')->onDelete('cascade');
             $table->timestamps();
         });
     }

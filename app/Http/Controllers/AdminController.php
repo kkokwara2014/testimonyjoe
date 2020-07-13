@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Booking;
+use App\Contact;
+use App\Equipment;
 use Illuminate\Http\Request;
 
 use App\User;
@@ -19,7 +22,12 @@ class AdminController extends Controller
     {
         $user = Auth::user();
 
-        return view('admin.index', compact('user'));
+        $contacts=Contact::count();
+        $bookings=Booking::count();
+        $equipment=Equipment::count();
+        $users=User::count();
+
+        return view('admin.index', compact('user','contacts','bookings','equipment','users'));
     }
 
     /**

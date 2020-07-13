@@ -9,12 +9,12 @@
     <!-- Left col -->
     <section class="col-lg-12 connectedSortable">
         <a href="{{ route('equipment.index') }}" class="btn btn-success">
-           <span class="fa fa-eye"></span> All Equipment
+            <span class="fa fa-eye"></span> All Equipment
         </a>
         <br><br>
 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-7">
 
                 <div class="box">
                     <!-- /.box-header -->
@@ -23,24 +23,50 @@
                             {{ csrf_field() }}
                             {{method_field('PUT')}}
 
-                            <div>
-                                <label for="name">Equipment Name <strong style="color:red;">*</strong></label>
-                                <input type="text" class="form-control" name="name" value="{{$equipment->name}}">
+                            <div class="form-group">
+                                <label for="">Equipment Name <strong style="color:red;">*</strong> </label>
+                                <input type="text" class="form-control" name="name" placeholder="Equipment Name" value="{{ $equipment->name }}">
                             </div>
-                            <div>
-                                <label for="price">Equipment Price <strong style="color:red;">*</strong></label>
-                                <input type="text" class="form-control" name="price" value="{{$equipment->price}}">
+                            <input type="hidden" name="existing_name" value="{{ $equipment->name }}">
+
+                            <div class="form-group">
+                                <label for="">Equipment Category <strong style="color:red;">*</strong></label>
+                                <select name="equipcategory_id" class="form-control">
+                                    <option selected="disabled">Select Equipment Category</option>
+                                    @foreach ($equipcategories as $equipcategory)
+                                    <option value="{{$equipcategory->id}}" {{$equipcategory->id==$equipment->equipcategory_id ? 'selected':''}}>{{$equipcategory->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Price <strong style="color:red;">*</strong></label>
+                                <input type="text" name="price" class="form-control"
+                                    placeholder="Price" pattern="[0-9]+" value="{{ $equipment->price }}">
                             </div>
                             <div class="form-group">
-                                <label for="">Equipment Description</label>
-                                <textarea class="form-control" name="description" cols="30" rows="3"
-                            >{{$equipment->description}}</textarea>
+                                <label for="">Description </label>
+                                <textarea class="form-control" name="description" cols="30" rows="2" placeholder="Equipment Description">
+                                    {{ $equipment->description }}
+                                </textarea>
+
                             </div>
-                            <div>
-                                <label for="">Upload Equipment Image <strong style="color:red;">*</strong></label>
-                            <input type="file" name="image" value="{{$equipment->image}}">
+
+
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <label for="">Upload Equipment Image </label>
+                                    <input type="file" name="image">
+                                    <input type="hidden" name="existing_image" value="{{$equipment->image}}">
+                                </div>
+                                <div class="col-md-4">
+                                   <br>
+                                    Existing image :
+                                        <img src="{{url('equipment_images',$equipment->image)}}" alt=""
+                                                            class="img-responsive img-circle" width="100" height="100">
+
+                                </div>
                             </div>
-                            <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                             <br>
                             <button type="submit" class="btn btn-primary">Update</button>
                             <a href="{{ route('equipment.index') }}" class="btn btn-default">Cancel</a>

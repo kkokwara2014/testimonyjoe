@@ -72,10 +72,10 @@
                                         </div>
 
                                         <div class="col-lg-12 col-md-12">
-                                            <select name="location" class="form-control mb-15" required>
+                                            <select name="country_id" class="form-control mb-15" required>
                                                 <option selected="disabled">Select Location</option>
                                                 @foreach ($locations as $location)
-                                                <option value="{{ $location->name }}">{{ $location->name }}</option>
+                                                <option value="{{ $location->id }}">{{ $location->name }}</option>
                                                 @endforeach
                                             </select>
                                         </div>

@@ -9,35 +9,48 @@
     <!-- Left col -->
     <section class="col-lg-12 connectedSortable">
         <a href="{{ route('gallery.index') }}" class="btn btn-success">
-           <span class="fa fa-eye"></span> All Gallery
+            <span class="fa fa-eye"></span> All Galleries
         </a>
         <br><br>
 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-7">
 
                 <div class="box">
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <form action="{{ route('gallery.update',$galleries->id) }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('gallery.update',$gallery->id) }}" method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             {{method_field('PUT')}}
 
-                            <div>
-                                <label for="name">Caption <strong style="color:red;">*</strong></label>
-                                <input type="text" class="form-control" name="caption" value="{{$galleries->caption}}">
-                            </div>
                             <div class="form-group">
-                                <label for="">Gallery Description</label>
-                                <textarea class="form-control" name="description" cols="30" rows="3"
-                            >{{$galleries->description}}</textarea>
+                                <label for="">gallery Caption <strong style="color:red;">*</strong> </label>
+                                <input type="text" class="form-control" name="title" placeholder="Gallery Title" value="{{ $gallery->title }}">
+                            </div>
+                            <input type="hidden" name="existing_title" value="{{ $gallery->title }}">
+
+                            <div class="form-group">
+                                <label for="">Description </label>
+                                <textarea class="form-control" name="description" cols="30" rows="2" placeholder="gallery Description">
+                                    {{ $gallery->description }}
+                                </textarea>
+
                             </div>
 
-                            <div>
-                                <label for="">Upload Image <strong style="color:red;">*</strong></label>
-                            <input type="file" name="image" value="{{$galleries->image}}">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <label for="">Upload gallery Image </label>
+                                    <input type="file" name="image">
+                                    <input type="hidden" name="existing_image" value="{{$gallery->image}}">
+                                </div>
+                                <div class="col-md-4">
+                                   <br>
+                                    Existing image :
+                                        <img src="{{url('gallery_images',$gallery->image)}}" alt=""
+                                                            class="img-responsive img-circle" width="100" height="100">
+
+                                </div>
                             </div>
-                            <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                             <br>
                             <button type="submit" class="btn btn-primary">Update</button>
                             <a href="{{ route('gallery.index') }}" class="btn btn-default">Cancel</a>

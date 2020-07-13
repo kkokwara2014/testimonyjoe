@@ -8,31 +8,23 @@
 <div class="row">
     <!-- Left col -->
     <section class="col-lg-12 connectedSortable">
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-default">
-            <span class="fa fa-plus"></span> Add Equipment
-        </button>
-        <br><br>
 
         <div class="row">
-            <div class="col-md-12">
-
+            <div class="col-md-7">
                 {{-- for messages --}}
-                @include('admin.messages.success')
+                @include('admin.messages.deleted')
 
                 <div class="box">
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <table id="example1" class="table table-responsive table-bordered table-striped">
+                        <table id="example1" class="table table-bordered table-striped table-responsive">
                             <thead>
                                 <tr>
+                                    <th>Image</th>
                                     <th>Name</th>
-                                    <th>Price</th>
-                                    <th>Description</th>
-                                    <th>Created By</th>
-                                    {{-- <th>View Details</th> --}}
-
-                                    <th>Edit</th>
-                                    <th>Delete</th>
+                                    <th>Category</th>
+                                    <th>View Details</th>
+                                    <th>Action</th>
 
 
                                 </tr>
@@ -41,31 +33,49 @@
                                 @foreach ($equipments as $equipment)
                                 <tr>
 
+                                    <td>
+                                        <img src="{{url('equipment_images',$equipment->image)}}" alt=""
+                                            class="img-responsive" width="40" height="40">
+                                    </td>
                                     <td>{{$equipment->name}}</td>
-                                    <td>&#163;{{$equipment->price}}</td>
-                                    <td>{{$equipment->description}}</td>
-                                    <td>{{$equipment->user->firstname.' '.$equipment->user->lastname}}</td>
-                                    {{-- <td><a href="{{ route('equipment.show',$equipment->id) }}"><span
-                                        class="fa fa-eye fa-2x text-primary"></span></a></td> --}}
+                                    <td>{{$equipment->equipcategory->name}}</td>
 
-<td><a href="{{ route('equipment.edit',$equipment->id) }}"><span class="fa fa-edit fa-2x text-primary"></span></a></td>
+                                    <td><a href="{{ route('equipment.show',$equipment->id) }}"><span
+                                                class="fa fa-eye fa-2x text-primary"></span></a></td>
 
                                     <td>
-                                        <form id="delete-form-{{$equipment->id}}" style="display: none"
-                                            action="{{ route('equipment.destroy',$equipment->id) }}" method="post">
-                                            {{ csrf_field() }}
-                                            {{method_field('DELETE')}}
-                                        </form>
-                                        <a href="" onclick="
-                                                            if (confirm('Are you sure you want to delete this?')) {
-                                                                event.preventDefault();
-                                                            document.getElementById('delete-form-{{$equipment->id}}').submit();
-                                                            } else {
-                                                                event.preventDefault();
-                                                            }
-                                                        ">
-                                            <p class="fa fa-trash fa-2x text-danger"></span>
-                                        </a>
+                                        <div class="dropdown"> <button type="button"
+                                            class="btn btn-primary btn-sm dropdown-toggle" id="dropdownMenu1"
+                                            data-toggle="dropdown"> Action &nbsp;&nbsp;<span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+
+                                            <li role="presentation"> <a role="menuitem" tabindex="-1"
+                                                    href="{{ route('equipment.edit',$equipment->id) }}"><span
+                                                        class="fa fa-pencil-square"></span> Edit</a> </li>
+
+                                            <form id="remove-{{$equipment->id}}" style="display: none"
+                                                action="{{ route('equipment.destroy',$equipment->id) }}"
+                                                method="post">
+                                                {{ csrf_field() }}
+                                                {{method_field('DELETE')}}
+                                            </form>
+
+                                            <li role="presentation">
+                                                <a role="menuitem" tabindex="-1" href="" onclick="
+                                                                if (confirm('Delete this?')) {
+                                                                    event.preventDefault();
+                                                                document.getElementById('remove-{{$equipment->id}}').submit();
+                                                                } else {
+                                                                    event.preventDefault();
+                                                                }
+                                                            "><span class="fa fa-trash-o"></span>
+                                                    Delete
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
 
                                     </td>
 
@@ -74,14 +84,12 @@
                             </tbody>
                             <tfoot>
                                 <tr>
+                                    <th>Image</th>
                                     <th>Name</th>
-                                    <th>Price</th>
-                                    <th>Description</th>
-                                    <th>Created By</th>
-                                    {{-- <th>View Details</th> --}}
+                                    <th>Category</th>
 
-                                    <th>Edit</th>
-                                    <th>Delete</th>
+                                    <th>View Details</th>
+                                    <th>Action</th>
                                 </tr>
                             </tfoot>
                         </table>
@@ -90,75 +98,56 @@
                 </div>
                 <!-- /.box -->
             </div>
-        </div>
+            <div class="col-md-5">
+                {{-- for messages --}}
+                @include('admin.messages.success')
 
-
-        {{-- Data input modal area --}}
-        <div class="modal fade" id="modal-default">
-            <div class="modal-dialog">
-
-                <form action="{{ route('equipment.store') }}" method="post" enctype="multipart/form-data">
-                    {{ csrf_field() }}
-
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title"><span class="fa fa-ils"></span> Add Equipment</h4>
-                        </div>
-                        <div class="modal-body">
+                <div class="box">
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <form action="{{ route('equipment.store') }}" method="post" enctype="multipart/form-data">
+                            @csrf
                             <div class="form-group">
-                                <label for="">Equipment Name <strong style="color:red;">*</strong></label>
-                                <input id="name" type="text"
-                                    class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name"
-                                    value="{{ old('name') }}" required autofocus placeholder="Equipment Name">
-
-                                @if ($errors->has('name'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('name') }}</strong>
-                                </span>
-                                @endif
-
-                            </div>
-                            <div class="form-group">
-                                <label for="">Equipment Price <strong style="color:red;">*</strong></label>
-                                <input id="price" type="text" maxlength="4"
-                                    class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}" name="price"
-                                    value="{{ old('price') }}" required autofocus placeholder="Equipment Price">
-
-                                @if ($errors->has('price'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('price') }}</strong>
-                                </span>
-                                @endif
-
+                                <label for="">Equipment name <strong style="color:red;">*</strong> </label>
+                                <input type="text" class="form-control" name="name" placeholder="Equipment Name">
                             </div>
 
                             <div class="form-group">
-                                <label for="">Equipment Description</label>
-                                <textarea class="form-control" name="description" cols="30" rows="3"
-                                    placeholder="Your Description"></textarea>
+                                <label for="">Equipment Category <strong style="color:red;">*</strong></label>
+                                <select name="equipcategory_id" class="form-control">
+                                    <option selected="disabled">Select Equipment Category</option>
+                                    @foreach ($equipcategories as $equipcat)
+                                    <option value="{{$equipcat->id}}">{{$equipcat->name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
 
+                            <div class="form-group">
+                                <label for="">Price <strong style="color:red;">*</strong></label>
+                                <input type="text" name="price" class="form-control"
+                                    placeholder="Price" pattern="[0-9]+">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Description </label>
+                                <textarea class="form-control" name="description" cols="30" rows="2" placeholder="Equipment Description"></textarea>
+
+                            </div>
                             <div>
                                 <label for="">Upload Equipment Image <strong style="color:red;">*</strong></label>
-                                <input type="file" name="image">
+                                <input type="file" name="image" required>
                             </div>
+
                             <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-                        </div>
-                        <div class="modal-footer">
+
+                            <p></p>
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-primary">Save</button>
-                        </div>
+
+                        </form>
                     </div>
-                    <!-- /.modal-content -->
-
-                </form>
+                </div>
             </div>
-            <!-- /.modal-dialog -->
         </div>
-        <!-- /.modal -->
-
 
     </section>
     <!-- /.Left col -->

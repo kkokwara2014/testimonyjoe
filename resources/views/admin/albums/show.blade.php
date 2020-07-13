@@ -21,7 +21,7 @@
                         <div class="row">
                             <div class="col-md-5">
                                 <img src="{{url('album_images',$album->albumimage)}}" alt=""
-                                    class="img-responsive img-rounded" width="250" height="250">
+                                    class="img-responsive img-rounded" width="350" height="350">
 
                             </div>
                             <div class="col-md-7">
@@ -31,15 +31,17 @@
                                 <hr>
 
                                 <div>Artist : <strong>{{$album->artistfullname}}</strong> </div>
-                                <div>Category : {{$album->albumcategory->name}} </div>
                                 <div>Year of Release : {{$album->yearofpub}} </div>
 
-                                <br>
+                                <hr>
+                                <strong>Added By</strong><p></p>
                                 <div>
-                                    Added by :
+                                    <span class="fa fa-user"></span>
                                     <strong>{{$album->user->firstname.', '.$album->user->lastname}}</strong>
                                 </div>
-                                <div>Phone : {{$album->user->phone}}</div>
+                                <div>
+                                    <span class="fa fa-phone"></span> {{$album->user->phone}}
+                                </div>
                             </div>
 
                         </div>

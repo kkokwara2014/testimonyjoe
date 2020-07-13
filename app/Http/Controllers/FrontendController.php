@@ -47,7 +47,7 @@ class FrontendController extends Controller
             $booking->eventtype=$request->eventtype;
             $booking->eventdate=$eventdate;
             $booking->eventtime=$request->eventtime;
-            $booking->location=$request->location;
+            $booking->country_id=$request->country_id;
             $booking->additionalinfo=$request->additionalinfo;
             $booking->save();
 

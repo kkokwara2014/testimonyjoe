@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAlbumcategoriesTable extends Migration
+class CreateTrackcategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateAlbumcategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('albumcategories', function (Blueprint $table) {
+        Schema::create('trackcategories', function (Blueprint $table) {
             $table->engine='InnoDB';
-            $table->bigIncrements('id')->unsigned();
+            $table->bigIncrements('id')->nullable();
             $table->string('name');
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ class CreateAlbumcategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('albumcategories');
+        Schema::dropIfExists('trackcategories');
     }
 }

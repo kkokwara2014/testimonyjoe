@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Booking;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BookingController extends Controller
 {
+    public function __construct(){
+        $this->middleware('admin');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +18,8 @@ class BookingController extends Controller
      */
     public function index()
     {
-        //
+        $bookings=Booking::latest()->get();
+        return view('admin.bookings.index', array('user' => Auth::user()), compact('bookings'));
     }
 
     /**
@@ -46,7 +51,8 @@ class BookingController extends Controller
      */
     public function show(Booking $booking)
     {
-        //
+        $booking = Booking::find($booking->id);
+        return view('admin.bookings.show', array('user' => Auth::user()), compact('booking'));
     }
 
     /**
@@ -80,6 +86,8 @@ class BookingController extends Controller
      */
     public function destroy(Booking $booking)
     {
-        //
+        $booking->delete();
+
+        return redirect()->back()->with('deleted','Message deleted successfully!');
     }
 }

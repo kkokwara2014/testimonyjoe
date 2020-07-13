@@ -27,16 +27,8 @@
                                 <label for="">Album Title <strong style="color:red;">*</strong> </label>
                                 <input type="text" class="form-control" name="title" placeholder="Album Title" value="{{ $album->title }}">
                             </div>
+                            <input type="hidden" name="existing_title" value="{{ $album->title }}">
 
-                            <div class="form-group">
-                                <label for="">Album Category <strong style="color:red;">*</strong></label>
-                                <select name="albumcategory_id" class="form-control">
-                                    <option selected="disabled">Select Album Category</option>
-                                    @foreach ($albumcategories as $albumcategory)
-                                    <option value="{{$albumcategory->id}}" {{$albumcategory->id==$album->albumcategory_id ? 'selected':''}}>{{$albumcategory->name}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
 
                             <div class="form-group">
                                 <label for="">Artist's Full Name <strong style="color:red;">*</strong></label>
@@ -53,7 +45,7 @@
                                 <div class="col-md-8">
                                     <label for="">Upload Album Image </label>
                                     <input type="file" name="albumimage">
-                                    <input type="hidden" name="albumimage" value="{{$album->albumimage}}">
+                                    <input type="hidden" name="existing_albumimage" value="{{$album->albumimage}}">
                                 </div>
                                 <div class="col-md-4">
                                    <br>
